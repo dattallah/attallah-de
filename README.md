@@ -9,3 +9,5 @@ Hub-Seite mit Links zu allen Projekten:
 - [Tempo Rechner](https://dattallah.github.io/speedcalc/)
 
 `CNAME` ist bereits für die Custom Domain `attallah.de` vorbereitet — DNS muss noch beim Registrar auf GitHub Pages umgestellt werden.
+
+Die Seite wird laufend um neue Projekte erweitert.
