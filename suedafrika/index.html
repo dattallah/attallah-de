@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Südafrika — Guide der großen Kap-Weine</title>
+<meta name="description" content="Die wichtigsten Weinregionen Südafrikas, Top-Rot- und Weißweine, Cap Classique, Süßweine, Jahrgänge und die Auszeichnungen von Tim Atkin MW und Platter's.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F5A4A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23F3E7CF' text-anchor='middle'%3EZA%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--pri:#1F5A4A;--pril:#2E7560;--prid:#123A2F;--red:#8A2438;--gold:#9A6A1C;--goldl:#B07F2C;--cream:#1E2620;--creamd:#4E5A4A;--dark:#F8F5EC;--darkc:#FFFFFF;--surface2:#EFF1E6;--on-pri:#F5F0E2;--txt:#3C443A;--dim:#6E7766;--div:rgba(31,90,74,0.17);--line:rgba(31,60,40,.08);--hero1:#DCEBDF;--hero2:#F5F1E4;--navbg:rgba(248,245,236,0.9);}
+@media (prefers-color-scheme: dark){:root{--pri:#3E9A7E;--pril:#4FB592;--prid:#123A2F;--red:#D66A7C;--gold:#D9A94E;--goldl:#E6BC68;--cream:#F1ECDD;--creamd:#C2C6B4;--dark:#131814;--darkc:#1B221D;--surface2:#222B25;--on-pri:#0F1511;--txt:#D3D6CA;--dim:#98A091;--div:rgba(120,190,160,0.18);--line:rgba(200,230,210,.07);--hero1:#1E3229;--hero2:#151B17;--navbg:rgba(19,24,20,0.9);}}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--dark);color:var(--txt);font-size:12.5px;line-height:1.6;overflow-x:hidden;}
+a{color:var(--gold);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:center;align-items:center;background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--div);overflow-x:auto;scrollbar-width:none;}
+nav::-webkit-scrollbar{display:none;}
+.nav-item{padding:14px 18px;font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--dim);text-decoration:none;cursor:pointer;transition:color .25s,background .25s;border-right:1px solid var(--div);white-space:nowrap;}
+.nav-item:first-child{border-left:1px solid var(--div);}
+.nav-item:hover,.nav-item.active{color:var(--gold);background:rgba(154,106,28,0.09);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;padding:0 20px;background:radial-gradient(ellipse 80% 60% at 50% -10%,var(--hero1) 0%,var(--hero2) 45%,var(--dark) 100%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(transparent,var(--dark));pointer-events:none;}
+.hero-badge{font-size:10px;letter-spacing:.55em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:0;animation:fu .9s ease forwards .3s;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(58px,12vw,140px);font-weight:300;letter-spacing:.05em;line-height:.88;color:var(--cream);opacity:0;animation:fu .9s ease forwards .6s;}
+.hero-title em{font-style:italic;color:var(--goldl);display:block;font-size:.34em;letter-spacing:.24em;margin-top:18px;}
+.hero-sub{font-size:9.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--dim);margin-top:36px;opacity:0;animation:fu .9s ease forwards .9s;max-width:900px;line-height:2;}
+.hero-line{width:1px;height:70px;background:linear-gradient(var(--gold),transparent);margin:36px auto 0;opacity:0;animation:fu .9s ease forwards 1.1s;}
+.hero-cta{position:absolute;bottom:40px;z-index:2;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:0 16px;}
+.cta{cursor:pointer;font-size:9px;letter-spacing:.3em;text-transform:uppercase;padding:11px 22px;border:1px solid var(--div);color:var(--dim);background:color-mix(in srgb,var(--darkc) 60%,transparent);transition:color .2s;}
+.cta:hover{color:var(--gold);}
+.cta.main{background:var(--pri);border-color:var(--pril);color:var(--on-pri);}
+@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* FACTS */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin:0 0 50px;}
+.fact{background:var(--darkc);border:1px solid var(--div);padding:20px 22px;}
+.fact b{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--cream);line-height:1.1;}
+.fact span{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);}
+
+/* PAGES */
+.page{display:none;padding:80px 0 40px;}
+.page.active{display:block;}
+#page-home{padding-top:0;}
+.container{max-width:1500px;margin:0 auto;padding:0 30px;}
+.sec-label{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,56px);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:36px;}
+.sec-title em{font-style:italic;color:var(--goldl);}
+.lead{color:var(--dim);font-size:11px;margin-bottom:28px;max-width:820px;line-height:1.8;}
+
+/* FILTER BAR */
+.filter-bar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;align-items:center;}
+.filter-bar label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);margin-right:4px;}
+.fbtn{font-size:9px;letter-spacing:.25em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--div);background:transparent;color:var(--dim);cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .2s;border-radius:1px;}
+.fbtn:hover,.fbtn.on{background:var(--pri);border-color:var(--pril);color:var(--on-pri);}
+.sep{width:1px;height:20px;background:var(--div);margin:0 6px;}
+input[type=text].fsearch{font-size:11px;padding:7px 14px;border:1px solid var(--div);background:var(--darkc);color:var(--txt);font-family:'Montserrat',sans-serif;outline:none;min-width:200px;border-radius:1px;}
+input[type=text].fsearch::placeholder{color:var(--dim);}
+input[type=text].fsearch:focus{border-color:var(--gold);}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--div);}
+table{width:100%;border-collapse:collapse;min-width:760px;}
+thead tr{background:rgba(154,106,28,.06);border-bottom:1px solid var(--div);}
+th{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);padding:11px 14px;text-align:left;white-space:nowrap;cursor:pointer;user-select:none;}
+th.nosort{cursor:default;}
+.vt th{white-space:normal;line-height:1.5;vertical-align:bottom;}
+.vt td{padding:9px 10px;}
+th .sort-arrow{margin-left:4px;opacity:.4;}
+td{padding:9px 14px;border-bottom:1px solid var(--line);font-size:11.5px;color:var(--txt);vertical-align:middle;}
+tr:hover td{background:rgba(31,90,74,.04);}
+tbody tr:last-child td{border-bottom:none;}
+.w-prod{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--cream);line-height:1.2;}
+.w-name{font-size:11px;color:var(--txt);}
+.w-reg{font-size:10px;color:var(--dim);}
+.w-note{font-size:10.5px;color:var(--dim);max-width:340px;line-height:1.55;}
+.grape{display:inline-block;font-size:9px;letter-spacing:.08em;color:var(--creamd);background:rgba(31,90,74,.06);border:1px solid var(--div);padding:2px 7px;white-space:nowrap;}
+.aw{font-size:10px;line-height:1.45;color:var(--txt);}
+.aw .tag{display:inline-block;font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:2px 6px;margin-right:4px;border:1px solid var(--gold);color:var(--gold);}
+.aw.classic{color:var(--dim);font-style:italic;}
+.count{font-size:9px;letter-spacing:.2em;color:var(--dim);margin:0 0 10px;text-transform:uppercase;}
+.flag{color:var(--gold);cursor:help;font-size:10px;}
+
+/* SCORE */
+.sc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;font-size:10.5px;font-weight:600;flex-shrink:0;}
+.s96{background:#FBEEC7;color:#7A5710;border:1.5px solid #C9A84C;}
+.s93{background:#E5F0E4;color:#245A3E;border:1.5px solid #4E9A72;}
+.s90{background:#EDF1E6;color:#3E5A34;border:1.5px solid #7E9A68;}
+.s87{background:#F1EEE2;color:#5E5638;border:1.5px solid #A89A70;}
+.s0{background:#EEEDE8;color:#86847C;border:1.5px solid #C4C2B8;}
+.yr-cell{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--cream);white-space:nowrap;}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:22px;padding:14px 18px;background:var(--darkc);border:1px solid var(--div);align-items:center;}
+.legend > span{display:flex;align-items:center;gap:7px;font-size:10px;color:var(--dim);}
+
+/* REGION CARDS */
+.app-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:2px;}
+.app-card{background:var(--darkc);border:1px solid var(--div);padding:24px 26px;transition:background .25s;cursor:pointer;}
+.app-card:hover{background:var(--surface2);}
+.app-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle;}
+.app-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--cream);margin-bottom:4px;}
+.app-type{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.app-desc{font-size:11.5px;color:var(--dim);line-height:1.7;margin-bottom:10px;}
+.app-meta{font-size:10px;color:var(--txt);line-height:1.6;}
+.app-meta b{font-weight:600;color:var(--cream);}
+.app-subs{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;padding-top:10px;border-top:1px solid var(--div);}
+.app-sub{font-size:9px;letter-spacing:.12em;color:var(--creamd);background:rgba(31,90,74,.05);border:1px solid var(--div);padding:3px 8px;}
+.app-link{margin-top:12px;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);}
+
+/* AWARDS */
+.aw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px;margin-bottom:40px;}
+.aw-card{background:var(--darkc);border:1px solid var(--div);padding:18px 20px;position:relative;overflow:hidden;}
+.aw-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);}
+.aw-cat{font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.aw-name{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--cream);line-height:1.25;margin-bottom:3px;}
+.aw-sub{font-size:10px;color:var(--dim);line-height:1.55;}
+.sub-h{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--cream);margin:10px 0 18px;}
+.sub-h em{font-style:italic;color:var(--goldl);}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:40px 0;}
+.note-box{border:1px dashed var(--div);padding:14px 18px;font-size:10.5px;color:var(--dim);line-height:1.7;margin-bottom:24px;max-width:900px;}
+
+footer{border-top:1px solid var(--div);padding:32px 30px;text-align:center;color:var(--dim);font-size:9.5px;letter-spacing:.15em;margin-top:60px;line-height:2;}
+footer a{text-decoration:none;}
+
+@media (max-width:760px){
+  nav{justify-content:flex-start;}
+  .nav-item{padding:13px 12px;letter-spacing:.2em;}
+  .container{padding:0 16px;}
+  input[type=text].fsearch{min-width:0;width:100%;}
+  .hero-cta{position:static;margin-top:36px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-item active" onclick="showPage('home',this)">Südafrika</span>
+  <span class="nav-item" onclick="showPage('regions',this)">Regionen</span>
+  <span class="nav-item" onclick="showPage('red',this)">Rotweine</span>
+  <span class="nav-item" onclick="showPage('white',this)">Weißweine</span>
+  <span class="nav-item" onclick="showPage('special',this)">Cap Classique &amp; Süß</span>
+  <span class="nav-item" onclick="showPage('vintage',this)">Jahrgänge</span>
+  <span class="nav-item" onclick="showPage('awards',this)">Auszeichnungen 2026</span>
+</nav>
+
+<!-- ========== HOME ========== -->
+<div id="page-home" class="page active">
+<div class="hero">
+  <div class="hero-badge">Western Cape · Wine of Origin · Cape Winelands</div>
+  <h1 class="hero-title">Südafrika<em>Guide der großen Kap-Weine</em></h1>
+  <p class="hero-sub">Regionen · Rot &amp; Weiß · Cap Classique · Jahrgänge 2009–2025 · Tim Atkin MW &amp; Platter's 2026</p>
+  <div class="hero-line"></div>
+  <div class="hero-cta">
+    <span class="cta" onclick="showPage('regions')">→ Regionen</span>
+    <span class="cta main" onclick="showPage('red')">→ Top-Rotweine</span>
+    <span class="cta" onclick="showPage('white')">→ Top-Weißweine</span>
+    <span class="cta" onclick="showPage('vintage')">→ Jahrgänge</span>
+  </div>
+</div>
+<div class="container">
+  <span class="sec-label">Das Kap in Zahlen</span>
+  <h2 class="sec-title">Alte Welt trifft <em>Neue Welt</em></h2>
+  <div class="facts">
+    <div class="fact"><b>1659</b><span>Erster Wein am Kap (Jan van Riebeeck)</span></div>
+    <div class="fact"><b>≈ 86.500 ha</b><span>Rebfläche 2025 (SAWIS)</span></div>
+    <div class="fact"><b>Chenin Blanc</b><span>Meistgepflanzte Rebsorte</span></div>
+    <div class="fact"><b>Pinotage</b><span>Kap-eigene Kreuzung (1925)</span></div>
+    <div class="fact"><b>Constantia</b><span>Vin de Constance — Napoleons Süßwein</span></div>
+  </div>
+  <p class="lead">Südafrika ist das älteste Weinland der Neuen Welt und gleichzeitig eines der dynamischsten. Zwei Ozeane, der kalte Benguela-Strom und der „Cape Doctor“ (der kräftige Südostwind) halten die Trauben trotz Sonne frisch. Alte Buschreben (Old Vines, ab 35 Jahren zertifiziert) aus Chenin Blanc, Cinsault und Grenache sind das Markenzeichen der neuen Generation in Swartland und Citrusdal. Stellenbosch steht für Cabernet Sauvignon und Bordeaux-Blends von Weltklasse, Hemel-en-Aarde und Elgin für kühlen Pinot Noir und Chardonnay.</p>
+</div>
+</div>
+
+<!-- ========== REGIONEN ========== -->
+<div id="page-regions" class="page">
+<div class="container" style="padding-top:40px;">
+  <span class="sec-label">Wine of Origin · Regionen, Distrikte &amp; Wards</span>
+  <h2 class="sec-title">Die wichtigsten Weinregionen <em>am Kap</em></h2>
+  <p class="lead">Das Wine-of-Origin-System (seit 1973) gliedert sich in Geographical Unit (z. B. Western Cape) → Region (z. B. Coastal Region, Cape South Coast) → District (z. B. Stellenbosch) → Ward (z. B. Simonsberg-Stellenbosch). Ein Klick auf eine Karte zeigt die Top-Weine dieser Region.</p>
+  <div class="app-grid" id="regGrid"></div>
+</div>
+</div>
+
+<!-- ========== ROTWEINE ========== -->
+<div id="page-red" class="page">
+<div class="container" style="padding-top:40px;">
+  <span class="sec-label">Vins Rouges · Ikonen &amp; Preisträger</span>
+  <h2 class="sec-title">Die Top-Rotweine <em>Südafrikas</em></h2>
+  <p class="lead">Ikonen und aktuelle Preisträger. Bei Preisträgern ist der ausgezeichnete Jahrgang angegeben; bei den Klassikern geht es um das Weingut bzw. den Wein über mehrere Jahrgänge hinweg. Punkte stehen nur dort, wo sie aus Tim Atkin MW oder Platter's belegt sind.</p>
+  <div class="filter-bar" id="fb-red"></div>
+  <div class="count" id="cnt-red"></div>
+  <div class="tbl-wrap"><table><thead id="th-red"></thead><tbody id="tb-red"></tbody></table></div>
+</div>
+</div>
+
+<!-- ========== WEISSWEINE ========== -->
+<div id="page-white" class="page">
+<div class="container" style="padding-top:40px;">
+  <span class="sec-label">Vins Blancs · Chenin, Chardonnay, Sauvignon &amp; Blends</span>
+  <h2 class="sec-title">Die Top-Weißweine <em>Südafrikas</em></h2>
+  <p class="lead">Weißwein ist Südafrikas größte Stärke: Old-Vine Chenin Blanc aus Swartland und Citrusdal, Chardonnay aus Hemel-en-Aarde und Elgin, mineralischer Sauvignon Blanc aus Constantia, Durbanville und Elim sowie die Cape White Blends.</p>
+  <div class="filter-bar" id="fb-white"></div>
+  <div class="count" id="cnt-white"></div>
+  <div class="tbl-wrap"><table><thead id="th-white"></thead><tbody id="tb-white"></tbody></table></div>
+</div>
+</div>
+
+<!-- ========== CAP CLASSIQUE & SÜSS ========== -->
+<div id="page-special" class="page">
+<div class="container" style="padding-top:40px;">
+  <span class="sec-label">Méthode Cap Classique · Vin de Constance · Straw Wine · Cape Vintage</span>
+  <h2 class="sec-title">Schaumwein &amp; <em>Süßweine</em></h2>
+  <p class="lead">Cap Classique ist Flaschengärung nach traditioneller Methode (seit 1971, Simonsig Kaapse Vonkel). Klein Constantias Vin de Constance belebt den legendären Süßwein des 18. Jahrhunderts wieder, den Napoleon im Exil auf St. Helena trank. Calitzdorp in der Klein Karoo ist die Heimat der „Cape Vintage“-Portweinstile.</p>
+  <div class="filter-bar" id="fb-special"></div>
+  <div class="count" id="cnt-special"></div>
+  <div class="tbl-wrap"><table><thead id="th-special"></thead><tbody id="tb-special"></tbody></table></div>
+</div>
+</div>
+
+<!-- ========== JAHRGÄNGE ========== -->
+<div id="page-vintage" class="page">
+<div class="container" style="padding-top:40px;">
+  <span class="sec-label">Vintages · Jahrgangstabelle</span>
+  <h2 class="sec-title">Jahrgangsbewertungen <em>2009–2025</em></h2>
+  <div class="note-box"><b style="color:var(--gold);">Wichtig zur Einordnung:</b> Für Südafrika gibt es, anders als in Bordeaux, keine etablierte Punkte-Jahrgangstabelle der großen Kritiker. Die Punkte hier sind <b>redaktionelle Richtwerte</b> auf der 100-Punkte-Skala. Sie fassen qualitative Jahrgangsberichte zusammen: Tim Atkin MW (z. B. 2015 und 2017 „arguably the best ever“, 2025 „9–10 von 10, bester Jahrgang seit 2017“), VinPro/SAWIS-Ernteberichte, Wine-Searcher und Fachhandels-Berichte. Sie zeigen die Tendenz; die Unterschiede zwischen einzelnen Weingütern sind am Kap oft größer als zwischen den Jahrgängen.</div>
+
+  <div class="filter-bar">
+    <label>Qualität:</label>
+    <button class="fbtn on" onclick="filterVintage('all',this)">Alle</button>
+    <button class="fbtn" onclick="filterVintage('leg',this)">★ Herausragend 96+</button>
+    <button class="fbtn" onclick="filterVintage('exc',this)">Exzellent 93–95</button>
+    <button class="fbtn" onclick="filterVintage('vg',this)">Sehr gut 90–92</button>
+    <button class="fbtn" onclick="filterVintage('good',this)">Gut / Uneinheitlich &lt;90</button>
+  </div>
+
+  <div class="legend">
+    <span style="letter-spacing:.2em;text-transform:uppercase;font-size:9px;">Legende:</span>
+    <span><span class="sc s96">97</span>Herausragend 96+</span>
+    <span><span class="sc s93">94</span>Exzellent 93–95</span>
+    <span><span class="sc s90">91</span>Sehr gut 90–92</span>
+    <span><span class="sc s87">88</span>Gut 87–89</span>
+    <span><span class="sc s0">85</span>Uneinheitlich &lt;87</span>
+    <span style="margin-left:auto;font-size:9px;">Klick auf Spalten-Header = sortieren</span>
+  </div>
+
+  <div class="tbl-wrap">
+    <table class="vt">
+      <thead>
+        <tr>
+          <th onclick="sortVt(0)">Jahr <span class="sort-arrow">↕</span></th>
+          <th onclick="sortVt(1)">Stellenbosch · Cabernet/Blends <span class="sort-arrow">↕</span></th>
+          <th onclick="sortVt(2)">Swartland · Syrah/Rhône <span class="sort-arrow">↕</span></th>
+          <th onclick="sortVt(3)">Cape South Coast · Pinot/Chard <span class="sort-arrow">↕</span></th>
+          <th onclick="sortVt(4)">Chenin Blanc · Weiß <span class="sort-arrow">↕</span></th>
+          <th class="nosort">Ø</th>
+          <th class="nosort" style="min-width:260px;">Charakter</th>
+          <th class="nosort">Trinkreife (Spitze, rot)</th>
+        </tr>
+      </thead>
+      <tbody id="vtbody"></tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- ========== AUSZEICHNUNGEN ========== -->
+<div id="page-awards" class="page">
+<div class="container" style="padding-top:40px;">
+  <span class="sec-label">Tim Atkin MW · Platter's by Diners Club</span>
+  <h2 class="sec-title">Die Auszeichnungen <em>2025 / 2026</em></h2>
+
+  <h3 class="sub-h">Tim Atkin MW — <em>South Africa Special Report 2026</em></h3>
+  <p class="lead">14. Ausgabe, veröffentlicht am 1. September 2026. 1.831 Weine von über 350 Weingütern verkostet. Rund 247 Weine erreichten 95+ Punkte, siebzehn 98 Punkte, einer 99 und einer 100. Atkin bewertet den Jahrgang 2025 mit 9–10 von 10 als besten seit 2017.</p>
+  <div class="aw-grid" id="aw-atkin26"></div>
+
+  <h3 class="sub-h">Platter's by Diners Club — <em>South African Wine Guide 2026</em></h3>
+  <p class="lead">46. Ausgabe, erschienen im November 2025. Über 8.000 Weine; 316 Weine, Brandys und Husk Spirits erhielten 5 Sterne (≙ 95+ Punkte); 36 „Wines of the Year“ als jeweils bester Wein ihrer Kategorie. Zwei Weine erreichten mit 99 Punkten einen Rekord.</p>
+  <div class="aw-grid" id="aw-platter26"></div>
+
+  <h3 class="sub-h">Tim Atkin MW — <em>Report 2025 (Rückblick)</em></h3>
+  <div class="aw-grid" id="aw-atkin25"></div>
+
+  <div class="note-box">Eine vollständige Liste aller 316 Platter's-Fünfsterne-Weine und aller Atkin-„Growths“ (Klassifikation der besten Erzeuger nach Bordeaux-Vorbild) ist nur in den kostenpflichtigen Publikationen enthalten: <a href="https://timatkin.com" target="_blank" rel="noopener">timatkin.com</a> · <a href="https://wineonaplatter.com" target="_blank" rel="noopener">wineonaplatter.com</a>. Diese Seite zeigt die öffentlich berichteten Hauptpreise.</div>
+</div>
+</div>
+
+<footer>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--cream);margin-bottom:10px;letter-spacing:.05em;">Südafrika — Guide der großen Kap-Weine</p>
+  <p>Quellen: <a href="https://timatkin.com" target="_blank" rel="noopener">Tim Atkin MW South Africa Report 2025 &amp; 2026</a> · <a href="https://wineonaplatter.com" target="_blank" rel="noopener">Platter's South African Wine Guide 2026</a> · <a href="https://www.sawis.co.za" target="_blank" rel="noopener">SAWIS</a> · <a href="https://www.vinpro.co.za" target="_blank" rel="noopener">VinPro</a> · <a href="https://www.wosa.co.za" target="_blank" rel="noopener">Wines of South Africa</a> · <a href="https://www.wine-searcher.com/vintage-2024-south+africa" target="_blank" rel="noopener">Wine-Searcher</a></p>
+  <p style="font-size:9px;">Stand: Oktober 2026. Mit <span class="flag">◇</span> markierte Angaben (Lage/Rebsorte) sind nicht durch eine Primärquelle gesichert. Jahrgangspunkte sind redaktionelle Richtwerte. Keine Gewähr.</p>
+  <p style="font-size:9px;margin-top:6px;"><a href="https://attallah.de">← attallah.de</a> · <a href="https://dattallah.github.io/bordeaux-weine/">Bordeaux — Guide des Grands Vins</a></p>
+</footer>
+
+<script>
+// =============================================
+// NAVIGATION
+// =============================================
+function showPage(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  if (el) el.classList.add('active');
+  else document.querySelectorAll('.nav-item').forEach(n => {
+    if (n.getAttribute('onclick').includes("'" + id + "'")) n.classList.add('active');
+  });
+  window.scrollTo(0, 0);
+}
+
+// =============================================
+// REGIONEN
+// =============================================
+const regions = {
+  stb:  { name:'Stellenbosch', color:'#8A2438', type:'Coastal Region · Cabernet · Bordeaux-Blends · Chenin', desc:'Das Herz des Kap-Weins und das „Médoc Südafrikas“. Granit- und Sandsteinböden an den Hängen von Simonsberg, Helderberg und Jonkershoek, gekühlt von der False Bay. Hier stehen die meisten Ikonen: Kanonkop, Meerlust, Rust en Vrede, Jordan, Delaire Graff.', climate:'Mediterran, durch False Bay gekühlt', grapes:'Cabernet Sauvignon, Merlot, Cabernet Franc, Pinotage, Chenin Blanc, Chardonnay', subs:['Simonsberg-Stellenbosch','Banghoek','Jonkershoek Valley','Devon Valley','Bottelary','Polkadraai Hills','Papegaaiberg','Vlottenburg'] },
+  swa:  { name:'Swartland', color:'#5E3A6E', type:'Coastal Region · Old Vines · Syrah · Chenin', desc:'Die Revolution der 2000er: Eben Sadie, Adi Badenhorst, Mullineux, Porseleinberg und Rall machten aus der weiten Weizenlandschaft die spannendste Region des Landes. Ungewässerte Buschreben auf Schiefer, Granit und Eisenstein, naturnaher Ausbau, Swartland Independent Producers.', climate:'Heiß und trocken, meist unbewässert', grapes:'Syrah, Grenache, Cinsault, Mourvèdre, Chenin Blanc, Rhône-White-Blends', subs:['Paardeberg','Riebeekberg','Malmesbury','Riebeeksrivier','St. Helena Bay'] },
+  paarl:{ name:'Paarl & Wellington', color:'#9C5A2A', type:'Coastal Region · Vielseitig · Old Vines', desc:'Wärmer als Stellenbosch, mit dem markanten Granitfelsen Paarl Rock. Wellington liefert Top-Syrah und alte Chenin-Reben, Voor-Paardeberg sitzt an der Grenze zum Swartland.', climate:'Warm, kontinentaler', grapes:'Syrah, Cabernet Sauvignon, Pinotage, Chenin Blanc', subs:['Simonsberg-Paarl','Voor Paardeberg','Agter Paarl','Wellington','Bovlei'] },
+  fhk:  { name:'Franschhoek', color:'#B0893A', type:'Coastal Region · Hugenotten-Tal · Sémillon', desc:'Von den französischen Hugenotten 1688 besiedeltes Tal, umrahmt von hohen Bergen. Gastronomie-Hotspot und Heimat von Boekenhoutskloof und Chamonix. Berühmt für uralte Sémillon-Reben (teils über 100 Jahre) und Cap Classique.', climate:'Warm im Talboden, kühl in Höhenlagen', grapes:'Sémillon, Chardonnay, Cabernet Sauvignon, Syrah', subs:['Franschhoek Valley'] },
+  con:  { name:'Constantia & Cape Peninsula', color:'#2E6A8A', type:'Coastal Region · Atlantik-Einfluss · Sauvignon', desc:'Die Wiege des Kap-Weins (Groot Constantia, 1685), am Stadtrand von Kapstadt. Kühle Seebrisen von zwei Seiten, Granitböden. Sauvignon Blanc und Sémillon-Blends sowie der historische Vin de Constance.', climate:'Kühl, maritim', grapes:'Sauvignon Blanc, Sémillon, Muscat de Frontignan, Bordeaux-Blends', subs:['Constantia','Hout Bay','Cape Point'] },
+  dur:  { name:'Durbanville & Philadelphia', color:'#4A8A7A', type:'Coastal Region · Kühle Hügel · Sauvignon', desc:'Sanfte, windgekühlte Hügel nördlich von Kapstadt mit Blick auf den Atlantik. Hochburg des intensiven, grünen Sauvignon Blanc; Diemersdal wurde 2026 als „Top Performing Winery“ von Platter\'s ausgezeichnet.', climate:'Kühl, windig, maritim', grapes:'Sauvignon Blanc, Pinotage, Merlot', subs:['Durbanville','Philadelphia'] },
+  hea:  { name:'Walker Bay · Hemel-en-Aarde · Bot River', color:'#7A2A5A', type:'Cape South Coast · Pinot Noir · Chardonnay', desc:'„Himmel und Erde“: Das kühle Tal hinter Hermanus ist Südafrikas Burgund. Tonschiefer (Bokkeveld-Schiefer) und Atlantikkühle. Hamilton Russell Vineyards war 1975 der Pionier; Storm, Newton Johnson, Crystallum und Creation folgten.', climate:'Kühl, maritim', grapes:'Pinot Noir, Chardonnay, Sauvignon Blanc', subs:['Hemel-en-Aarde Valley','Upper Hemel-en-Aarde','Hemel-en-Aarde Ridge','Bot River','Stanford Foothills','Sunday\'s Glen'] },
+  elg:  { name:'Elgin', color:'#3A6A9A', type:'Cape South Coast · Höhenlage · Kühlstes Klima', desc:'Ehemaliges Apfelanbaugebiet auf rund 300–400 m Höhe, eine der kühlsten Weinregionen des Landes. Präziser Chardonnay, eleganter Pinot Noir, Riesling und Sauvignon Blanc (Paul Cluver, Richard Kershaw, Oak Valley).', climate:'Kühl, Höhenlage, Wolken', grapes:'Chardonnay, Pinot Noir, Sauvignon Blanc, Riesling', subs:['Elgin'] },
+  csc:  { name:'Elim · Greyton · übrige Südküste', color:'#5A7A3A', type:'Cape South Coast · Extreme Kühle', desc:'An der Südspitze Afrikas (Cape Agulhas): Elim mit windumtosten Sauvignon-Blanc-Lagen. Im Landesinneren Greyton, wo Samantha O\'Keefes Lismore Estate Vineyards 2026 zur ersten „Winery of the Year“ von Tim Atkin gekürt wurde.', climate:'Sehr kühl, windig', grapes:'Sauvignon Blanc, Chardonnay, Syrah, Viognier, Pinot Noir', subs:['Elim (Cape Agulhas)','Greyton','Overberg','Elandskloof'] },
+  oli:  { name:'Citrusdal Mountain · Cederberg', color:'#A06A2A', type:'Olifants River & Höhenlagen · Old-Vine Chenin', desc:'Abgelegene Bergweinberge, die zu den Höhepunkten Südafrikas zählen: Piekenierskloof mit uralten Grenache- und Chenin-Reben; Cederberg mit über 1.000 m einer der höchsten Weinberge des Landes. Alheit Magnetic North (100 Pkt. Atkin 2025) und Huilkrans (99 Pkt., Atkin White Wine of the Year 2026) kommen von hier.', climate:'Höhenlage, große Tag-Nacht-Unterschiede', grapes:'Chenin Blanc, Grenache, Sauvignon Blanc, Shiraz', subs:['Piekenierskloof','Citrusdal Mountain','Cederberg','Olifants River'] },
+  tul:  { name:'Tulbagh', color:'#6A5A9A', type:'Coastal Region · Bergkessel', desc:'Ein von drei Gebirgszügen umschlossenes Tal mit heißen Tagen und kalten Nächten. Kraftvoller Syrah und Rhône-Blends (Saronsberg) sowie Cap Classique.', climate:'Warm, große Tag-Nacht-Unterschiede', grapes:'Shiraz, Rhône-Blends, Chenin Blanc', subs:['Tulbagh'] },
+  brv:  { name:'Breede River Valley · Robertson', color:'#8A8A3A', type:'Kalkböden · Chardonnay · Cap Classique', desc:'Kalkreiche Böden, ungewöhnlich für das Kap, ideal für Chardonnay und Schaumwein. Graham Beck (Pieter „Bubbles“ Ferreira, Atkin-„Winemaking Legend“ 2026), De Wetshof, Springfield, Silverthorn.', climate:'Warm, trocken, bewässert', grapes:'Chardonnay, Pinot Noir (Cap Classique), Sauvignon Blanc', subs:['Robertson','Breedekloof','Worcester','Bonnievale','Eilandia'] },
+  kk:   { name:'Klein Karoo · Calitzdorp', color:'#8A4A2A', type:'Halbwüste · Cape Vintage · Muskateller', desc:'Trockene Halbwüste zwischen den Bergketten. Calitzdorp ist die „Port-Hauptstadt“ Südafrikas: Touriga Nacional, Tinta Barocca und Muskateller für die Cape-Vintage-Stile (Boplaas, De Krans).', climate:'Heiß, sehr trocken', grapes:'Touriga Nacional, Tinta Barocca, Muscat', subs:['Calitzdorp','Tradouw','Upper Langkloof'] },
+};
+
+function renderRegions() {
+  document.getElementById('regGrid').innerHTML = Object.entries(regions).map(([k, r]) => {
+    const n = wines.filter(w => w.r === k).length;
+    return `<div class="app-card" onclick="jumpRegion('${k}')">
+      <div class="app-name"><span class="app-dot" style="background:${r.color}"></span>${r.name}</div>
+      <div class="app-type">${r.type}</div>
+      <div class="app-desc">${r.desc}</div>
+      <div class="app-meta"><b>Klima:</b> ${r.climate}<br><b>Rebsorten:</b> ${r.grapes}</div>
+      <div class="app-subs">${r.subs.map(s => `<span class="app-sub">${s}</span>`).join('')}</div>
+      <div class="app-link">→ ${n} Top-Weine anzeigen</div>
+    </div>`;
+  }).join('');
+}
+
+// =============================================
+// WEINE
+// c: rot | weiss | cc (Cap Classique) | suess
+// aw: Auszeichnung (belegt) · pts: belegte Punktzahl · u: Lage/Rebsorte unbestätigt
+// =============================================
+const wines = [
+  // ---------- ROT ----------
+  { p:'Sadie Family Wines', w:'Columella', r:'swa', g:'Syrah-Blend', c:'rot', pts:100, aw:'Atkin 2026: Overall Red Wine of the Year — Jg. 2024, 100 Pkt. (auch 2019 mit 100 Pkt.)', n:'Eben Sadies Flaggschiff seit 2000. Syrah mit Mourvèdre, Grenache u. a. von Schiefer und Granit — der Referenz-Rotwein des neuen Südafrikas.' },
+  { p:'Porseleinberg', w:'Syrah', r:'swa', g:'Syrah', c:'rot', pts:100, aw:'Atkin 2025: 100 Pkt. — Jg. 2023; Atkin 2026: 98 Pkt.', n:'Schieferhang im Swartland (zu Boekenhoutskloof gehörig). Ausbau in Beton und großem Holz, sehr puristisch, biologisch bewirtschaftet.' },
+  { p:'Leeuwenkuil', w:'Heritage Syrah', r:'swa', g:'Syrah', c:'rot', pts:99, aw:'Platter\'s 2026: Wine of the Year Shiraz/Syrah — Jg. 2022, 99 Pkt. (Rekordwert)', n:'Großer Swartland-Familienbetrieb mit kleiner Heritage-Linie aus besten Parzellen.' },
+  { p:'Boschkloof', w:'Epilogue Syrah', r:'stb', g:'Syrah', c:'rot', pts:98, aw:'Atkin 2026: 98 Pkt. — Jg. 2024', n:'Reenen Borman, Polkadraai Hills. Einer der präzisesten Stellenbosch-Syrahs, kühl und floral.' },
+  { p:'Van Loggerenberg', w:'Graft Syrah', r:'stb', u:true, g:'Syrah', c:'rot', pts:98, aw:'Atkin 2026: 98 Pkt. — Jg. 2025', n:'Lukas van Loggerenberg, Minimal-Intervention, Ganztraubenanteil. Herkunft der Trauben im Coastal Region nicht gesichert.' },
+  { p:'Rall Wines', w:'Ava Syrah', r:'swa', g:'Syrah', c:'rot', pts:98, aw:'Atkin 2026: 98 Pkt. (laut Berichten zur 98er-Liste)', n:'Donovan Rall — Atkin-Winemaker of the Year 2025. Schiefer und Granit, sehr elegant.' },
+  { p:'Jordan Wine Estate', w:'Sophia', r:'stb', g:'Bordeaux-Blend', c:'rot', pts:98, aw:'Atkin 2026: 98 Pkt. — Jg. 2022', n:'Ursprünglich für die Cape Winemakers Guild Auction. Spitzen-Blend aus Cabernet Sauvignon und Merlot aus Stellenbosch Kloof.' },
+  { p:'Oldenburg Vineyards', w:'Per Se', r:'stb', g:'Cabernet Sauvignon', c:'rot', aw:'Platter\'s 2026: Wine of the Year Cabernet Sauvignon — Jg. 2022', n:'Banghoek, eines der höchstgelegenen Täler Stellenboschs. Granit und Lehm, kühle Nächte.' },
+  { p:'Raats Family Wines', w:'Vlag Cabernet Franc', r:'stb', g:'Cabernet Franc', c:'rot', aw:'Platter\'s 2026: Wine of the Year Cabernet Franc — Jg. 2023 (nur in einer Quelle genannt)', n:'Bruwer Raats gilt als Südafrikas Cabernet-Franc-Spezialist (auch: Raats Chenin Blanc).' },
+  { p:'Tokara', w:'Limited Release Pinotage', r:'stb', g:'Pinotage', c:'rot', aw:'Platter\'s 2026: Wine of the Year Pinotage — Jg. 2023', n:'Helshoogte-Pass zwischen Stellenbosch und Franschhoek. Höhenlage, moderner, frischer Pinotage-Stil.' },
+  { p:'Diemersdal', w:'Pinotage Reserve / The Journal Pinotage', r:'dur', g:'Pinotage', c:'rot', aw:'Platter\'s 2026: 5 Sterne (Reserve 2024, The Journal 2023) — Diemersdal = Top Performing Winery 2026', n:'Familie Louw in sechster Generation. Unbewässerte Buschreben in Durbanville.' },
+  { p:'Constantia Glen', w:'Five', r:'con', g:'Bordeaux-Blend', c:'rot', aw:'Platter\'s 2026: Wine of the Year Cape Bordeaux Red — Jg. 2022', n:'Alle fünf Bordeaux-Sorten von den kühlen Hängen des Constantiabergs.' },
+  { p:'Anysbos', w:'Tesame', r:'hea', g:'Rhône-Blend', u:true, c:'rot', aw:'Platter\'s 2026: Wine of the Year Red Blend „Other“ — Jg. 2023', n:'Bot River. Zusammensetzung (vermutlich mediterrane Sorten) nicht gesichert.' },
+  { p:'Kanonkop', w:'Paul Sauer', r:'stb', g:'Bordeaux-Blend', c:'rot', aw:'Ikone. Jg. 2015 war Atkins erste 100-Punkte-Bewertung in der Neuen Welt', n:'Simonsberg-Stellenbosch. Cabernet Sauvignon mit Cabernet Franc und Merlot, offen vergoren, extrem langlebig. Südafrikas „First Growth“.' },
+  { p:'Kanonkop', w:'Black Label Pinotage', r:'stb', g:'Pinotage', c:'rot', n:'Aus Pinotage-Buschreben von 1953. Der teuerste und berühmteste Pinotage des Landes.' },
+  { p:'Meerlust', w:'Rubicon', r:'stb', g:'Bordeaux-Blend', c:'rot', n:'Familie Myburgh seit 1756. Erster Jahrgang 1980 — einer der ersten Bordeaux-Blends des Landes.' },
+  { p:'Rust en Vrede', w:'1694 Classification', r:'stb', g:'Shiraz-Cabernet', c:'rot', n:'Helderberg. Kraftvoller, opulenter Shiraz-Cabernet-Blend; Kultwein mit Glamour.' },
+  { p:'Delaire Graff', w:'Botmaskop', r:'stb', g:'Bordeaux-Blend', c:'rot', n:'Helshoogte-Pass. Cabernet-basierter Blend, eines der bekanntesten Luxus-Weingüter Afrikas.' },
+  { p:'Keermont', w:'Amphitheatre Syrah', r:'stb', g:'Syrah', c:'rot', n:'Stellenbosch-Berge oberhalb des Helderberg. Kühle Hochlagen-Syrahs mit großer Frische.' },
+  { p:'Thelema Mountain Vineyards', w:'Cabernet Sauvignon', r:'stb', g:'Cabernet Sauvignon', c:'rot', n:'Simonsberg/Helshoogte. Klassischer Minze-Cassis-Cabernet, seit den 1990ern Maßstab.' },
+  { p:'Le Riche', w:'Cabernet Sauvignon Reserve', r:'stb', g:'Cabernet Sauvignon', c:'rot', n:'Etienne Le Riche, der „Cabernet King“. Klassisch, ausgewogen, sehr lagerfähig.' },
+  { p:'Ernie Els Wines', w:'Signature', r:'stb', g:'Bordeaux-Blend', c:'rot', n:'Weingut des Golfprofis am Helderberg. Kraftvoller, polierter Cabernet-Blend.' },
+  { p:'Vergelegen', w:'V', r:'stb', g:'Cabernet Sauvignon', c:'rot', pts:95, aw:'Atkin 2026: 95 Pkt. — Jg. 2024', n:'Historisches Gut in Somerset West (1700). V ist die Einzellagen-Spitze aus Cabernet.' },
+  { p:'Glenelly', w:'Lady May', r:'stb', g:'Cabernet Sauvignon', c:'rot', n:'Gegründet von May-Eliane de Lencquesaing (ehem. Château Pichon Comtesse). Bordelaiser Handschrift.' },
+  { p:'Reyneke', w:'Reserve Red', r:'stb', g:'Syrah', c:'rot', n:'Johan Reyneke, Pionier der biodynamischen Bewirtschaftung am Kap (Polkadraai Hills).' },
+  { p:'Beeslaar', w:'Pinotage', r:'stb', g:'Pinotage', c:'rot', aw:'Atkin 2026: 98 Pkt. für Beeslaar „The Sacrament“ 2023', n:'Abrie Beeslaar (Kellermeister von Kanonkop) mit eigenem Label. Pinotage im Burgunder-Stil.' },
+  { p:'Mullineux', w:'Schist Syrah', r:'swa', g:'Syrah', c:'rot', n:'Chris & Andrea Mullineux. Terroir-Serie Schist/Granite/Iron, die Böden des Swartland im Glas.' },
+  { p:'A.A. Badenhorst Family Wines', w:'Family Red', r:'swa', g:'Rhône-Blend', c:'rot', n:'Adi Badenhorst, Paardeberg. Shiraz, Cinsault, Grenache — unkompliziert-tiefgründig.' },
+  { p:'Boekenhoutskloof', w:'Syrah', r:'paarl', u:true, g:'Syrah', c:'rot', n:'Marc Kent. Lange einer der ikonischen Syrahs des Landes (Lagen in Wellington/Swartland).' },
+  { p:'Boekenhoutskloof', w:'Cabernet Sauvignon', r:'fhk', g:'Cabernet Sauvignon', c:'rot', n:'Franschhoek-Weingut von Marc Kent. Fruchtquellen in Stellenbosch und Franschhoek.' },
+  { p:'Hamilton Russell Vineyards', w:'Pinot Noir', r:'hea', g:'Pinot Noir', c:'rot', n:'Seit 1975 der Pionier im Hemel-en-Aarde Valley. Steiniger Schieferton, burgundischer Stil.' },
+  { p:'Storm Wines', w:'Vrede / Ignis / Ridge Pinot Noir', r:'hea', g:'Pinot Noir', c:'rot', aw:'Hannes Storm = Atkin Winemaker of the Year 2026', n:'Präzise Einzellagen-Pinots aus den drei Hemel-en-Aarde-Wards.' },
+  { p:'Crystallum', w:'Mabalel Pinot Noir', r:'csc', u:true, g:'Pinot Noir', c:'rot', aw:'Platter\'s 2026: Wine of the Year Pinot Noir — Jg. 2024', n:'Peter-Allan Finlayson. Einzellage an der Cape South Coast (genaue Ward nicht gesichert).' },
+  { p:'Newton Johnson', w:'Family Vineyards Pinot Noir', r:'hea', g:'Pinot Noir', c:'rot', n:'Upper Hemel-en-Aarde. Duftig, mineralisch, Granit-Lehm.' },
+  { p:'Bouchard Finlayson', w:'Galpin Peak Pinot Noir', r:'hea', g:'Pinot Noir', c:'rot', n:'Peter Finlayson, Mitbegründer des Hemel-en-Aarde-Pinot. Klassiker seit den 1990ern.' },
+  { p:'Lismore Estate Vineyards', w:'Syrah', r:'csc', g:'Syrah', c:'rot', aw:'Atkin 2026: Winery of the Year (erstmals vergeben); laut Atkin ein „First Growth“', n:'Samantha O\'Keefe in Greyton. Kühler, pfeffriger Syrah mit Viognier-Akzent.' },
+  { p:'Saronsberg', w:'Shiraz', r:'tul', g:'Shiraz', c:'rot', n:'Tulbaghs bekanntestes Weingut. Reifer, dichter Shiraz mit Würze.' },
+  // ---------- WEISS ----------
+  { p:'Alheit Vineyards', w:'Huilkrans Chenin Blanc', r:'oli', g:'Chenin Blanc', c:'weiss', pts:99, aw:'Atkin 2026: Overall White Wine of the Year — Jg. 2025, 99 Pkt. · Alheit = Platter\'s Editor\'s Award Winery of the Year 2026', n:'Chris & Suzaan Alheit. Alte Chenin-Reben in den Bergen von Citrusdal.' },
+  { p:'Alheit Vineyards', w:'Magnetic North Chenin Blanc', r:'oli', g:'Chenin Blanc', c:'weiss', pts:100, aw:'Atkin 2025: 100 Pkt. — Jg. 2024; Atkin 2026: 98 Pkt. — Jg. 2025', n:'Hochgelegene, wurzelechte Chenin-Buschreben in Citrusdal Mountain. Kult.' },
+  { p:'Botanica', w:'Mary Delany Chenin Blanc', r:'stb', g:'Chenin Blanc', c:'weiss', pts:99, aw:'Platter\'s 2026: Wine of the Year Chenin Blanc — Jg. 2024, 99 Pkt. (Rekordwert)', n:'Ginny Povall, Devon Valley. Old-Vine Chenin mit großer Spannung.' },
+  { p:'Scions of Sinai', w:'Granietsteen Old Vine Chenin Blanc', r:'stb', g:'Chenin Blanc', c:'weiss', pts:98, aw:'Atkin 2026: 98 Pkt. — Jg. 2025', n:'Bernhard Bredell, Helderberg. Alte Reben auf Granit, Ausbau in Ton und Holz.' },
+  { p:'Boekenhoutskloof', w:'Semillon', r:'fhk', g:'Sémillon', c:'weiss', pts:98, aw:'Atkin 2026: 98 Pkt. — Jg. 2024', n:'Aus uralten Franschhoek-Sémillon-Reben (über 100 Jahre). Lagerfähig wie großer Graves.' },
+  { p:'Crystallum', w:'Clay Shales Chardonnay', r:'hea', u:true, g:'Chardonnay', c:'weiss', aw:'Platter\'s 2026: Wine of the Year Chardonnay — Jg. 2024', n:'Tonschiefer-Lage an der Cape South Coast. Straff, salzig, burgundisch.' },
+  { p:'Steenberg', w:'Magna Carta', r:'con', g:'Sauvignon-Sémillon', c:'weiss', aw:'Platter\'s 2026: Wine of the Year Cape Bordeaux White — Jg. 2023', n:'Constantias Spitzen-White-Blend, im Stil eines großen weißen Pessac-Léognan.' },
+  { p:'Mullineux', w:'Roundstone White', r:'swa', g:'White Blend', c:'weiss', aw:'Platter\'s 2026: Wine of the Year White Blend „Other“ — Jg. 2024', n:'Chenin-basierter Swartland-Blend von Chris & Andrea Mullineux (Roundstone-Lage).' },
+  { p:'Sadie Family Wines', w:'Palladius', r:'swa', g:'White Blend', c:'weiss', n:'Der Archetyp des Cape White Blend: Chenin, Grenache Blanc, Clairette, Viognier u. a. von alten Reben.' },
+  { p:'Sadie Family Wines', w:'Old Vine Series (Skerpioen, Mev. Kirsten, ’T Voetpad)', r:'swa', g:'Chenin / Field Blend', c:'weiss', n:'Einzellagen von teils über 100 Jahre alten Reben. Mev. Kirsten gilt als eine der ältesten Chenin-Lagen des Landes.' },
+  { p:'Mullineux', w:'Granite Chenin Blanc', r:'swa', g:'Chenin Blanc', c:'weiss', n:'Chenin von Granitböden am Paardeberg — kühl, salzig, druckvoll.' },
+  { p:'A.A. Badenhorst Family Wines', w:'Family White', r:'swa', g:'White Blend', c:'weiss', n:'Paardeberg-Feldmischung auf Chenin-Basis. Einer der prägenden Weine der Swartland-Revolution.' },
+  { p:'Hamilton Russell Vineyards', w:'Chardonnay', r:'hea', g:'Chardonnay', c:'weiss', n:'Einer der besten Chardonnays der Südhalbkugel. Straff, mineralisch, lagerfähig.' },
+  { p:'Storm Wines', w:'Chardonnay', r:'hea', g:'Chardonnay', c:'weiss', aw:'Hannes Storm = Atkin Winemaker of the Year 2026', n:'Präzise, site-fokussierte Chardonnays aus dem Hemel-en-Aarde.' },
+  { p:'Ataraxia', w:'Chardonnay', r:'hea', g:'Chardonnay', c:'weiss', n:'Kevin Grant, Hemel-en-Aarde Ridge. Kraftvoll und kühl zugleich.' },
+  { p:'Richard Kershaw', w:'Elgin Chardonnay', r:'elg', g:'Chardonnay', c:'weiss', n:'Master of Wine Richard Kershaw. Klon-selektierter Cool-Climate-Chardonnay.' },
+  { p:'Paul Cluver', w:'Seven Flags Chardonnay', r:'elg', g:'Chardonnay', c:'weiss', n:'Elgins Pionier-Weingut. Auch bekannt für Riesling.' },
+  { p:'Chamonix', w:'Reserve Chardonnay', r:'fhk', g:'Chardonnay', c:'weiss', n:'Hochlagen von Franschhoek. Einer der etablierten Spitzen-Chardonnays.' },
+  { p:'Lismore Estate Vineyards', w:'Reserve Chardonnay', r:'csc', g:'Chardonnay', c:'weiss', aw:'Atkin 2026: Winery of the Year', n:'Greyton. Spannungsreicher Chardonnay mit großer Länge.' },
+  { p:'Vergelegen', w:'Estate White (GVB White)', r:'stb', g:'Sauvignon-Sémillon', c:'weiss', pts:95, aw:'Atkin 2026: 95 Pkt. — Jg. 2025', n:'Lagerfähiger Bordeaux-White-Blend aus Somerset West.' },
+  { p:'Jordan Wine Estate', w:'Timepiece Sauvignon Blanc', r:'stb', g:'Sauvignon Blanc', c:'weiss', pts:95, aw:'Atkin 2026: 95 Pkt. — Jg. 2025', n:'Gary & Kathy Jordan, Stellenbosch Kloof.' },
+  { p:'Diemersdal', w:'Sauvignon Blanc (Reserve, Wild Ferment u. a.)', r:'dur', g:'Sauvignon Blanc', c:'weiss', aw:'Platter\'s 2026: vier Sauvignons mit 5 Sternen — Top Performing Winery of the Year', n:'Durbanville-Referenz für intensiven, kühlen Sauvignon Blanc.' },
+  { p:'Klein Constantia', w:'Sauvignon Blanc', r:'con', g:'Sauvignon Blanc', c:'weiss', n:'Kühle Constantia-Hänge. Spitzen-Sauvignons auch als Einzellagen-Abfüllungen.' },
+  { p:'Cape Point Vineyards', w:'Isliedh', r:'con', g:'Sauvignon-Sémillon', c:'weiss', n:'Atlantiknähe auf der Kap-Halbinsel (Noordhoek). Komplexer, holzgereifter Sauvignon-Sémillon.' },
+  { p:'Cederberg', w:'Five Generations Chenin Blanc', r:'oli', g:'Chenin Blanc', c:'weiss', n:'David Nieuwoudt. Einer der höchstgelegenen Weinberge Südafrikas (über 1.000 m).' },
+  { p:'Reyneke', w:'Reserve White', r:'stb', g:'Sauvignon Blanc', c:'weiss', n:'Biodynamisch, holzgereift, gewachsene Spannung.' },
+  { p:'Kleine Zalze', w:'Family Reserve Chenin Blanc', r:'stb', g:'Chenin Blanc', c:'weiss', n:'Mehrfach preisgekrönter, opulenter Holz-Chenin.' },
+  { p:'DeMorgenzon', w:'Reserve Chenin Blanc', r:'stb', g:'Chenin Blanc', c:'weiss', n:'Hohe Lagen der Stellenboschkloof. Alte Reben, Barrique-Ausbau.' },
+  { p:'Ken Forrester', w:'The FMC Chenin Blanc', r:'stb', g:'Chenin Blanc', c:'weiss', n:'„Forrester Meinert Chenin“ — ein früher Botschafter des hochwertigen Kap-Chenins.' },
+  { p:'De Wetshof', w:'Bateleur Chardonnay', r:'brv', g:'Chardonnay', c:'weiss', n:'Familie de Wet, Robertson. Kalkböden, Südafrikas Chardonnay-Pionier.' },
+  // ---------- CAP CLASSIQUE ----------
+  { p:'Silverthorn', w:'Jewel Box', r:'brv', g:'Chardonnay / Pinot Noir', u:true, c:'cc', aw:'Platter\'s 2026: Wine of the Year Cap Classique — Jg. 2019', n:'John Loubser, Robertson. Spezialist ausschließlich für Cap Classique.' },
+  { p:'Graham Beck', w:'Cuvée Clive', r:'brv', g:'Chardonnay / Pinot Noir', c:'cc', aw:'Pieter „Bubbles“ Ferreira = Atkin Winemaking Legend 2026', n:'Prestige-Cuvée, lange Hefelagerung. Graham Beck prägte das Ansehen des südafrikanischen Schaumweins.' },
+  { p:'Le Lude', w:'Agrafe Brut Reserve', r:'fhk', g:'Chardonnay / Pinot Noir', c:'cc', n:'Franschhoek, Zweitgärung unter Agrafe (Naturkorken) — eine Seltenheit am Kap.' },
+  { p:'Colmant', w:'Brut Chardonnay', r:'fhk', g:'Chardonnay', c:'cc', n:'Belgisches Ehepaar in Franschhoek, reine Cap-Classique-Kellerei.' },
+  { p:'Simonsig', w:'Kaapse Vonkel', r:'stb', g:'Chardonnay / Pinot Noir', c:'cc', n:'1971 der erste Cap Classique des Landes (Frans Malan).' },
+  // ---------- SÜSS / FORTIFIED ----------
+  { p:'Klein Constantia', w:'Vin de Constance', r:'con', g:'Muscat de Frontignan', c:'suess', n:'Unbotrytisierter Süßwein aus am Stock getrockneten Muskateller-Trauben. Ab 1986 wiederbelebt; schon Napoleon, Jane Austen und Baudelaire priesen das historische Original.' },
+  { p:'Mullineux', w:'Straw Wine', r:'swa', g:'Chenin Blanc', c:'suess', n:'Auf Stroh getrocknete Chenin-Trauben. Konzentriert, frisch, regelmäßig hoch bewertet.' },
+  { p:'Boplaas', w:'Cape Vintage Reserve', r:'kk', g:'Touriga Nacional / Tinta Barocca', c:'suess', n:'Calitzdorp. Südafrikas Antwort auf Vintage Port.' },
+  { p:'De Krans', w:'Cape Vintage Reserve', r:'kk', g:'Touriga Nacional / Tinta Barocca', c:'suess', n:'Calitzdorp. Zweiter Referenzerzeuger für Cape Vintage.' },
+];
+
+// =============================================
+// WEIN-TABELLEN (generisch für rot / weiss / special)
+// =============================================
+const views = {
+  red:     { types:['rot'] },
+  white:   { types:['weiss'] },
+  special: { types:['cc','suess'] },
+};
+const state = {};
+const typeLabel = { rot:'Rot', weiss:'Weiß', cc:'Cap Classique', suess:'Süß / Fortified' };
+const cols = [
+  { k:'p',   label:'Weingut',     get:w => w.p + ' ' + w.w },
+  { k:'r',   label:'Region',      get:w => regions[w.r].name },
+  { k:'g',   label:'Rebsorte',    get:w => w.g },
+  { k:'pts', label:'Punkte',      get:w => w.pts || 0 },
+  { k:'aw',  label:'Auszeichnung', get:w => w.aw ? 0 : 1 },
+  { k:'n',   label:'Charakter',   nosort:true },
+];
+
+// Preisträger = der Wein selbst wurde 2025/26 bepunktet oder ausgezeichnet (nicht nur das Weingut)
+const isPrize = w => !!w.pts || /Wine of the Year|5 Stern/.test(w.aw || '');
+
+function scClass(s) {
+  if (!s) return 's0';
+  if (s >= 96) return 's96';
+  if (s >= 93) return 's93';
+  if (s >= 90) return 's90';
+  if (s >= 87) return 's87';
+  return 's0';
+}
+function scBadge(s) { return s ? `<span class="sc ${scClass(s)}">${s}</span>` : '<span class="sc s0">—</span>'; }
+
+function initView(v) {
+  const list = wines.filter(w => views[v].types.includes(w.c));
+  const regs = [...new Set(list.map(w => w.r))];
+  const grapes = [...new Set(list.map(w => w.g))].sort();
+  state[v] = { reg:'all', grape:'all', type:'all', q:'', aw:false, sort:4, dir:1 };
+  let html = `<label>Region:</label><button class="fbtn on" data-f="reg" data-v="all">Alle (${list.length})</button>`;
+  html += regs.map(r => `<button class="fbtn" data-f="reg" data-v="${r}">${regions[r].name.split(' · ')[0].split(' & ')[0]}</button>`).join('');
+  html += `<span class="sep"></span>`;
+  if (views[v].types.length > 1) {
+    html += `<label>Typ:</label><button class="fbtn on" data-f="type" data-v="all">Alle</button>` +
+      views[v].types.map(t => `<button class="fbtn" data-f="type" data-v="${t}">${typeLabel[t]}</button>`).join('') + `<span class="sep"></span>`;
+  } else {
+    html += `<label>Rebsorte:</label><select class="fbtn" data-f="grape" style="text-transform:none;letter-spacing:.05em;"><option value="all">Alle Rebsorten</option>${grapes.map(g => `<option>${g}</option>`).join('')}</select><span class="sep"></span>`;
+  }
+  html += `<button class="fbtn" data-f="aw">★ Nur Preisträger 2025/26</button><span class="sep"></span>`;
+  html += `<input type="text" class="fsearch" placeholder="Weingut oder Wein suchen…">`;
+  const fb = document.getElementById('fb-' + v);
+  fb.innerHTML = html;
+  fb.querySelectorAll('button[data-f]').forEach(b => b.addEventListener('click', () => {
+    const f = b.dataset.f, st = state[v];
+    if (f === 'aw') { st.aw = !st.aw; b.classList.toggle('on', st.aw); }
+    else {
+      st[f] = b.dataset.v;
+      fb.querySelectorAll(`button[data-f="${f}"]`).forEach(x => x.classList.toggle('on', x === b));
+    }
+    renderView(v);
+  }));
+  const sel = fb.querySelector('select');
+  if (sel) sel.addEventListener('change', () => { state[v].grape = sel.value; renderView(v); });
+  fb.querySelector('input').addEventListener('input', e => { state[v].q = e.target.value.toLowerCase(); renderView(v); });
+  document.getElementById('th-' + v).innerHTML = '<tr>' + cols.map((c, i) =>
+    c.nosort ? `<th class="nosort" style="min-width:260px;">${c.label}</th>` : `<th data-i="${i}">${c.label} <span class="sort-arrow">↕</span></th>`).join('') + '</tr>';
+  document.querySelectorAll('#th-' + v + ' th[data-i]').forEach(th => th.addEventListener('click', () => {
+    const i = +th.dataset.i, st = state[v];
+    if (st.sort === i) st.dir *= -1; else { st.sort = i; st.dir = (cols[i].k === 'pts') ? -1 : 1; }
+    renderView(v);
+  }));
+  renderView(v);
+}
+
+function renderView(v) {
+  const st = state[v];
+  let list = wines.filter(w => views[v].types.includes(w.c))
+    .filter(w => st.reg === 'all' || w.r === st.reg)
+    .filter(w => st.grape === 'all' || w.g === st.grape)
+    .filter(w => st.type === 'all' || w.c === st.type)
+    .filter(w => !st.aw || isPrize(w))
+    .filter(w => !st.q || (w.p + ' ' + w.w + ' ' + w.g).toLowerCase().includes(st.q));
+  const c = cols[st.sort];
+  list.sort((a, b) => {
+    // Standard: Preisträger zuerst, dann nach Punkten, dann alphabetisch
+    if (c.k === 'aw') return ((a.aw ? 0 : 1) - (b.aw ? 0 : 1)) * st.dir || (b.pts || 0) - (a.pts || 0) || a.p.localeCompare(b.p);
+    const x = c.get(a), y = c.get(b);
+    return (typeof x === 'number' ? x - y : String(x).localeCompare(String(y), 'de')) * st.dir;
+  });
+  document.getElementById('cnt-' + v).textContent = list.length + ' Weine';
+  document.getElementById('tb-' + v).innerHTML = list.map(w => `<tr>
+    <td><div class="w-prod">${w.p}</div><div class="w-name">${w.w}${views[v].types.length > 1 ? ' · <span style="color:var(--dim)">' + typeLabel[w.c] + '</span>' : ''}</div></td>
+    <td class="w-reg"><span class="app-dot" style="background:${regions[w.r].color};width:7px;height:7px;"></span>${regions[w.r].name}${w.u ? ' <span class="flag" title="Lage bzw. Rebsorte nicht durch eine Primärquelle gesichert">◇</span>' : ''}</td>
+    <td><span class="grape">${w.g}</span></td>
+    <td>${scBadge(w.pts)}</td>
+    <td class="aw ${w.aw ? '' : 'classic'}">${w.aw ? w.aw : 'Klassiker / Referenzwein'}</td>
+    <td class="w-note">${w.n}</td>
+  </tr>`).join('') || '<tr><td colspan="6" style="color:var(--dim);">Keine Weine für diese Auswahl.</td></tr>';
+}
+
+function jumpRegion(r) {
+  const has = t => wines.some(w => w.r === r && views[t].types.includes(w.c));
+  const target = has('red') ? 'red' : has('white') ? 'white' : 'special';
+  ['red', 'white', 'special'].forEach(v => {
+    if (!wines.some(w => w.r === r && views[v].types.includes(w.c))) return;
+    state[v].reg = r; state[v].aw = false;
+    document.querySelectorAll('#fb-' + v + ' button[data-f="aw"]').forEach(b => b.classList.remove('on'));
+    document.querySelectorAll('#fb-' + v + ' button[data-f="reg"]').forEach(b => b.classList.toggle('on', b.dataset.v === r));
+    renderView(v);
+  });
+  showPage(target);
+}
+
+// =============================================
+// JAHRGÄNGE (redaktionelle Richtwerte)
+// s: Stellenbosch · w: Swartland · c: Cape South Coast · ch: Chenin/Weiß
+// =============================================
+const vintages = [
+  { y:2025, s:96, w:96, c:96, ch:96, note:'Mild, trocken, geringer Krankheitsdruck; kühle Reifephase bewahrte die Säure (Pinotage, Shiraz, Chardonnay). Atkin: 9–10/10, bester Jahrgang seit 2017. Ernte 1,244 Mio. t (+11 %).', drink:'2028–2045+' },
+  { y:2024, s:94, w:92, c:91, ch:92, note:'Warm und früh. Frost drückte die Erträge (v. a. Breedekloof). Stellenbosch- und Olifants-River-Weine laut Berichten „outstanding all-round“, Swartland stark bei Rot.', drink:'2027–2040' },
+  { y:2023, s:88, w:88, c:90, ch:91, note:'Schwieriges, regnerisches Jahr mit Krankheitsdruck, dazu Stromabschaltungen während der Lese. Kühler, eleganter Stil; Weißweine (Chenin, Chardonnay) besser als Rote. Selektiv kaufen.', drink:'2025–2033' },
+  { y:2022, s:93, w:91, c:92, ch:92, note:'Uneinheitlich nach Region, aber mit Spitzen: Stellenbosch-Rote besonders stark. Ausgewogene Weine, viele Top-Preisträger 2026 stammen aus diesem Jahrgang.', drink:'2026–2040' },
+  { y:2021, s:96, w:95, c:95, ch:95, note:'Kühles, langes Jahr nach guten Winterregen. Kleinere Erträge in Stellenbosch, Qualität „superb“. Frische, Präzision, große Lagerfähigkeit — ein moderner Klassiker.', drink:'2026–2045' },
+  { y:2020, s:93, w:90, c:93, ch:91, note:'Gutes Jahr, überschattet von den Covid-Exportverboten. Stellenbosch und Walker Bay exzellent, Hitzeprobleme im Swartland.', drink:'2024–2038' },
+  { y:2019, s:93, w:92, c:92, ch:92, note:'Moderates Jahr nach der Dürre, Erträge noch niedrig. Frische, eleganter Stil, sehr gute Weißweine. Columella 2019 erhielt 100 Pkt. von Atkin.', drink:'2023–2038' },
+  { y:2018, s:91, w:89, c:90, ch:90, note:'Dritte Dürre in Folge (Kapstadt „Day Zero“). Sehr kleine Ernte, konzentrierte Beeren, aber teils gestresste Reben. Sorgfältig auswählen.', drink:'2022–2035' },
+  { y:2017, s:97, w:96, c:95, ch:96, note:'Dürrejahr mit kleinen, intensiven Beeren und perfekter Reife. Für Atkin „arguably the best ever“ (mit 2015). Kraft, Frische und Tiefe.', drink:'2024–2045' },
+  { y:2016, s:88, w:87, c:89, ch:88, note:'Heiß, Beginn der Dürre, frühe und kompakte Lese. Uneinheitlich; die besten Erzeuger gut, viele Weine reif und weniger frisch.', drink:'jetzt–2030' },
+  { y:2015, s:97, w:96, c:95, ch:95, note:'Ein legendärer Jahrgang: trocken, gesund, ideale Reife. Kanonkop Paul Sauer 2015 erhielt Atkins erste 100 Pkt. für die Neue Welt.', drink:'jetzt–2045' },
+  { y:2014, s:88, w:89, c:90, ch:89, note:'Kühl und regnerisch, späte Lese. Leichtere, frischere Rote; gute Weißweine.', drink:'jetzt–2028' },
+  { y:2013, s:91, w:91, c:91, ch:91, note:'Große Ernte, ausgewogene, klassische Weine. Unterschätzt.', drink:'jetzt–2030' },
+  { y:2012, s:91, w:91, c:91, ch:90, note:'Gleichmäßige Saison, elegante, gut strukturierte Weine. Swartland-Rote mit Frische.', drink:'jetzt–2028' },
+  { y:2011, s:89, w:89, c:89, ch:89, note:'Warm, solide, wenige Höhepunkte. Weitgehend trinken.', drink:'jetzt–2025' },
+  { y:2010, s:90, w:89, c:89, ch:89, note:'Schwieriger Start (Wind, ungleichmäßiger Austrieb), aber starke Stellenbosch-Cabernets. Konzentriert, tanninreich.', drink:'jetzt–2028' },
+  { y:2009, s:94, w:93, c:92, ch:91, note:'Lange als bester Jahrgang des Jahrzehnts gefeiert: reif, ausgewogen, sehr gute Rote in Stellenbosch.', drink:'jetzt–2030' },
+];
+let vtSortCol = 0, vtSortDir = -1, vtFilter = 'all';
+const vAvg = v => Math.round((v.s + v.w + v.c + v.ch) / 4);
+function vtQuality(v) {
+  const a = vAvg(v);
+  return a >= 96 ? 'leg' : a >= 93 ? 'exc' : a >= 90 ? 'vg' : 'good';
+}
+function renderVintage() {
+  const keys = [v => v.y, v => v.s, v => v.w, v => v.c, v => v.ch];
+  const data = vintages.filter(v => vtFilter === 'all' || vtQuality(v) === vtFilter)
+    .sort((a, b) => (keys[vtSortCol](a) - keys[vtSortCol](b)) * vtSortDir);
+  document.getElementById('vtbody').innerHTML = data.map(v => `<tr>
+    <td><span class="yr-cell">${v.y}</span></td>
+    <td>${scBadge(v.s)}</td><td>${scBadge(v.w)}</td><td>${scBadge(v.c)}</td><td>${scBadge(v.ch)}</td>
+    <td style="font-weight:600;color:var(--cream);">${vAvg(v)}</td>
+    <td class="w-note">${v.note}</td>
+    <td style="font-size:10.5px;color:var(--dim);white-space:nowrap;">${v.drink}</td>
+  </tr>`).join('');
+}
+function filterVintage(f, btn) {
+  vtFilter = f;
+  btn.parentElement.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderVintage();
+}
+function sortVt(col) {
+  if (vtSortCol === col) vtSortDir *= -1; else { vtSortCol = col; vtSortDir = -1; }
+  renderVintage();
+}
+
+// =============================================
+// AUSZEICHNUNGEN
+// =============================================
+const awAtkin26 = [
+  ['Overall Red Wine of the Year', 'Sadie Family Columella 2024', 'Swartland · 100 Punkte'],
+  ['Overall White Wine of the Year', 'Alheit Vineyards Huilkrans Chenin Blanc 2025', 'Citrusdal Mountain · 99 Punkte'],
+  ['Overall Rosé of the Year', 'Doolhof Xclusiv Rosé 2026 · Terblanche Family Vineyards Elmie Pinotage Rosé 2025', 'Limietberg · Stellenbosch'],
+  ['Winemaker of the Year', 'Hannes Storm', 'Storm Wines, Hemel-en-Aarde · Pinot Noir & Chardonnay'],
+  ['Winery of the Year (neu)', 'Lismore Estate Vineyards', 'Samantha O\'Keefe · Greyton'],
+  ['Winemaking Legend', 'Pieter „Bubbles“ Ferreira', 'Graham Beck · Cap-Classique-Pionier'],
+  ['Young Winemaker of the Year', 'Jolandie Fouché', 'Wolf & Woman Wines'],
+  ['Rising Star of the Year', 'Stefan Johannes', 'Zwartwater (ehem. Lammershoek), Swartland'],
+  ['Growers of the Year', 'Chris Steyn & Cató Rabie', 'Eendrag Farm'],
+  ['98 Punkte (Auswahl von 17)', 'Alheit Magnetic North 2025 · Boekenhoutskloof Semillon 2024 · Boschkloof Epilogue Syrah 2024 · Jordan Sophia 2022 · Scions of Sinai Granietsteen 2025 · Van Loggerenberg Graft Syrah 2025 · Beeslaar The Sacrament 2023 · Porseleinberg Syrah · Rall Ava Syrah', 'Laut Erzeuger- und Händlerangaben'],
+];
+const awPlatter26 = [
+  ['Top Performing Winery of the Year', 'Diemersdal Estate', 'Durbanville · 6 Fünfsterne-Weine (4 Sauvignon Blanc, 2 Pinotage)'],
+  ['Editor\'s Award Winery of the Year', 'Alheit Vineyards', 'Seit dem Debüt 2012 konstant Weltklasse'],
+  ['Newcomer Winery of the Year', 'The Saldanha Wine & Spirit Co', 'Debüt mit 95 und 96 Punkten'],
+  ['Chenin Blanc', 'Botanica Mary Delany 2024', 'Devon Valley, Stellenbosch · 99 Punkte'],
+  ['Shiraz / Syrah', 'Leeuwenkuil Heritage Syrah 2022', 'Swartland · 99 Punkte'],
+  ['Cabernet Sauvignon', 'Oldenburg Per Se 2022', 'Banghoek, Stellenbosch'],
+  ['Cabernet Franc', 'Raats Vlag 2023', 'Stellenbosch · nur in einer Quelle genannt'],
+  ['Pinotage', 'Tokara Limited Release 2023', 'Stellenbosch'],
+  ['Pinot Noir', 'Crystallum Mabalel 2024', 'Cape South Coast'],
+  ['Chardonnay', 'Crystallum Clay Shales 2024', 'Cape South Coast'],
+  ['Cape Bordeaux Red', 'Constantia Glen Five 2022', 'Constantia'],
+  ['Cape Bordeaux White', 'Steenberg Magna Carta 2023', 'Constantia'],
+  ['White Blend (Other)', 'Mullineux Roundstone White 2024', 'Swartland'],
+  ['Red Blend (Other)', 'Anysbos Tesame 2023', 'Bot River'],
+  ['Red Blend mit Pinotage', 'Bellingham Pod 2022', ''],
+  ['Red Blend Shiraz-basiert', 'Flagstone Velvet 2023', ''],
+  ['Cap Classique', 'Silverthorn Jewel Box 2019', 'Robertson'],
+];
+const awAtkin25 = [
+  ['100 Punkte', 'Alheit Magnetic North Chenin Blanc 2024', 'Citrusdal Mountain'],
+  ['100 Punkte', 'Porseleinberg Syrah 2023', 'Swartland'],
+  ['Winemaker of the Year 2025', 'Donovan Rall', 'Rall Wines, Swartland'],
+];
+function renderAw(id, arr) {
+  document.getElementById(id).innerHTML = arr.map(([c, n, s]) => `<div class="aw-card"><div class="aw-cat">${c}</div><div class="aw-name">${n}</div>${s ? `<div class="aw-sub">${s}</div>` : ''}</div>`).join('');
+}
+
+// =============================================
+// INIT
+// =============================================
+renderRegions();
+['red', 'white', 'special'].forEach(initView);
+renderVintage();
+renderAw('aw-atkin26', awAtkin26);
+renderAw('aw-platter26', awPlatter26);
+renderAw('aw-atkin25', awAtkin25);
+</script>
+</body>
+</html>
