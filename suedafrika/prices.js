@@ -1,6 +1,7 @@
 // Richtpreise pro Flasche (0,75 l, sonst Größe als 5. Feld) in Euro (gerundet), Stand Oktober 2026.
 // [Euro, Quelle, Originalwert, unsicher]  Quelle: ws = Wine-Searcher-Ø ohne Steuern (USD), eu/eui = EU-Handel, uk = UK-Handel, za = SA-Handel/ab Hof, ch = Schweiz
-const prices = {"Sadie Family Wines|Columella":[140,"ws","160 USD",0],
+const prices = {"Longridge|Ekliptika":[35,"za","630 ZAR",0],
+"Sadie Family Wines|Columella":[140,"ws","160 USD",0],
 "Porseleinberg|Syrah":[75,"ws","89 USD",0],
 "Leeuwenkuil|Heritage Syrah":[25,"ws","31 USD",0],
 "Boschkloof|Epilogue Syrah":[75,"ws","85 USD",0],

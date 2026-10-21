@@ -121,7 +121,7 @@ const producers = {
   "Belle Rebelle": "„Le Belle Rebelle“ von Mariëtte Stofberg (Breedekloof): Cap Classique „Mariëtte“ Chardonnay, 2017 mit fünf Sternen bei Platter's 2025, dazu der „CapeSecco“ aus Chenin Blanc (Hidden Gem).",
   "La Bri": "Weingut im Franschhoek-Tal (Robertsvlei), Teil der Gruppe um Leopard's Leap. Sauvage La Bri (Cap Classique) und Barrel Select Chardonnay erhielten 5 Sterne bei Platter's 2025.",
   "Lanzerac": "Historisches Gut (1692) im Jonkershoek-Tal (Stellenbosch) mit Hotel. Lanzerac brachte den ersten Pinotage mit Sortenangabe auf den Markt (Jg. 1959); Pionier und Commemorative sind die Spitzen-Pinotages.",
-  "Longridge": "Biologisch bewirtschaftetes Weingut am Helderberg (Stellenbosch). Clos du Ciel ist der Spitzen-Chardonnay.",
+  "Longridge": "Biologisch bewirtschaftetes Weingut am Helderberg (Stellenbosch). Spitzenweine sind der Chardonnay Clos du Ciel und der rote Bordeaux-Blend Ekliptika.",
   "Miles Mossop": "Miles Mossop war lange Kellermeister bei Tokara und führt sein eigenes Label in Stellenbosch. Die Weine tragen die Namen seiner Kinder (Max, Saskia, Kika, Sam); der Noble Late Harvest Kika ist Platter's 2025 Wine of the Year.",
   "Momento": "Marelise Niemann gründete Momento in Bot River (Walker Bay). Spezialistin für Grenache und Chenin; Grenache Gris und Chenin-Verdelho wurden beide Platter's 2025 Wine of the Year.",
   "Mulderbosch": "Weingut in Stellenbosch (Koelenhof), bekannt für Sauvignon Blanc, Rosé und Old-Vine Chenin („Steen op Hout“).",
@@ -251,6 +251,7 @@ W('rot','Savage Wines','Follow the Line','wcape','Cinsault','Cinsault-betonter, 
 W('rot','Stark-Condé','Three Pines Cabernet Sauvignon','stb','Cabernet Sauvignon','Von steilen Granitlagen im Jonkershoek: frisch, kühl, langlebig.');
 W('rot','Kleine Zalze','Family Reserve Cabernet Sauvignon','stb','Cabernet Sauvignon','Dichter, reifer Stellenbosch-Cabernet mit viel Holzfeinheit.');
 W('rot','Tokara','Director\'s Reserve Red','stb','Bordeaux-Blend','Cabernet-basierter Blend aus den Höhenlagen von Tokara.',{aw:H94(2021)});
+W('rot','Longridge','Ekliptika','stb','Bordeaux-Blend','Das rote Flaggschiff vom Helderberg: Cabernet-Franc-betonter Blend (2020: 39 % Cabernet Franc, dazu Cabernet Sauvignon, Merlot, Petit Verdot). Rote und schwarze Beeren, florales Parfum, Kräuter, Graphit.',{aw:'winemag.co.za: 94/100 — Jg. 2020 · Tim Atkin: 94 Pkt. — Jg. 2015'});
 
 // ======================= TOP 100 WEISS =======================
 W('weiss','Alheit Vineyards','Huilkrans Chenin Blanc','oli','Chenin Blanc','Alte Chenin-Reben in den Bergen von Citrusdal: konzentriert und doch schwerelos, salzig, endlos lang.',{pts:99,aw:J("Atkin 2026: Overall White Wine of the Year — Jg. 2025, 99 Pkt.",S5(2023))});
