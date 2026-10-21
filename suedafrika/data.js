@@ -111,14 +111,14 @@ const producers = {
   "De Grendel": "Weingut der Familie Graaff in Durbanville mit Blick auf den Tafelberg. Rubáiyát ist der Bordeaux-Blend; dazu Lagen im kühlen Elim und auf dem Ceres-Plateau („Op die Berg“).",
   "Delheim": "Familie Sperling am Simonsberg (Stellenbosch). Spatz Sperling war einer der Pioniere der Stellenbosch-Weinroute (1971); der edelsüße Edelspatz ist ein Klassiker.",
   "Erika Obermeyer": "Erika Obermeyer gründete 2016 ihr eigenes Label in Stellenbosch, nach vielen Jahren als Kellermeisterin bei Graham Beck. Mitglied der Cape Winemakers Guild; ihr Syrah-Grenache-Cinsault ist Platter's 2025 Wine of the Year.",
-  "Glen Heatlie": "Erzeuger des Grenache Blanc „The Frontier“, Platter's 2025 Wine of the Year. Lage und Hintergrund sind hier nicht durch eine Quelle gesichert.",
+  "Glen Heatlie": "Kleines Label von Joan Heatlie. Der Grenache Blanc „The Frontier“ (nur wenige Hundert bis gut tausend Flaschen je Jahrgang) wurde Platter's 2025 Wine of the Year.",
   "Groot Phesantekraal": "Familienweingut in Durbanville. Marizanne ist der Spitzen-Sauvignon (5 Sterne bei Platter's 2025).",
   "Hogan": "Jocelyn Hogan Wilson, früher Kellermeisterin bei Bartho Eksteen, gründete ihr kleines Label in Stellenbosch. Chenin, Chardonnay und Carignan von ausgewählten Lagen.",
   "Holden Manz": "Boutique-Weingut in Franschhoek von Gerard Holden und Migo Manz. Reserve-Weine aus Merlot und Cabernet Franc; der Merlot Reserve ist Platter's 2025 Wine of the Year.",
   "Journey's End": "Familie Gabb (aus England) am Sir-Lowry's-Pass oberhalb von Somerset West (Stellenbosch). Ad Infinitum ist der weiße Bordeaux-Blend.",
   "Julien Schaal": "Julien Schaal, Winzer aus dem Elsass, erzeugt seit Jahren Chardonnay und Pinot Noir an der kühlen Cape South Coast. Mountain Vineyards Pinot Noir 2023: Platter's 2025 Wine of the Year. Genaue Lage nicht gesichert.",
   "KWV": "1918 als Winzergenossenschaft gegründet, heute einer der größten Wein- und Brandyerzeuger des Landes mit Sitz in Paarl. Die Mentors-Linie umfasst die Spitzenweine; Perold ist nach Abraham Perold benannt, der 1925 den Pinotage kreuzte.",
-  "Belle Rebelle": "Cap-Classique-Label, dessen Chardonnay 2017 bei Platter's 2025 fünf Sterne erhielt; dazu der „CapeSecco“ aus Chenin Blanc (Hidden Gem). Herkunft und Team hier nicht durch eine Quelle gesichert.",
+  "Belle Rebelle": "„Le Belle Rebelle“ von Mariëtte Stofberg (Breedekloof): Cap Classique „Mariëtte“ Chardonnay, 2017 mit fünf Sternen bei Platter's 2025, dazu der „CapeSecco“ aus Chenin Blanc (Hidden Gem).",
   "La Bri": "Weingut im Franschhoek-Tal (Robertsvlei), Teil der Gruppe um Leopard's Leap. Sauvage La Bri (Cap Classique) und Barrel Select Chardonnay erhielten 5 Sterne bei Platter's 2025.",
   "Lanzerac": "Historisches Gut (1692) im Jonkershoek-Tal (Stellenbosch) mit Hotel. Lanzerac brachte den ersten Pinotage mit Sortenangabe auf den Markt (Jg. 1959); Pionier und Commemorative sind die Spitzen-Pinotages.",
   "Longridge": "Biologisch bewirtschaftetes Weingut am Helderberg (Stellenbosch). Clos du Ciel ist der Spitzen-Chardonnay.",
@@ -265,7 +265,7 @@ W('weiss','Constantia Glen','Two','con','Sauvignon-Sémillon','Weißer Bordeaux-
 W('weiss','Momento','Chenin Blanc-Verdelho','hea','White Blend','Chenin mit der seltenen portugiesischen Sorte Verdelho – frisch, salzig, texturreich.',{aw:WY('White Blend „Other“',2023)});
 W('weiss','Thorne & Daughters','Tin Soldier','wcape','Sémillon Gris','Seltener Weißwein aus der rotschaligen Mutation Sémillon Gris, mit Schalenkontakt.',{aw:WY('Semillon Gris',2023)});
 W('weiss','Momento','Grenache Gris','hea','Grenache Gris','Rarität: Grenache Gris von alten Reben, reinsortig ausgebaut.',{aw:WY('Grenache Gris',2023)});
-W('weiss','Glen Heatlie','The Frontier Grenache Blanc','wcape','Grenache Blanc','Grenache Blanc, 2025 der beste seiner Kategorie bei Platter\'s. Herkunft nicht gesichert.',{u:true,aw:WY('Grenache Blanc',2023)});
+W('weiss','Glen Heatlie','The Frontier Grenache Blanc','oli','Grenache Blanc','Grenache Blanc aus dem Piekenierskloof mit einem kleinen Anteil Swartland-Chenin, im großen alten Fass vergoren; 2025 der beste seiner Kategorie bei Platter\'s.',{aw:WY('Grenache Blanc',2023)});
 W('weiss','Crystallum','Clay Shales Chardonnay','hea','Chardonnay','Chardonnay von Tonschiefer: straff, salzig, burgundisch.',{u:true,aw:WY('Chardonnay',2024,P26)});
 W('weiss','Steenberg','Magna Carta','con','Sauvignon-Sémillon','Holzgereifter Bordeaux-White-Blend, im Stil eines großen weißen Pessac-Léognan.',{aw:WY('Cape Bordeaux White',2023,P26)});
 W('weiss','Mullineux','Roundstone White','swa','White Blend','Chenin-basierter Lagen-Blend aus dem Swartland.',{aw:J(WY('White Blend „Other“',2024,P26),S5(2023))});
@@ -309,7 +309,7 @@ W('weiss','David & Nadia','Hoë-Steen Chenin Blanc','swa','Chenin Blanc','Einzel
 W('weiss','David & Nadia','Rondevlei Chenin Blanc','swa','Chenin Blanc','Einzellagen-Chenin aus dem Swartland.',{aw:S5(2023)});
 W('weiss','Stellenrust','59 Barrel Fermented Chenin Blanc','stb','Chenin Blanc','Im Fass vergorener Chenin von alten Reben.',{aw:S5(2023)});
 W('weiss','Mulderbosch','Old Vine Steen Op Hout','stb','Chenin Blanc','Old-Vine Chenin („Steen“), im Holz ausgebaut („op hout“).',{aw:S5(2023)});
-W('weiss','Gabriëlskloof','Elodie Chenin Blanc','hea','Chenin Blanc','Chenin von Peter-Allan Finlayson in Bot River.',{u:true,aw:S5(2023)});
+W('weiss','Gabriëlskloof','Elodie Chenin Blanc','swa','Chenin Blanc','Chenin der „Landscape Series“ des Bot-River-Guts, aber aus alten Swartland-Reben (W.O. Swartland); benannt nach einer Schwester von Gründer Bernhard Heyns.',{aw:S5(2023)});
 W('weiss','Creation','Cool Climate Chenin Blanc','hea','Chenin Blanc','Chenin aus kühlen Lagen im Hemel-en-Aarde Ridge.',{aw:S5(2023)});
 W('weiss','Spice Route','Tarragon Chenin Blanc','swa','Chenin Blanc','Spitzen-Chenin aus dem Swartland.',{u:true,aw:S5(2023)});
 W('weiss','Nederburg','The Anchorman Chenin Blanc','paarl','Chenin Blanc','Chenin-Spitzenwein des historischen Paarl-Hauses.',{aw:S5(2023)});
@@ -330,7 +330,7 @@ W('weiss','Journey\'s End','Ad Infinitum','stb','Sauvignon-Sémillon','Weißer B
 W('weiss','Keermont','Terrasse','stb','White Blend','Chenin-basierter White Blend von Terrassenlagen.',{u:true,aw:S5(2023)});
 W('weiss','Stark-Condé','The Field Blend','stb','White Blend','Weißer gemischter Satz aus Jonkershoek.',{aw:S5(2023)});
 W('weiss','Thelema Mountain Vineyards','Sutherland Viognier-Roussanne','elg','Viognier-Roussanne','Rhône-White-Blend vom Thelema-Ableger Sutherland in Elgin.',{aw:S5(2023)});
-W('weiss','Fairview','Beryl Back','paarl','White Blend','White Blend aus Fairviews Spitzenlinie.',{u:true,aw:S5(2023)});
+W('weiss','Fairview','Beryl Back','paarl','White Blend','Trockener White Blend aus Chenin, Viognier, Verdelho und Roussanne (nicht zu verwechseln mit dem süßen La Beryl).',{aw:S5(2023)});
 W('weiss','Cape Point Vineyards','Isliedh','con','Sauvignon-Sémillon','Komplexer, holzgereifter Sauvignon-Sémillon aus Atlantiknähe.',{aw:H94(2023)});
 W('weiss','Thorne & Daughters','Rocking Horse','wcape','White Blend','Feiner, texturreicher White Blend aus mehreren Regionen.',{aw:H94(2023)});
 W('weiss','Mullineux','Old Vines White','swa','White Blend','Chenin-basierter Blend mit Clairette, Viognier und Sémillon Gris.',{aw:H94(2023)});
@@ -371,8 +371,8 @@ W('cc','JC le Roux','Scintilla','stb','Chardonnay / Pinot Noir','Lang gereifte P
 W('cc','Graham Beck','Pinot Meunier','brv','Pinot Meunier','Rarität: reinsortiger Pinot Meunier als Cap Classique.',{aw:S5(2022)});
 W('cc','Colmant','Blanc de Blancs','fhk','Chardonnay','Der Blanc de Blancs des Hauses, ohne Jahrgang.',{aw:S5('NV')});
 W('cc','Domaine des Dieux','Anna Louise Cuvée Blanc de Blancs','hea','Chardonnay','Sehr lang gereifter Blanc de Blancs aus dem kühlen Hemel-en-Aarde.',{u:true,aw:S5(2012)});
-W('cc','Belle Rebelle','Chardonnay','wcape','Chardonnay','Lang gereifter Blanc de Blancs. Herkunft nicht gesichert.',{u:true,aw:S5(2017)});
-W('cc','La Bri','Sauvage La Bri','fhk','Chardonnay / Pinot Noir','Cap Classique aus Franschhoek.',{u:true,aw:S5(2018)});
+W('cc','Belle Rebelle','Chardonnay','brv','Chardonnay','„Mariëtte“ Chardonnay Brut, lang gereifter Blanc de Blancs aus dem Breedekloof.',{aw:S5(2017)});
+W('cc','La Bri','Sauvage La Bri','fhk','Chardonnay','Blanc de Blancs Cap Classique aus Franschhoek.',{aw:S5(2018)});
 W('cc','Spier','Prestige Cuvée','stb','Chardonnay / Pinot Noir','Lang gereifte Prestige-Cuvée.',{u:true,aw:S5(2016)});
 W('cc','Graham Beck','Blanc de Blancs Brut','brv','Chardonnay','Jahrgangs-Blanc-de-Blancs von Robertsons Kalkböden.',{aw:J("Amorim Cap Classique Challenge 2025: Kategoriesieger Blanc de Blancs — Jg. 2019",H94(2019))});
 W('cc','Kleine Zalze','Brut Rosé','stb','Pinot Noir / Chardonnay','Lachsfarben, rotbeerig, frisch.',{aw:"Amorim Cap Classique Challenge 2025: Kategoriesieger Rosé — NV"});
@@ -389,8 +389,8 @@ W('suess','Nuy','Barbieri Idro','brv','Dessertwein (aufgespritet)','Aufgespritet
 W('suess','Bergsig','Cape Late Bottled Vintage','brv','Portwein-Stil','Portwein-Stil aus dem Breedekloof, lange im Fass gereift.',{aw:WY('Port-Style',2018)});
 W('suess','Boplaas','Cape Vintage Reserve','kk','Touriga Nacional / Tinta Barocca','Südafrikas Antwort auf Vintage Port.',{aw:S5(2022)});
 W('suess','De Krans','Cape Vintage Reserve','kk','Touriga Nacional / Tinta Barocca','Zweiter Referenzerzeuger für Cape Vintage.',{aw:S5(2022)});
-W('suess','Boekenhoutskloof','Noble Late Harvest','fhk','Sémillon','Edelsüßer Sémillon aus Franschhoek.',{u:true,aw:S5(2021)});
-W('suess','Delheim','Edelspatz Noble Late Harvest','stb','Riesling','Klassischer edelsüßer Wein vom Simonsberg.',{u:true,aw:S5(2022)});
+W('suess','Boekenhoutskloof','Noble Late Harvest','fhk','Sémillon','Edelsüßer Sémillon aus Franschhoek.',{aw:S5(2021)});
+W('suess','Delheim','Edelspatz Noble Late Harvest','stb','Riesling','Edelsüßer Botrytis-Riesling vom Simonsberg, ein Klassiker.',{aw:S5(2022)});
 W('suess','Keermont','Fleurfontein','stb','Chenin Blanc','Vin de Paille aus getrockneten Trauben.',{u:true,aw:S5(2023)});
 W('suess','Nederburg','Edelkeur','paarl','Chenin Blanc','1969 der erste edelsüße Botrytiswein Südafrikas.');
 
@@ -407,7 +407,7 @@ Object.assign(producers, {
   "Callender Peak": "Hochgelegene Weinberge in den Winterhoek-Bergen (Region nicht abschließend gesichert). Chardonnay und Sauvignon Blanc mit großer Frische – beide 5 Sterne bei Platter's 2025.",
   "Capensis": "Chardonnay-Projekt der kalifornischen Jackson-Familie (Kendall-Jackson) mit Antony Beck. Fijnbosch ist eine Einzellage.",
   "Carinus": "Familienweingut Carinus in Stellenbosch mit Lagen u. a. in den Polkadraai Hills (nicht gesichert).",
-  "De Kleine Wijn": "Kleiner Erzeuger, dessen Sémillon „Debutant Wit“ 5 Sterne erhielt. Hintergrund hier nicht durch eine Quelle gesichert.",
+  "De Kleine Wijn": "De Kleine Wijn Koop, kleiner Erzeuger, dessen Franschhoek-Sémillon „Debutant“ (Wit) 5 Sterne erhielt.",
   "De Trafford": "David Trafford, ausgebildeter Architekt, bewirtschaftet hoch oben im Blaauwklippen-Tal (Stellenbosch) ein kleines Weingut. Elevation 393 ist nach der Lagenhöhe benannt; der maischevergorene Chenin erhielt 5 Sterne.",
   "Donkiesbaai": "Marke mit Fokus auf Chenin Blanc aus Höhenlagen (Piekenierskloof); Hooiwijn ist ein Strohwein (Vin de Paille). Hintergrund nicht abschließend gesichert.",
   "Dorrance": "Stadtweingut im Zentrum von Kapstadt, gegründet vom Franzosen Christophe Durand. Cuvée Anaïs ist der Spitzen-Chardonnay.",
@@ -418,7 +418,7 @@ Object.assign(producers, {
   "Harry Hartman": "Erzeuger des Bordeaux-Blends Mosi (5 Sterne). Hintergrund hier nicht durch eine Quelle gesichert.",
   "Hermanuspietersfontein": "Weingut in Hermanus (Walker Bay) mit Lagen im kühlen Sondagskloof. Bekannt für Bordeaux-Sorten; Swartskaap ist der Cabernet Franc.",
   "Idun": "Erzeuger des Rotwein-Blends Carmélite (5 Sterne). Hintergrund hier nicht durch eine Quelle gesichert.",
-  "Kara-Tara": "Pinot-Noir- und Chardonnay-Linie von Lagen an der kühlen Cape South Coast. Hintergrund nicht abschließend gesichert.",
+  "Kara-Tara": "Linie des Stellenbosch-Weinguts Stark-Condé für Pinot Noir und Chardonnay von kühlen Lagen (Elgin/Cape South Coast).",
   "Keet": "Kellermeister Chris Keet (früher Cordoba) mit seinem eigenen Label in Stellenbosch; First Verse ist ein Bordeaux-Blend.",
   "Klein Goederust": "Weingut in Franschhoek von Paul Siguqa, eines der ersten Weingüter des Tals in schwarzem Besitz.",
   "Le Sueur": "Kleines Label mit Old-Vine Chenin Blanc (Kluisenaar: 5 Sterne bei Platter's 2025). Hintergrund hier nicht durch eine Quelle gesichert.",
@@ -432,11 +432,11 @@ Object.assign(producers, {
   "Rickety Bridge": "Weingut in Franschhoek; Paulina's Reserve ist die Spitzenlinie.",
   "Ridgeback": "Weingut in Paarl, bekannt für Cabernet Franc und Rhône-Sorten.",
   "Riebeek Valley": "Winzerkeller in Riebeek-Kasteel (Swartland). Die „Raar“-Linie umfasst ungewöhnliche Weine wie Kohlensäure-Maischegärung-Shiraz und Grenache Blanc.",
-  "Saga": "Projekt aus dem Umfeld der Familie Borman (Boschkloof) mit der Linie „Sons of Sugarland“ und dem Chenin Patatsfontein Steen.",
+  "Saga": "„Saga Vineyards“ bündelt seit 2024 die Labels Patatsfontein und Sons of Sugarland von Winemaker Reenen Borman (Boschkloof) und seinen Partnern Henk Kotze und Fritz Schoon.",
   "Stellenbosch Vineyards": "Großer Erzeuger in Stellenbosch; die Credo-Linie umfasst die Spitzenweine (Shiraz und Chenin mit 5 Sternen bei Platter's 2025).",
   "Stony Brook": "Familienweingut in Franschhoek; Ghost Gum ist der Spitzen-Cabernet.",
   "Survivor": "Weinmarke mit einem Fünf-Sterne-Pinotage (Reserve). Hintergrund nicht abschließend gesichert.",
-  "The Vineyard Party": "Erzeuger des Sémillon „Daisy If You Do“ (5 Sterne). Hintergrund hier nicht durch eine Quelle gesichert.",
+  "The Vineyard Party": "Erzeuger des Sémillon „Daisy If You Do“ (5 Sterne). Die Herkunft wechselt je Jahrgang: 2022 Stellenbosch Kloof, 2023 Bot River, ab 2024 Swartland.",
   "Thistle & Weed": "Kleines Label in Stellenbosch, das Weine nach heimischen Unkräutern benennt (Khakibos, Brandnetel, Duwweltjie).",
   "Van Wyk": "Erzeuger des Rotwein-Blends Rebecca May (5 Sterne). Hintergrund hier nicht durch eine Quelle gesichert.",
   "Vinevenom": "Erzeuger eines maischevergorenen Chenin (Skin). Hintergrund hier nicht durch eine Quelle gesichert.",
@@ -523,7 +523,7 @@ A('weiss','McFarlane','Monday\'s Child Chenin Blanc','wcape','Chenin Blanc',2023
 A('weiss','Miles Mossop','CWG Auction Saskia-Jo Chenin Blanc','stb','Chenin Blanc',2022,{n:'Chenin für die Cape Winemakers Guild Auction.'});
 A('weiss','Noble Hill','Simonskop Chenin Blanc','paarl','Chenin Blanc',2023,{n:'Spitzen-Chenin aus Simonsberg-Paarl.'});
 A('weiss','Pilgrim','Chenin Blanc','wcape','Chenin Blanc',2023,{n:'Chenin Blanc.',u:true});
-A('weiss','Saga','Patatsfontein Steen','wcape','Chenin Blanc',2023,{n:'Chenin („Steen“) von der Lage Patatsfontein.',u:true});
+A('weiss','Saga','Patatsfontein Steen','kk','Chenin Blanc',2023,{n:'Einzellagen-Chenin („Steen“): 0,6 ha, 1984 gepflanzt, Schiefer auf rund 800 m im Keisie-Tal bei Montagu.'});
 A('weiss','Stellenbosch Vineyards','Credo Chenin Blanc','stb','Chenin Blanc',2023,{n:'Chenin aus der Credo-Spitzenlinie.'});
 A('weiss','Vinevenom','Skin Chenin Blanc','wcape','Chenin Blanc','NV',{n:'Maischevergorener Chenin.',u:true});
 A('weiss','Zevenwacht','Z-Collection Chenin Blanc','stb','Chenin Blanc',2023,{n:'Chenin aus der Z-Collection.'});
@@ -534,8 +534,8 @@ A('weiss','Bloemendal','Suider Terras Sauvignon Blanc','dur','Sauvignon Blanc',2
 A('weiss','Miles Mossop','Stellenbosch Sauvignon Blanc','stb','Sauvignon Blanc',2023,{n:'Sauvignon Blanc aus Stellenbosch.'});
 A('weiss','Vriesenhuijs','Sauvignon Blanc','wcape','Sauvignon Blanc',2023,{n:'Sauvignon Blanc.',u:true});
 A('weiss','Zevenwacht','Z-Collection Sauvignon Blanc','stb','Sauvignon Blanc',2023,{n:'Sauvignon aus der Z-Collection.'});
-A('weiss','De Kleine Wijn','Debutant Wit','wcape','Sémillon',2023,{n:'Sémillon.',u:true});
-A('weiss','The Vineyard Party','Daisy If You Do','wcape','Sémillon',2022,{n:'Sémillon.',u:true});
+A('weiss','De Kleine Wijn','Debutant Wit','fhk','Sémillon',2023,{n:'Sémillon aus Franschhoek.'});
+A('weiss','The Vineyard Party','Daisy If You Do','stb','Sémillon',2022,{n:'Sémillon, Jahrgang 2022 aus dem Stellenbosch Kloof.'});
 A('weiss','Brookdale','Bradbourne','paarl','White Blend',2023,{n:'White Blend aus Paarl.',u:true});
 A('weiss','Brookdale','Sixteen Field Blend','paarl','White Blend',2023,{n:'Gemischter Satz aus sechzehn Sorten (laut Name).',u:true});
 A('weiss','Thistle & Weed','Khakibos','stb','White Blend',2023,{n:'White Blend, benannt nach einer heimischen Pflanze.',u:true});
@@ -544,7 +544,7 @@ A('weiss','Thistle & Weed','Khakibos','stb','White Blend',2023,{n:'White Blend, 
 // ---- SÜSS / FORTIFIED ----
 A('suess','Klein Goederust','Chenin Blanc (Natural Sweet)','fhk','Chenin Blanc',2021,{n:'Natürlich süßer Chenin aus Franschhoek.'});
 A('suess','Stellenrust','Chenin d\'Muscat','stb','Chenin / Muscat',2022,{n:'Natürlich süßer Wein aus Chenin und Muskateller.',u:true});
-A('suess','Waterford','Library Collection Noble Late Harvest','stb','Noble Late Harvest',2018,{n:'Lang gereifter edelsüßer Wein.',u:true});
+A('suess','Waterford','Library Collection Noble Late Harvest','stb','Viognier',2018,{n:'Edelsüßer Viognier, nur für Mitglieder der Waterford Society erhältlich.'});
 A('suess','Donkiesbaai','Hooiwijn','oli','Chenin Blanc',2023,{n:'Strohwein (Vin de Paille) aus getrockneten Chenin-Trauben.',u:true});
 A('suess','Mullineux','Olerasay 4°','swa','Chenin Blanc','NV',{n:'Solera-Strohwein (mehrere Jahrgänge verschnitten).'});
 A('suess','Boplaas','Cape Tawny','kk','Portwein-Stil','NV',{n:'Tawny-Portwein-Stil aus Calitzdorp, lange im Fass gereift.'});

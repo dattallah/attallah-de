@@ -43,7 +43,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
   background:var(--bar);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
 .brand{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap;}
 .brand em{color:var(--gold);font-style:italic;font-weight:400;}
-.appbar-r{font-size:12px;color:var(--dim);text-decoration:none;white-space:nowrap;}
+.appbar-r{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap;}
+.appbar-r a{color:var(--dim);text-decoration:none;}
+.ver{font:inherit;font-size:11px;color:var(--gold);background:none;border:0;padding:4px 2px;cursor:pointer;}
+.changelog{margin-top:14px;}
+.changelog summary{cursor:pointer;color:var(--txt);}
+.changelog ol{list-style:none;margin:8px 0 0;display:grid;gap:8px;}
+.changelog li b{font-family:inherit;font-size:12.5px;display:inline;color:var(--ink);margin:0;}
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(5,1fr);
   height:calc(var(--tab-h) + var(--safe-b));padding-bottom:var(--safe-b);background:var(--bar);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);}
 .tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:500;color:var(--dim);text-decoration:none;}
@@ -114,6 +120,7 @@ h2.title em,h1 em{font-style:italic;color:var(--gold);}
 .wc-aw li.plain{background:transparent;padding:0;color:var(--dim);font-style:italic;}
 .wc-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;margin:10px 0 0;font-size:12px;color:var(--dim);}
 .wc-price b{font-size:16px;font-weight:600;color:var(--ink);}
+.wc-price b small{font-size:12px;font-weight:400;color:var(--dim);}
 .wc-note{font-size:14px;color:var(--dim);line-height:1.6;margin-top:12px;}
 .more{margin-top:12px;width:100%;display:flex;justify-content:space-between;align-items:center;padding:11px 0 0;border-top:1px solid var(--line2);font-size:13px;font-weight:600;color:var(--pri);text-align:left;}
 .more::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;margin-right:4px;}
@@ -241,7 +248,8 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
   .tab{flex-direction:row;gap:7px;padding:8px 12px;border-radius:10px;font-size:13.5px;}
   .tab svg{width:18px;height:18px;}
   .tab.on{background:var(--soft);}
-  .appbar-r{display:none;}
+  .appbar{justify-content:flex-start;gap:18px;}
+  .appbar-r{padding-top:3px;}
   .page{padding:32px 28px 48px;}
   .hero{margin:-32px -28px 28px;padding:72px 28px 56px;}
   .hero h1{font-size:110px;}
@@ -261,7 +269,7 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
 
 <header class="appbar">
   <a class="brand" href="#start">Kap-<em>Weine</em></a>
-  <a class="appbar-r" href="https://attallah.de">attallah.de</a>
+  <div class="appbar-r"><button class="ver" id="verBtn" type="button" title="Version und Änderungen"></button><a href="https://attallah.de">attallah.de</a></div>
 </header>
 <nav class="tabbar" aria-label="Hauptnavigation">
     <a class="tab" href="#start" data-p="start"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>Start</a>
@@ -379,8 +387,9 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
 <footer>
   <b>Südafrika — Guide der großen Kap-Weine</b>
   Quellen: <a href="https://timatkin.com" target="_blank" rel="noopener">Tim Atkin MW South Africa Report 2025 &amp; 2026</a> · <a href="https://wineonaplatter.com" target="_blank" rel="noopener">Platter's South African Wine Guide 2025 (Print) &amp; 2026</a> · Amorim Cap Classique Challenge 2025 · <a href="https://www.sawis.co.za" target="_blank" rel="noopener">SAWIS</a> · <a href="https://www.vinpro.co.za" target="_blank" rel="noopener">VinPro</a> · <a href="https://www.wosa.co.za" target="_blank" rel="noopener">Wines of South Africa</a><br>
-  Stand: Oktober 2026. Mit <span class="flag">◇</span> markierte Angaben (Lage/Rebsorte) sind nicht durch eine Primärquelle gesichert. Jahrgangspunkte sind redaktionelle Richtwerte. Preise sind gerundete Richtwerte pro 0,75-l-Flasche (Wine-Searcher-Durchschnitt ohne Steuern bzw. Handelspreise; Kurse: 1 USD = 0,87 €, 1 GBP = 1,16 €, 1 € = 18,7 ZAR, 1 CHF = 1,07 €). Keine Gewähr.<br>
+  Stand: Oktober 2026. Mit <span class="flag">◇</span> markierte Angaben (Lage/Rebsorte) sind nicht durch eine Primärquelle gesichert. Jahrgangspunkte sind redaktionelle Richtwerte. Preise sind gerundete Richtwerte pro 0,75-l-Flasche (Süßweine: Flaschengröße angegeben) (Wine-Searcher-Durchschnitt ohne Steuern bzw. Handelspreise; Kurse: 1 USD = 0,87 €, 1 GBP = 1,16 €, 1 € = 18,7 ZAR, 1 CHF = 1,07 €). Keine Gewähr.<br>
   <a href="https://attallah.de">← attallah.de</a> · <a href="https://dattallah.github.io/bordeaux-weine/">Bordeaux — Guide des Grands Vins</a>
+  <details class="changelog" id="versionen"><summary id="verSum"></summary><ol id="verList"></ol></details>
 </footer>
 
 <!-- FILTER SHEET -->
@@ -481,12 +490,24 @@ function scClass(s) { return !s ? 's0' : s >= 96 ? 's96' : s >= 93 ? 's93' : s >
 const scBadge = (s, sm) => `<span class="sc ${sm ? 'sm ' : ''}${scClass(s)}">${s || '—'}</span>`;
 const regShort = r => regions[r].name.split(' · ')[0].split(' & ')[0].replace(' (regionsübergreifend)', '');
 
+// Versionen (neueste zuerst)
+const changelog = [
+  ['1.3', '21.10.2026', 'Euro-Richtpreise jetzt für 307 von 332 Weinen, Süßweine mit Flaschengröße; Versionsnummer und diese Änderungsliste; Korrekturen zu Herkunft und Rebsorte (u. a. Glen Heatlie, Gabriëlskloof Elodie, Saga/Patatsfontein, Le Belle Rebelle, Kara-Tara, De Kleine Wijn Koop, Delheim Edelspatz, Waterford NLH)'],
+  ['1.2', '21.10.2026', 'Euro-Richtpreise mit Quelle, Preisfilter und Preissortierung; alle Fünf-Sterne-Weine aus Platter\'s 2025 ergänzt (149 Rot, 140 Weiß); Korrekturen (Julien Schaal, Swartberg Wingerde, ArtiSons, Delaire Botmanskop, Keermont)'],
+  ['1.1', '21.10.2026', 'Platter\'s 2025 integriert; Mobile-first-Neugestaltung; Weingut-Seiten und Verlinkung aus den Award-Listen'],
+  ['1.0', '20.10.2026', 'Erste Version: Regionen, Top 100 Rot und Weiß, Top 25 Cap Classique, Weingut-Profile, Jahrgangstabelle, Auszeichnungen 2026'],
+];
+$('verBtn').textContent = `(v${changelog[0][0]})`;
+$('verSum').textContent = `Version ${changelog[0][0]} · ${changelog[0][1]} · Änderungen`;
+$('verList').innerHTML = changelog.map(([v, d, t]) => `<li><b>v${v}</b> · ${d}<br>${t}</li>`).join('');
+$('verBtn').addEventListener('click', () => { const d = $('versionen'); d.open = true; d.scrollIntoView({ behavior:'smooth', block:'end' }); });
+
 // Rang je Kategorie = Reihenfolge in data.js
 const rankCount = {};
 wines.forEach(w => { rankCount[w.c] = (rankCount[w.c] || 0) + 1; w.rank = rankCount[w.c]; });
 // Euro-Richtpreise aus prices.js
 const PSRC = { ws:'Wine-Searcher-Ø, ohne Steuern', eu:'EU-Handel-Ø, ohne Steuern', eui:'EU-Handel, inkl. MwSt.', uk:'UK-Handel', za:'Preis in Südafrika', ch:'Schweizer Handel', no:'Norwegen' };
-wines.forEach(w => { const x = (typeof prices !== 'undefined') && prices[w.p + '|' + w.w]; if (x) Object.assign(w, { eur:x[0], esrc:x[1], eraw:x[2], eu:!!x[3] }); });
+wines.forEach(w => { const x = (typeof prices !== 'undefined') && prices[w.p + '|' + w.w]; if (x) Object.assign(w, { eur:x[0], esrc:x[1], eraw:x[2], eu:!!x[3], esize:x[4] }); });
 const PBANDS = { all:'Alle', p1:'bis 20 €', p2:'20–40 €', p3:'40–80 €', p4:'über 80 €', p0:'ohne Preis' };
 const pBand = w => !w.eur ? 'p0' : w.eur <= 20 ? 'p1' : w.eur <= 40 ? 'p2' : w.eur <= 80 ? 'p3' : 'p4';
 // Preisträger = der Wein selbst wurde bepunktet oder ausgezeichnet (nicht nur das Weingut)
@@ -571,7 +592,7 @@ function setView(v) {
   cur = v;
   $('w-eyebrow').textContent = views[v].eyebrow;
   $('w-title').innerHTML = views[v].title;
-  $('w-info').textContent = info[v] + ' Preise: gerundete Euro-Richtwerte pro 0,75-l-Flasche, umgerechnet aus dem Wine-Searcher-Durchschnitt (ohne Steuern) oder, wo der fehlt, aus Handelspreisen in UK, EU oder Südafrika. Die Quelle steht am Preis; „≈?“ heißt: Zuordnung oder Jahrgang unsicher. Ab-Hof-Preise in Südafrika liegen deutlich unter deutschen Ladenpreisen.';
+  $('w-info').textContent = info[v] + ' Preise: gerundete Euro-Richtwerte pro 0,75-l-Flasche (bei Süßweinen pro angegebener Flaschengröße), umgerechnet aus dem Wine-Searcher-Durchschnitt (ohne Steuern) oder, wo der fehlt, aus Handelspreisen in UK, EU oder Südafrika. Die Quelle steht am Preis; „≈?“ heißt: Zuordnung oder Jahrgang unsicher. Ab-Hof-Preise in Südafrika liegen deutlich unter deutschen Ladenpreisen.';
   document.querySelectorAll('#w-seg button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
   $('w-q').value = st[v].q;
   $('w-sort').value = st[v].sort;
@@ -611,7 +632,7 @@ function wineCard(w, s) {
       ${w.pts ? scBadge(w.pts) : ''}
     </div>
     <div class="wc-meta"><span><span class="dot" style="background:${regions[w.r].color}"></span>${regShort(w.r)}</span><span class="grape">${w.g}</span>${views[cur].types.length > 1 ? `<span>${typeLabel[w.c]}</span>` : ''}${w.u ? '<span class="flag" title="Lage, Rebsorte oder Detail nicht gesichert">◇ nicht gesichert</span>' : ''}</div>
-    <div class="wc-price">${w.eur ? `<b>${w.eu ? '≈?' : '≈'} ${w.eur} €</b><span>${PSRC[w.esrc]} · ${w.eraw}</span>` : '<span>Preis noch nicht recherchiert</span>'}</div>
+    <div class="wc-price">${w.eur ? `<b>${w.eu ? '≈?' : '≈'} ${w.eur} €${w.esize ? ` <small>/ ${w.esize}</small>` : ''}</b><span>${PSRC[w.esrc]} · ${w.eraw}</span>` : '<span>Preis noch nicht recherchiert</span>'}</div>
     <ul class="wc-aw">${aws}</ul>
     <p class="wc-note">${w.n}</p>
     <button class="more" data-k="${key}" aria-expanded="${open}">Über das Weingut</button>
