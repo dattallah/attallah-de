@@ -191,6 +191,17 @@ h2.title em,h1 em{font-style:italic;color:var(--gold);}
 .tag.t5{background:rgba(201,168,76,.2);color:var(--ink);}
 .tag.t94{background:rgba(46,117,96,.14);color:var(--pri);}
 .pl-box{padding:4px 16px;}
+a.lnk{color:inherit;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:1px;text-underline-offset:3px;}
+a.pl-row{color:inherit;text-decoration:none;}
+a.pl-row .pl-name::after,.ac-go::after{content:' ›';color:var(--gold);}
+.ac-go{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--pri);text-decoration:none;}
+.wc-prod a{color:inherit;text-decoration:none;}
+.wc-prod a::after{content:' ›';color:var(--gold);font-size:.8em;}
+.card.hl{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold);}
+.back{font-size:14px;font-weight:600;color:var(--pri);margin:0 0 12px;padding:6px 0;}
+.prof-card{font-size:15px;line-height:1.7;}
+.ac-list{list-style:none;display:grid;gap:4px;margin-top:4px;}
+.ac-list li{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--ink);line-height:1.3;}
 
 /* FILTER SHEET */
 .scrim{position:fixed;inset:0;z-index:90;background:rgba(10,15,12,.45);opacity:0;pointer-events:none;transition:opacity .2s;}
@@ -255,7 +266,7 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
     <a class="tab" href="#regionen" data-p="regionen"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Regionen</a>
     <a class="tab" href="#weine" data-p="weine"><svg viewBox="0 0 24 24"><path d="M8 3h8l-.5 6a3.5 3.5 0 0 1-7 0z"/><path d="M12 13v7M8.5 21h7"/></svg>Weine</a>
     <a class="tab" href="#jahrgaenge" data-p="jahrgaenge"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Jahrgänge</a>
-    <a class="tab" href="#preise" data-p="preise"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/></svg>Preise</a>
+    <a class="tab" href="#preise" data-p="preise"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/></svg>Awards</a>
 </nav>
 
 <!-- ========== START ========== -->
@@ -264,7 +275,7 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
   <div class="hero">
     <div class="eyebrow">Western Cape · Wine of Origin</div>
     <h1>Südafrika<em>Guide der großen Kap-Weine</em></h1>
-    <p>Top 100 Rot- und Weißweine, Top 25 Cap Classique, 129 Weingüter, Jahrgänge und alle Preise von Tim Atkin MW und Platter's.</p>
+    <p>Top 100 Rot- und Weißweine, Top 25 Cap Classique, 129 Weingüter, Jahrgänge und alle Auszeichnungen von Tim Atkin MW und Platter's.</p>
   </div>
   <div class="tiles" id="tiles"></div>
   <div class="eyebrow">Das Kap in Zahlen</div>
@@ -326,7 +337,7 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
   <div class="list cols" id="v-list"></div>
 </section>
 
-<!-- ========== PREISE ========== -->
+<!-- ========== AWARDS ========== -->
 <section id="p-preise" class="page">
   <div class="eyebrow">Tim Atkin MW · Platter's</div>
   <h2 class="title">Auszeichnungen <em>&amp; Listen</em></h2>
@@ -334,7 +345,7 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
     <button class="chip" data-v="atkin26">Atkin 2026</button>
     <button class="chip" data-v="platter26">Platter's 2026</button>
     <button class="chip" data-v="lists">Platter's-Listen 2025</button>
-    <button class="chip" data-v="platter25">Platter's 2025 Preise</button>
+    <button class="chip" data-v="platter25">Platter's 2025 Awards</button>
     <button class="chip" data-v="atkin25">Atkin 2025</button>
   </div>
   <p class="lead" id="a-lead"></p>
@@ -348,6 +359,18 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
     <div class="resultbar"><span id="pl-count"></span></div>
     <div class="card pl-box" id="pl-list"></div>
   </div>
+</section>
+
+<!-- ========== WEINGUT ========== -->
+<section id="p-weingut" class="page">
+  <button class="back" onclick="history.length > 1 ? history.back() : (location.hash = 'weine')">‹ Zurück</button>
+  <div class="eyebrow" id="pr-eyebrow"></div>
+  <h2 class="title" id="pr-name"></h2>
+  <div class="card prof-card" id="pr-prof"></div>
+  <h3 class="h3" id="pr-wh"></h3>
+  <div class="list cols" id="pr-wines"></div>
+  <h3 class="h3" id="pr-ph"></h3>
+  <div class="card pl-box" id="pr-pl"></div>
 </section>
 </main>
 
@@ -466,7 +489,8 @@ const isPrize = w => !!w.pts || /Wine of the Year|5 Stern/.test(w.aw || '');
 // =============================================
 const routes = { start:['start'], regionen:['regionen'], weine:['weine','red'], rot:['weine','red'], weiss:['weine','white'], schaumwein:['weine','special'], jahrgaenge:['jahrgaenge'], preise:['preise','atkin26'], platter:['preise','lists'] };
 function route() {
-  const key = (location.hash || '#start').slice(1);
+  const key = decodeURIComponent((location.hash || '#start').slice(1));
+  if (key.startsWith('weingut/')) { showProducer(key.slice(8)); return; }
   const [page, sub] = routes[key] || routes.start;
   document.querySelectorAll('.page').forEach(p => p.classList.toggle('on', p.id === 'p-' + page));
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.p === page));
@@ -570,7 +594,7 @@ function wineCard(w, s) {
   return `<article class="card">
     <div class="wc-top">
       <span class="wc-rank">${w.rank}</span>
-      <div class="wc-head"><h3 class="wc-prod">${w.p}</h3><div class="wc-wine">${w.w}</div></div>
+      <div class="wc-head"><h3 class="wc-prod"><a href="#weingut/${slug(w.p)}">${w.p}</a></h3><div class="wc-wine">${w.w}</div></div>
       ${w.pts ? scBadge(w.pts) : ''}
     </div>
     <div class="wc-meta"><span><span class="dot" style="background:${regions[w.r].color}"></span>${regShort(w.r)}</span><span class="grape">${w.g}</span>${views[cur].types.length > 1 ? `<span>${typeLabel[w.c]}</span>` : ''}${w.u ? '<span class="flag" title="Lage, Rebsorte oder Detail nicht gesichert">◇ nicht gesichert</span>' : ''}</div>
@@ -685,7 +709,7 @@ function setAward(k) {
   $('a-lead').textContent = awardSets[k].lead;
   const isList = k === 'lists';
   $('a-lists').hidden = !isList; $('a-awards').hidden = isList;
-  if (!isList) $('a-awards').innerHTML = awardSets[k].data.map(([c, n, s]) => `<article class="card ac"><div class="ac-cat">${c}</div><div class="ac-name">${n}</div>${s ? `<div class="ac-sub">${s}</div>` : ''}</article>`).join('');
+  if (!isList) $('a-awards').innerHTML = awardSets[k].data.map(([c, n, s]) => awardCard(c, n, s)).join('');
   else renderPlatter();
 }
 $('a-seg').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { b.dataset.v === 'lists' ? (location.hash = 'platter') : (history.replaceState(null, '', '#preise'), setAward(b.dataset.v)); } });
@@ -711,10 +735,101 @@ function renderPlatter() {
   const list = platter25.filter(x => (plSt.list === 'all' || x.list === plSt.list) && (plSt.cat === 'all' || x.cat === plSt.cat) && (!plSt.q || x.w.toLowerCase().includes(plSt.q)));
   $('pl-count').textContent = `${list.length} Einträge`;
   $('pl-list').innerHTML = list.map(x => {
-    const m = x.w.match(/^(.*?)\s+((?:19|20)\d\d|NV)$/);
-    return `<div class="pl-row"><div><div class="pl-name">${esc(m ? m[1] : x.w)}</div><div class="pl-cat">${plSt.list === 'all' ? `<span class="tag ${plTag[x.list] || ''}">${plLabel[x.list]}</span>` : ''}${esc(x.cat)}</div></div><div class="pl-yr">${m ? m[2] : ''}</div></div>`;
+    return plRow(x, plSt.list === 'all');
   }).join('') || '<div class="empty">Keine Einträge.</div>';
 }
+
+// =============================================
+// VERLINKUNG: Text (z. B. „Sadie Columella 2022“) → Weingut / Wein
+// =============================================
+function slug(s) { return norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+function norm(s) { return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[’`]/g, "'").replace(/[„“"]/g, ''); }
+const SUFFIX = /\s+(family wines|wine estate|estate vineyards|mountain vineyards|signature wines|vineyards|wines|wine co\.|estate)$/i;
+const extraAlias = { 'Richard Kershaw':['Kershaw'], 'A.A. Badenhorst Family Wines':['Badenhorst','AA Badenhorst'], 'Diemersdal':['Diemersdal Estate'], 'Sadie Family Wines':['Sadie Family','Sadie'] };
+const aliases = [];
+Object.keys(producers).forEach(p => {
+  const set = new Set([p]); let q = p;
+  while (SUFFIX.test(q)) { q = q.replace(SUFFIX, ''); set.add(q); }
+  (extraAlias[p] || []).forEach(a => set.add(a));
+  set.forEach(a => aliases.push([norm(a), p]));
+});
+aliases.sort((a, b) => b[0].length - a[0].length);
+const bySlug = {}; Object.keys(producers).forEach(p => bySlug[slug(p)] = p);
+function matchProducer(text) {
+  const t = norm(text);
+  for (const [a, p] of aliases) if (t === a || t.startsWith(a + ' ')) return { p, rest: t.slice(a.length).trim() };
+  return null;
+}
+const GENERIC = new Set('the de la le of and blanc noir gris sauvignon cabernet chenin pinot syrah shiraz chardonnay semillon merlot pinotage franc grenache cinsault red white blend cape wine wines old vine vines family'.split(' '));
+const tokens = s => norm(s).split(/[^a-z0-9]+/).filter(t => t.length > 1 && !/^\d{4}$/.test(t) && t !== 'nv' && !GENERIC.has(t));
+// Platter's-Kategorie → erlaubte Rebsorte (verhindert z. B. „Reserve Syrah“ → „Pinotage Reserve“)
+const CATG = { 'Cabernet Franc':['cabernet franc'], 'Cabernet Sauvignon':['cabernet sauvignon'], 'Cinsault Noir':['cinsault'], 'Grenache Noir':['grenache'], 'Merlot':['merlot'], 'Pinotage':['pinotage'], 'Pinot Noir':['pinot noir'], 'Shiraz/Syrah':['syrah','shiraz'], 'Tinta Barocca':['tinta'], 'Chardonnay':['chardonnay'], 'Chenin Blanc':['chenin'], 'Grenache Blanc':['grenache blanc'], 'Grenache Gris':['grenache gris'], 'Sauvignon Blanc':['sauvignon blanc'], 'Semillon':['semillon'], 'Semillon Gris':['semillon gris'], 'Riesling':['riesling'], 'Viognier':['viognier'] };
+function catOk(w, cat) {
+  if (!cat) return true;
+  const g = norm(w.g);
+  if (/^cap classique/i.test(cat)) return w.c === 'cc';
+  if (/sweet|late harvest|paille|dessert|port/i.test(cat)) return w.c === 'suess';
+  if (/brandy|husk|rosé|sparkling|blanc de noir/i.test(cat)) return false;
+  if (/^red blends/i.test(cat)) return w.c === 'rot' && /blend|-|\/|cape/.test(g);
+  if (/^white blends/i.test(cat)) return w.c === 'weiss' && /blend|-|\//.test(g);
+  return CATG[cat] ? CATG[cat].some(x => g.includes(x)) : false;
+}
+const wTokens = w => { const pt = new Set(tokens(w.p)); return tokens(w.w).filter(t => !pt.has(t)); };
+function matchWine(p, rest, cat) {
+  // ohne Kategorie und ohne Weinnamen (z. B. „Winery of the Year“) nur aufs Weingut verlinken
+  if (!cat && !norm(rest).replace(/\b(19|20)\d\d\b|\bnv\b/g, '').trim()) return null;
+  const rt = tokens(rest), eq = (a, b) => a.length === b.length && a.every(t => b.includes(t));
+  let hits = wines.filter(w => w.p === p && catOk(w, cat) && eq(rt, wTokens(w)));
+  if (hits.length > 1) { const rr = norm(rest).replace(/\b(19|20)\d\d\b|\bnv\b/g, '').trim(); const ex = hits.filter(w => norm(w.w) === rr); if (ex.length === 1) hits = ex; }
+  return hits.length === 1 ? hits[0] : null;
+}
+function hrefFor(text, cat) {
+  const m = matchProducer(text); if (!m) return null;
+  const w = matchWine(m.p, m.rest, cat);
+  return { p: m.p, w, href: `#weingut/${slug(m.p)}${w ? '~' + w.c + w.rank : ''}` };
+}
+function linkText(text) { const h = hrefFor(text); return h ? `<a class="lnk" href="${h.href}">${esc(text)}</a>` : esc(text); }
+function awardCard(c, n, s) {
+  const parts = n.split(' · ');
+  const name = parts.length > 1 ? `<ul class="ac-list">${parts.map(x => `<li>${linkText(x)}</li>`).join('')}</ul>` : `<div class="ac-name">${linkText(n)}</div>`;
+  // Personen-Auszeichnungen: Weingut steht im Untertitel
+  let go = '';
+  if (parts.length === 1 && !hrefFor(n) && s) { const h = hrefFor(s.split(/[,·]/)[0].trim()); if (h) go = `<a class="ac-go" href="${h.href}">Zum Weingut ${esc(h.p)}</a>`; }
+  return `<article class="card ac"><div class="ac-cat">${c}</div>${name}${s ? `<div class="ac-sub">${s}</div>` : ''}${go}</article>`;
+}
+function plRow(x, showTag) {
+  const m = x.w.match(/^(.*?)\s+((?:19|20)\d\d|NV)$/), h = hrefFor(x.w, x.cat);
+  const inner = `<div><div class="pl-name">${esc(m ? m[1] : x.w)}</div><div class="pl-cat">${showTag ? `<span class="tag ${plTag[x.list] || ''}">${plLabel[x.list]}</span>` : ''}${esc(x.cat)}</div></div><div class="pl-yr">${m ? m[2] : ''}</div>`;
+  return h ? `<a class="pl-row" href="${h.href}">${inner}</a>` : `<div class="pl-row">${inner}</div>`;
+}
+
+// =============================================
+// WEINGUT-SEITE
+// =============================================
+function showProducer(arg) {
+  const [sl, wk] = arg.split('~'), p = bySlug[sl];
+  if (!p) { location.hash = 'weine'; return; }
+  document.querySelectorAll('.page').forEach(x => x.classList.toggle('on', x.id === 'p-weingut'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.p === 'weine'));
+  const ws = wines.filter(w => w.p === p);
+  const regs = [...new Set(ws.map(w => regShort(w.r)))];
+  $('pr-eyebrow').textContent = 'Weingut' + (regs.length ? ' · ' + regs.join(' · ') : '');
+  $('pr-name').textContent = p;
+  $('pr-prof').innerHTML = producers[p] || '';
+  $('pr-wh').innerHTML = `In unseren Top-Listen <em>(${ws.length})</em>`;
+  const s = { open:new Set() };
+  $('pr-wines').innerHTML = ws.map(w => wineCard(w, s).replace('<article class="card">', `<article class="card${wk === w.c + w.rank ? ' hl' : ''}" id="w-${w.c}${w.rank}">`)).join('');
+  const pl = platter25.filter(x => { const m = matchProducer(x.w); return m && m.p === p; });
+  $('pr-ph').innerHTML = pl.length ? `In Platter's 2025 <em>(${pl.length})</em>` : '';
+  $('pr-ph').hidden = !pl.length; $('pr-pl').hidden = !pl.length;
+  $('pr-pl').innerHTML = pl.map(x => plRow(x, true)).join('');
+  window.scrollTo(0, 0);
+  if (wk && $('w-' + wk)) setTimeout(() => $('w-' + wk).scrollIntoView({ block:'center', behavior:'smooth' }), 60);
+}
+$('pr-wines').addEventListener('click', e => {
+  const b = e.target.closest('.more'); if (!b) return;
+  const p = b.nextElementSibling; p.hidden = !p.hidden; b.setAttribute('aria-expanded', !p.hidden);
+});
 
 // =============================================
 // INIT
