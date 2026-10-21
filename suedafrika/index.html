@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#F8F5EC" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#131814" media="(prefers-color-scheme: dark)">
 <title>Südafrika — Guide der großen Kap-Weine</title>
-<meta name="description" content="Die wichtigsten Weinregionen Südafrikas, Top 100 Rot- und Weißweine, Top 25 Cap Classique, Jahrgänge und die Auszeichnungen von Tim Atkin MW und Platter's.">
+<meta name="description" content="Die wichtigsten Weinregionen Südafrikas, rund 150 Rot- und 140 Weißweine mit Euro-Richtpreisen, Top 25 Cap Classique, Jahrgänge und die Auszeichnungen von Tim Atkin MW und Platter's.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F5A4A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23F3E7CF' text-anchor='middle'%3EZA%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -112,6 +112,8 @@ h2.title em,h1 em{font-style:italic;color:var(--gold);}
 .wc-aw li.gold{background:rgba(201,168,76,.16);color:var(--ink);}
 .wc-aw li.green{background:rgba(46,117,96,.12);}
 .wc-aw li.plain{background:transparent;padding:0;color:var(--dim);font-style:italic;}
+.wc-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;margin:10px 0 0;font-size:12px;color:var(--dim);}
+.wc-price b{font-size:16px;font-weight:600;color:var(--ink);}
 .wc-note{font-size:14px;color:var(--dim);line-height:1.6;margin-top:12px;}
 .more{margin-top:12px;width:100%;display:flex;justify-content:space-between;align-items:center;padding:11px 0 0;border-top:1px solid var(--line2);font-size:13px;font-weight:600;color:var(--pri);text-align:left;}
 .more::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;margin-right:4px;}
@@ -275,7 +277,7 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
   <div class="hero">
     <div class="eyebrow">Western Cape · Wine of Origin</div>
     <h1>Südafrika<em>Guide der großen Kap-Weine</em></h1>
-    <p>Top 100 Rot- und Weißweine, Top 25 Cap Classique, 129 Weingüter, Jahrgänge und alle Auszeichnungen von Tim Atkin MW und Platter's.</p>
+    <p id="hero-p">Rot- und Weißweine, Cap Classique, Weingüter, Jahrgänge und alle Auszeichnungen von Tim Atkin MW und Platter's.</p>
   </div>
   <div class="tiles" id="tiles"></div>
   <div class="eyebrow">Das Kap in Zahlen</div>
@@ -299,12 +301,12 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
 
 <!-- ========== WEINE ========== -->
 <section id="p-weine" class="page">
-  <div class="eyebrow" id="w-eyebrow">Top 100</div>
+  <div class="eyebrow" id="w-eyebrow">Rangliste</div>
   <h2 class="title" id="w-title">Rotweine</h2>
   <div class="seg" id="w-seg">
-    <button data-v="red">Rot<small>100</small></button>
-    <button data-v="white">Weiß<small>100</small></button>
-    <button data-v="special">Schaumwein &amp; Süß<small>36</small></button>
+    <button data-v="red">Rot<small></small></button>
+    <button data-v="white">Weiß<small></small></button>
+    <button data-v="special">Schaumwein &amp; Süß<small></small></button>
   </div>
   <details class="info"><summary>So entsteht die Rangliste</summary><div id="w-info"></div></details>
   <div class="tools">
@@ -316,7 +318,7 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
   </div>
   <div class="resultbar"><span id="w-count"></span>
     <select class="select" id="w-sort" aria-label="Sortierung">
-      <option value="rank">Rang</option><option value="pts">Punkte</option><option value="name">Weingut A–Z</option><option value="region">Region</option>
+      <option value="rank">Rang</option><option value="pts">Punkte</option><option value="name">Weingut A–Z</option><option value="region">Region</option><option value="pup">Preis aufsteigend</option><option value="pdown">Preis absteigend</option>
     </select>
   </div>
   <div class="list cols" id="w-list"></div>
@@ -377,7 +379,7 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
 <footer>
   <b>Südafrika — Guide der großen Kap-Weine</b>
   Quellen: <a href="https://timatkin.com" target="_blank" rel="noopener">Tim Atkin MW South Africa Report 2025 &amp; 2026</a> · <a href="https://wineonaplatter.com" target="_blank" rel="noopener">Platter's South African Wine Guide 2025 (Print) &amp; 2026</a> · Amorim Cap Classique Challenge 2025 · <a href="https://www.sawis.co.za" target="_blank" rel="noopener">SAWIS</a> · <a href="https://www.vinpro.co.za" target="_blank" rel="noopener">VinPro</a> · <a href="https://www.wosa.co.za" target="_blank" rel="noopener">Wines of South Africa</a><br>
-  Stand: Oktober 2026. Mit <span class="flag">◇</span> markierte Angaben (Lage/Rebsorte) sind nicht durch eine Primärquelle gesichert. Jahrgangspunkte sind redaktionelle Richtwerte. Keine Gewähr.<br>
+  Stand: Oktober 2026. Mit <span class="flag">◇</span> markierte Angaben (Lage/Rebsorte) sind nicht durch eine Primärquelle gesichert. Jahrgangspunkte sind redaktionelle Richtwerte. Preise sind gerundete Richtwerte pro 0,75-l-Flasche (Wine-Searcher-Durchschnitt ohne Steuern bzw. Handelspreise; Kurse: 1 USD = 0,87 €, 1 GBP = 1,16 €, 1 € = 18,7 ZAR, 1 CHF = 1,07 €). Keine Gewähr.<br>
   <a href="https://attallah.de">← attallah.de</a> · <a href="https://dattallah.github.io/bordeaux-weine/">Bordeaux — Guide des Grands Vins</a>
 </footer>
 
@@ -391,6 +393,7 @@ footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);
 
 <script src="data.js"></script>
 <script src="platter2025.js"></script>
+<script src="prices.js"></script>
 <script>
 // =============================================
 // DATEN (Regionen, Jahrgänge, Preise)
@@ -481,6 +484,11 @@ const regShort = r => regions[r].name.split(' · ')[0].split(' & ')[0].replace('
 // Rang je Kategorie = Reihenfolge in data.js
 const rankCount = {};
 wines.forEach(w => { rankCount[w.c] = (rankCount[w.c] || 0) + 1; w.rank = rankCount[w.c]; });
+// Euro-Richtpreise aus prices.js
+const PSRC = { ws:'Wine-Searcher-Ø, ohne Steuern', eu:'EU-Handel-Ø, ohne Steuern', eui:'EU-Handel, inkl. MwSt.', uk:'UK-Handel', za:'Preis in Südafrika', ch:'Schweizer Handel', no:'Norwegen' };
+wines.forEach(w => { const x = (typeof prices !== 'undefined') && prices[w.p + '|' + w.w]; if (x) Object.assign(w, { eur:x[0], esrc:x[1], eraw:x[2], eu:!!x[3] }); });
+const PBANDS = { all:'Alle', p1:'bis 20 €', p2:'20–40 €', p3:'40–80 €', p4:'über 80 €', p0:'ohne Preis' };
+const pBand = w => !w.eur ? 'p0' : w.eur <= 20 ? 'p1' : w.eur <= 40 ? 'p2' : w.eur <= 80 ? 'p3' : 'p4';
 // Preisträger = der Wein selbst wurde bepunktet oder ausgezeichnet (nicht nur das Weingut)
 const isPrize = w => !!w.pts || /Wine of the Year|5 Stern/.test(w.aw || '');
 
@@ -505,13 +513,14 @@ window.addEventListener('hashchange', route);
 // =============================================
 const cnt = c => wines.filter(w => w.c === c).length;
 $('tiles').innerHTML = [
-  ['#rot', 'Rotweine', `Top ${cnt('rot')}`, 'main'],
-  ['#weiss', 'Weißweine', `Top ${cnt('weiss')}`],
+  ['#rot', 'Rotweine', `${cnt('rot')} Weine`, 'main'],
+  ['#weiss', 'Weißweine', `${cnt('weiss')} Weine`],
   ['#schaumwein', 'Cap Classique', `Top ${cnt('cc')} · dazu Süßweine`],
   ['#regionen', 'Regionen', `${Object.keys(regions).length} Anbaugebiete`],
   ['#jahrgaenge', 'Jahrgänge', '2009–2025'],
   ['#platter', 'Platter\'s 2025', `${platter25.length} Einträge`],
 ].map(([h, b, s, c]) => `<a class="tile ${c || ''}" href="${h}" style="text-decoration:none;"><b>${b}</b><span>${s}</span></a>`).join('');
+$('hero-p').textContent = `${cnt('rot')} Rot- und ${cnt('weiss')} Weißweine, Top ${cnt('cc')} Cap Classique, ${Object.keys(producers).length} Weingüter, Euro-Richtpreise, Jahrgänge und alle Auszeichnungen von Tim Atkin MW und Platter's.`;
 
 // =============================================
 // REGIONEN
@@ -543,25 +552,26 @@ $('regList').addEventListener('click', e => {
 // WEINE
 // =============================================
 const views = {
-  red:     { types:['rot'], eyebrow:'Top 100 · Vins Rouges', title:'Rotweine <em>Südafrikas</em>', hash:'rot' },
-  white:   { types:['weiss'], eyebrow:'Top 100 · Vins Blancs', title:'Weißweine <em>Südafrikas</em>', hash:'weiss' },
+  red:     { types:['rot'], eyebrow:'Rangliste · Vins Rouges', title:'Rotweine <em>Südafrikas</em>', hash:'rot' },
+  white:   { types:['weiss'], eyebrow:'Rangliste · Vins Blancs', title:'Weißweine <em>Südafrikas</em>', hash:'weiss' },
   special: { types:['cc','suess'], eyebrow:'Top 25 Cap Classique · Süßweine', title:'Schaumwein <em>&amp; Süßweine</em>', hash:'schaumwein' },
 };
 const info = {
-  red: 'Rangliste nach Belegen: zuerst die Spitzenbewertungen von Tim Atkin MW 2025/26 und die Wines of the Year von Platter\'s 2025/26, dann Fünf-Sterne-Weine (95+) und Highly Recommended (94) aus Platter\'s 2025, zuletzt Ikonen ohne aktuelle Listung. Bei Preisträgern ist der ausgezeichnete Jahrgang angegeben. Punkte nur, wo sie aus Atkin oder Platter\'s belegt sind.',
-  white: 'Weißwein ist Südafrikas größte Stärke: Old-Vine Chenin Blanc aus Swartland und Citrusdal, Chardonnay aus Hemel-en-Aarde und Elgin, Sauvignon Blanc aus Constantia, Durbanville und Elim sowie die Cape White Blends. Rangfolge wie bei den Rotweinen nach Belegen.',
+  red: 'Rangliste nach Belegen: zuerst die Spitzenbewertungen von Tim Atkin MW 2025/26 und die Wines of the Year von Platter\'s 2025/26, dann Fünf-Sterne-Weine (95+) und Highly Recommended (94) aus Platter\'s 2025, zuletzt Ikonen ohne aktuelle Listung. Bei Preisträgern ist der ausgezeichnete Jahrgang angegeben. Punkte nur, wo sie aus Atkin oder Platter\'s belegt sind. Über die Top 100 hinaus sind alle Fünf-Sterne-Weine aus Platter\'s 2025 aufgenommen.',
+  white: 'Weißwein ist Südafrikas größte Stärke: Old-Vine Chenin Blanc aus Swartland und Citrusdal, Chardonnay aus Hemel-en-Aarde und Elgin, Sauvignon Blanc aus Constantia, Durbanville und Elim sowie die Cape White Blends. Rangfolge wie bei den Rotweinen nach Belegen; ebenfalls ergänzt um alle Fünf-Sterne-Weine aus Platter\'s 2025.',
   special: 'Cap Classique ist Flaschengärung nach traditioneller Methode (seit 1971, Simonsig Kaapse Vonkel). Die Top 25 sind nach Atkin, Platter\'s und der Amorim Cap Classique Challenge 2025 gereiht. Dazu die besten Süß- und Portweine: Vin de Constance, Straw Wine, Noble Late Harvest und Cape Vintage.',
 };
 const typeLabel = { rot:'Rot', weiss:'Weiß', cc:'Cap Classique', suess:'Süß / Fortified' };
 const st = {};
-Object.keys(views).forEach(v => st[v] = { reg:'all', grape:'all', type:'all', prize:false, q:'', sort:'rank', open:new Set() });
+Object.keys(views).forEach(v => st[v] = { reg:'all', grape:'all', type:'all', price:'all', prize:false, q:'', sort:'rank', open:new Set() });
 let cur = 'red';
 
+document.querySelectorAll('#w-seg button').forEach(b => b.querySelector('small').textContent = wines.filter(w => views[b.dataset.v].types.includes(w.c)).length);
 function setView(v) {
   cur = v;
   $('w-eyebrow').textContent = views[v].eyebrow;
   $('w-title').innerHTML = views[v].title;
-  $('w-info').textContent = info[v];
+  $('w-info').textContent = info[v] + ' Preise: gerundete Euro-Richtwerte pro 0,75-l-Flasche, umgerechnet aus dem Wine-Searcher-Durchschnitt (ohne Steuern) oder, wo der fehlt, aus Handelspreisen in UK, EU oder Südafrika. Die Quelle steht am Preis; „≈?“ heißt: Zuordnung oder Jahrgang unsicher. Ab-Hof-Preise in Südafrika liegen deutlich unter deutschen Ladenpreisen.';
   document.querySelectorAll('#w-seg button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
   $('w-q').value = st[v].q;
   $('w-sort').value = st[v].sort;
@@ -577,6 +587,7 @@ function filtered(v, s) {
     .filter(w => s.reg === 'all' || w.r === s.reg)
     .filter(w => s.grape === 'all' || w.g === s.grape)
     .filter(w => s.type === 'all' || w.c === s.type)
+    .filter(w => !s.price || s.price === 'all' || pBand(w) === s.price)
     .filter(w => !s.prize || isPrize(w))
     .filter(w => !s.q || (w.p + ' ' + w.w + ' ' + w.g + ' ' + regions[w.r].name + ' ' + (producers[w.p] || '')).toLowerCase().includes(s.q));
 }
@@ -585,6 +596,8 @@ const sorters = {
   pts:    (a, b) => (b.pts || 0) - (a.pts || 0) || isPrize(b) - isPrize(a) || a.rank - b.rank,
   name:   (a, b) => a.p.localeCompare(b.p, 'de') || a.w.localeCompare(b.w, 'de'),
   region: (a, b) => regions[a.r].name.localeCompare(regions[b.r].name, 'de') || a.rank - b.rank,
+  pup:    (a, b) => (a.eur || 1e9) - (b.eur || 1e9) || a.rank - b.rank,
+  pdown:  (a, b) => (b.eur || 0) - (a.eur || 0) || a.rank - b.rank,
 };
 function awClass(t) { return /Wine of the Year|100 Pkt|99 Pkt|98 Pkt|97 Pkt|96 Pkt|Gesamtsieger/.test(t) ? 'gold' : /5 Sterne|95 Pkt|Kategoriesieger/.test(t) ? 'green' : ''; }
 
@@ -598,6 +611,7 @@ function wineCard(w, s) {
       ${w.pts ? scBadge(w.pts) : ''}
     </div>
     <div class="wc-meta"><span><span class="dot" style="background:${regions[w.r].color}"></span>${regShort(w.r)}</span><span class="grape">${w.g}</span>${views[cur].types.length > 1 ? `<span>${typeLabel[w.c]}</span>` : ''}${w.u ? '<span class="flag" title="Lage, Rebsorte oder Detail nicht gesichert">◇ nicht gesichert</span>' : ''}</div>
+    <div class="wc-price">${w.eur ? `<b>${w.eu ? '≈?' : '≈'} ${w.eur} €</b><span>${PSRC[w.esrc]} · ${w.eraw}</span>` : '<span>Preis noch nicht recherchiert</span>'}</div>
     <ul class="wc-aw">${aws}</ul>
     <p class="wc-note">${w.n}</p>
     <button class="more" data-k="${key}" aria-expanded="${open}">Über das Weingut</button>
@@ -613,6 +627,7 @@ function renderWines() {
   if (s.reg !== 'all') act.push(['reg', regShort(s.reg)]);
   if (s.grape !== 'all') act.push(['grape', s.grape]);
   if (s.type !== 'all') act.push(['type', typeLabel[s.type]]);
+  if (s.price && s.price !== 'all') act.push(['price', PBANDS[s.price]]);
   if (s.prize) act.push(['prize', '★ 5 Sterne / Preisträger']);
   $('w-active').innerHTML = act.map(([k, l]) => `<button class="chip on x" data-k="${k}">${l}</button>`).join('');
   $('w-active').hidden = !act.length;
@@ -642,6 +657,7 @@ function renderSheet() {
   if (views[cur].types.length > 1) h += `<h4>Typ</h4><div class="wrap">${chip('type', 'all', 'Alle')}${views[cur].types.map(t => chip('type', t, typeLabel[t])).join('')}</div>`;
   h += `<h4>Region</h4><div class="wrap">${chip('reg', 'all', 'Alle')}${regs.map(r => chip('reg', r, regShort(r))).join('')}</div>`;
   h += `<h4>Rebsorte</h4><div class="wrap">${chip('grape', 'all', 'Alle')}${grapes.map(g => chip('grape', g, g)).join('')}</div>`;
+  h += `<h4>Preis</h4><div class="wrap">${Object.entries(PBANDS).map(([k, l]) => chip('price', k, l)).join('')}</div>`;
   h += `<label class="switch">★ Nur 5 Sterne / Preisträger<input type="checkbox" id="f-prize"${draft.prize ? ' checked' : ''}></label>`;
   $('f-body').innerHTML = h;
   $('f-prize').addEventListener('change', e => { draft.prize = e.target.checked; updateApply(); });
@@ -657,12 +673,12 @@ $('f-body').addEventListener('click', e => {
 $('w-filter').addEventListener('click', openSheet);
 $('scrim').addEventListener('click', closeSheet);
 $('f-apply').addEventListener('click', () => { Object.assign(st[cur], draft); closeSheet(); renderWines(); window.scrollTo(0, 0); });
-$('f-reset').addEventListener('click', () => { Object.assign(draft, { reg:'all', grape:'all', type:'all', prize:false }); renderSheet(); });
+$('f-reset').addEventListener('click', () => { Object.assign(draft, { reg:'all', grape:'all', type:'all', price:'all', prize:false }); renderSheet(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
 
 function jumpRegion(r) {
   const v = Object.keys(views).find(v => wines.some(w => w.r === r && views[v].types.includes(w.c)));
-  Object.keys(views).forEach(x => { if (wines.some(w => w.r === r && views[x].types.includes(w.c))) Object.assign(st[x], { reg:r, grape:'all', type:'all', prize:false, q:'' }); });
+  Object.keys(views).forEach(x => { if (wines.some(w => w.r === r && views[x].types.includes(w.c))) Object.assign(st[x], { reg:r, grape:'all', type:'all', price:'all', prize:false, q:'' }); });
   location.hash = views[v].hash;
 }
 
@@ -745,7 +761,7 @@ function renderPlatter() {
 function slug(s) { return norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 function norm(s) { return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[’`]/g, "'").replace(/[„“"]/g, ''); }
 const SUFFIX = /\s+(family wines|wine estate|estate vineyards|mountain vineyards|signature wines|vineyards|wines|wine co\.|estate)$/i;
-const extraAlias = { 'Richard Kershaw':['Kershaw'], 'A.A. Badenhorst Family Wines':['Badenhorst','AA Badenhorst'], 'Diemersdal':['Diemersdal Estate'], 'Sadie Family Wines':['Sadie Family','Sadie'] };
+const extraAlias = { 'Richard Kershaw':['Kershaw'], 'A.A. Badenhorst Family Wines':['Badenhorst','AA Badenhorst'], 'Diemersdal':['Diemersdal Estate'], 'Sadie Family Wines':['Sadie Family','Sadie'], 'Julien Schaal':['Julian Schaal'] };
 const aliases = [];
 Object.keys(producers).forEach(p => {
   const set = new Set([p]); let q = p;
@@ -760,7 +776,7 @@ function matchProducer(text) {
   for (const [a, p] of aliases) if (t === a || t.startsWith(a + ' ')) return { p, rest: t.slice(a.length).trim() };
   return null;
 }
-const GENERIC = new Set('the de la le of and blanc noir gris sauvignon cabernet chenin pinot syrah shiraz chardonnay semillon merlot pinotage franc grenache cinsault red white blend cape wine wines old vine vines family'.split(' '));
+const GENERIC = new Set('the de la le of and blanc noir gris sauvignon cabernet chenin pinot syrah shiraz chardonnay semillon merlot pinotage franc grenache cinsault red white blend cape wine wines old vine vines family noble late harvest organic natural sweet'.split(' '));
 const tokens = s => norm(s).split(/[^a-z0-9]+/).filter(t => t.length > 1 && !/^\d{4}$/.test(t) && t !== 'nv' && !GENERIC.has(t));
 // Platter's-Kategorie → erlaubte Rebsorte (verhindert z. B. „Reserve Syrah“ → „Pinotage Reserve“)
 const CATG = { 'Cabernet Franc':['cabernet franc'], 'Cabernet Sauvignon':['cabernet sauvignon'], 'Cinsault Noir':['cinsault'], 'Grenache Noir':['grenache'], 'Merlot':['merlot'], 'Pinotage':['pinotage'], 'Pinot Noir':['pinot noir'], 'Shiraz/Syrah':['syrah','shiraz'], 'Tinta Barocca':['tinta'], 'Chardonnay':['chardonnay'], 'Chenin Blanc':['chenin'], 'Grenache Blanc':['grenache blanc'], 'Grenache Gris':['grenache gris'], 'Sauvignon Blanc':['sauvignon blanc'], 'Semillon':['semillon'], 'Semillon Gris':['semillon gris'], 'Riesling':['riesling'], 'Viognier':['viognier'] };
@@ -772,13 +788,13 @@ function catOk(w, cat) {
   if (/brandy|husk|rosé|sparkling|blanc de noir/i.test(cat)) return false;
   if (/^red blends/i.test(cat)) return w.c === 'rot' && /blend|-|\/|cape/.test(g);
   if (/^white blends/i.test(cat)) return w.c === 'weiss' && /blend|-|\//.test(g);
-  return CATG[cat] ? CATG[cat].some(x => g.includes(x)) : false;
+  return CATG[cat] ? (w.c === 'rot' || w.c === 'weiss') && CATG[cat].some(x => g.includes(x)) : false;
 }
 const wTokens = w => { const pt = new Set(tokens(w.p)); return tokens(w.w).filter(t => !pt.has(t)); };
 function matchWine(p, rest, cat) {
   // ohne Kategorie und ohne Weinnamen (z. B. „Winery of the Year“) nur aufs Weingut verlinken
   if (!cat && !norm(rest).replace(/\b(19|20)\d\d\b|\bnv\b/g, '').trim()) return null;
-  const rt = tokens(rest), eq = (a, b) => a.length === b.length && a.every(t => b.includes(t));
+  const pt = new Set(tokens(p)), rt = tokens(rest).filter(t => !pt.has(t)), eq = (a, b) => a.length === b.length && a.every(t => b.includes(t));
   let hits = wines.filter(w => w.p === p && catOk(w, cat) && eq(rt, wTokens(w)));
   if (hits.length > 1) { const rr = norm(rest).replace(/\b(19|20)\d\d\b|\bnv\b/g, '').trim(); const ex = hits.filter(w => norm(w.w) === rr); if (ex.length === 1) hits = ex; }
   return hits.length === 1 ? hits[0] : null;
