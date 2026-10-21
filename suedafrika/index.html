@@ -46,6 +46,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
 .appbar-r{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap;}
 .appbar-r a{color:var(--dim);text-decoration:none;}
 .ver{font:inherit;font-size:11px;color:var(--gold);background:none;border:0;padding:4px 2px;cursor:pointer;}
+.rc-prods{margin-top:10px;}
+.rc-prods a{color:var(--pri);text-decoration:none;}
+.rc-actions{flex-wrap:wrap;}
 .changelog{margin-top:14px;}
 .changelog summary{cursor:pointer;color:var(--txt);}
 .changelog ol{list-style:none;margin:8px 0 0;display:grid;gap:8px;}
@@ -492,6 +495,7 @@ const regShort = r => regions[r].name.split(' · ')[0].split(' & ')[0].replace('
 
 // Versionen (neueste zuerst)
 const changelog = [
+  ['1.4', '21.10.2026', 'Regionen: Liste aller Weingüter je Region (verlinkt) und getrennte Buttons für Rot, Weiß und Schaum-/Süßwein. Vorher führte der Button immer zu den Rotweinen, sodass reine Weißwein-Güter wie Longridge in der Region nicht auftauchten.'],
   ['1.3', '21.10.2026', 'Euro-Richtpreise jetzt für 307 von 332 Weinen, Süßweine mit Flaschengröße; Versionsnummer und diese Änderungsliste; Korrekturen zu Herkunft und Rebsorte (u. a. Glen Heatlie, Gabriëlskloof Elodie, Saga/Patatsfontein, Le Belle Rebelle, Kara-Tara, De Kleine Wijn Koop, Delheim Edelspatz, Waterford NLH)'],
   ['1.2', '21.10.2026', 'Euro-Richtpreise mit Quelle, Preisfilter und Preissortierung; alle Fünf-Sterne-Weine aus Platter\'s 2025 ergänzt (149 Rot, 140 Weiß); Korrekturen (Julien Schaal, Swartberg Wingerde, ArtiSons, Delaire Botmanskop, Keermont)'],
   ['1.1', '21.10.2026', 'Platter\'s 2025 integriert; Mobile-first-Neugestaltung; Weingut-Seiten und Verlinkung aus den Award-Listen'],
@@ -547,7 +551,11 @@ $('hero-p').textContent = `${cnt('rot')} Rot- und ${cnt('weiss')} Weißweine, To
 // REGIONEN
 // =============================================
 $('regList').innerHTML = Object.entries(regions).map(([k, r]) => {
-  const n = wines.filter(w => w.r === k).length;
+  const rw = wines.filter(w => w.r === k);
+  const prods = [...new Set(rw.map(w => w.p))].sort((a, b) => a.localeCompare(b, 'de'));
+  const VT = { red:['rot'], white:['weiss'], special:['cc','suess'] }; // views ist hier noch nicht definiert
+  const btns = Object.keys(VT).map(v => [v, rw.filter(w => VT[v].includes(w.c)).length]).filter(([, n]) => n)
+    .map(([v, n]) => `<button class="btn ${v === 'red' ? 'pri' : 'ghost'}" data-reg="${k}" data-view="${v}">${{ red:'Rot', white:'Weiß', special:'Schaum/Süß' }[v]} ${n}</button>`).join('');
   return `<article class="card">
     <div class="rc-name"><span class="dot" style="background:${r.color}"></span>${r.name}</div>
     <div class="rc-type">${r.type}</div>
@@ -555,18 +563,19 @@ $('regList').innerHTML = Object.entries(regions).map(([k, r]) => {
     <div class="rc-x" hidden>
       <div class="rc-meta"><b>Klima:</b> ${r.climate}<br><b>Rebsorten:</b> ${r.grapes}</div>
       <div class="rc-subs">${r.subs.map(s => `<span>${s}</span>`).join('')}</div>
+      <div class="rc-meta rc-prods"><b>Weingüter (${prods.length}):</b> ${prods.map(p => `<a href="#weingut/${slug(p)}">${p}</a>`).join(' · ')}</div>
     </div>
     <div class="rc-actions">
-      <button class="btn ghost" data-more>Details</button>
-      <button class="btn pri" data-reg="${k}">${n} Weine</button>
+      <button class="btn ghost" data-more>Weingüter &amp; Details</button>
+      ${btns}
     </div>
   </article>`;
 }).join('');
 $('regList').addEventListener('click', e => {
   const m = e.target.closest('[data-more]');
-  if (m) { const c = m.closest('.card'), x = c.querySelector('.rc-x'); x.hidden = !x.hidden; c.classList.toggle('open', !x.hidden); m.textContent = x.hidden ? 'Details' : 'Weniger'; return; }
+  if (m) { const c = m.closest('.card'), x = c.querySelector('.rc-x'); x.hidden = !x.hidden; c.classList.toggle('open', !x.hidden); m.textContent = x.hidden ? 'Weingüter & Details' : 'Weniger'; return; }
   const r = e.target.closest('[data-reg]');
-  if (r) jumpRegion(r.dataset.reg);
+  if (r) jumpRegion(r.dataset.reg, r.dataset.view);
 });
 
 // =============================================
@@ -697,8 +706,8 @@ $('f-apply').addEventListener('click', () => { Object.assign(st[cur], draft); cl
 $('f-reset').addEventListener('click', () => { Object.assign(draft, { reg:'all', grape:'all', type:'all', price:'all', prize:false }); renderSheet(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
 
-function jumpRegion(r) {
-  const v = Object.keys(views).find(v => wines.some(w => w.r === r && views[v].types.includes(w.c)));
+function jumpRegion(r, want) {
+  const v = want || Object.keys(views).find(v => wines.some(w => w.r === r && views[v].types.includes(w.c)));
   Object.keys(views).forEach(x => { if (wines.some(w => w.r === r && views[x].types.includes(w.c))) Object.assign(st[x], { reg:r, grape:'all', type:'all', price:'all', prize:false, q:'' }); });
   location.hash = views[v].hash;
 }
