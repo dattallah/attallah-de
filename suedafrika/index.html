@@ -89,6 +89,10 @@ tr.wrow.open .caret{transform:rotate(90deg);}
 tr.drow td{background:var(--surface2);border-bottom:1px solid var(--line);padding:12px 14px 16px;}
 .prof{font-size:11.5px;line-height:1.75;color:var(--txt);max-width:980px;}
 .prof-h{display:block;font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.pl-tag{display:inline-block;font-size:8px;letter-spacing:.15em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--div);color:var(--dim);white-space:nowrap;}
+.pl-woty{border-color:var(--gold);color:var(--on-pri);background:var(--gold);}
+.pl-5{border-color:var(--gold);color:var(--gold);}
+.pl-94{border-color:var(--pril);color:var(--pri);}
 .count{font-size:9px;letter-spacing:.2em;color:var(--dim);margin:0 0 10px;text-transform:uppercase;}
 .flag{color:var(--gold);cursor:help;font-size:10px;}
 
@@ -150,7 +154,8 @@ footer a{text-decoration:none;}
   <span class="nav-item" onclick="showPage('white',this)">Weißweine</span>
   <span class="nav-item" onclick="showPage('special',this)">Cap Classique &amp; Süß</span>
   <span class="nav-item" onclick="showPage('vintage',this)">Jahrgänge</span>
-  <span class="nav-item" onclick="showPage('awards',this)">Auszeichnungen 2026</span>
+  <span class="nav-item" onclick="showPage('awards',this)">Auszeichnungen</span>
+  <span class="nav-item" onclick="showPage('platter',this)">Platter's 2025</span>
 </nav>
 
 <!-- ========== HOME ========== -->
@@ -158,7 +163,7 @@ footer a{text-decoration:none;}
 <div class="hero">
   <div class="hero-badge">Western Cape · Wine of Origin · Cape Winelands</div>
   <h1 class="hero-title">Südafrika<em>Guide der großen Kap-Weine</em></h1>
-  <p class="hero-sub">Regionen · Top 100 Rot · Top 100 Weiß · Top 25 Cap Classique · 110 Weingüter · Jahrgänge 2009–2025 · Tim Atkin MW &amp; Platter's 2026</p>
+  <p class="hero-sub">Regionen · Top 100 Rot · Top 100 Weiß · Top 25 Cap Classique · 129 Weingüter · Platter's 2025 komplett · Jahrgänge 2009–2025 · Tim Atkin MW &amp; Platter's 2026</p>
   <div class="hero-line"></div>
   <div class="hero-cta">
     <span class="cta" onclick="showPage('regions')">→ Regionen</span>
@@ -196,7 +201,7 @@ footer a{text-decoration:none;}
 <div class="container" style="padding-top:40px;">
   <span class="sec-label">Vins Rouges · Ikonen &amp; Preisträger</span>
   <h2 class="sec-title">Die Top 100 Rotweine <em>Südafrikas</em></h2>
-  <p class="lead">Redaktionelle Rangliste: belegte Spitzenbewertungen 2025/26 zuerst, danach Ikonen und Referenzweine. Bei Preisträgern ist der ausgezeichnete Jahrgang angegeben, bei Klassikern geht es um den Wein über mehrere Jahrgänge. Punkte stehen nur dort, wo sie aus Tim Atkin MW oder Platter's belegt sind. <b>Klick auf eine Zeile öffnet das Profil des Weinguts.</b></p>
+  <p class="lead">Rangliste nach Belegen: zuerst die Spitzenbewertungen von Tim Atkin MW 2025/26 und die Wines of the Year von Platter's 2025/26, dann Fünf-Sterne-Weine (95+) und Highly Recommended (94) aus Platter's 2025, zuletzt Ikonen ohne aktuelle Listung. Bei Preisträgern ist der ausgezeichnete Jahrgang angegeben, bei Klassikern geht es um den Wein über mehrere Jahrgänge. Punkte stehen nur dort, wo sie aus Tim Atkin MW oder Platter's belegt sind. <b>Klick auf eine Zeile öffnet das Profil des Weinguts.</b></p>
   <div class="filter-bar" id="fb-red"></div>
   <div class="count" id="cnt-red"></div>
   <div class="tbl-wrap"><table><thead id="th-red"></thead><tbody id="tb-red"></tbody></table></div>
@@ -208,7 +213,7 @@ footer a{text-decoration:none;}
 <div class="container" style="padding-top:40px;">
   <span class="sec-label">Vins Blancs · Chenin, Chardonnay, Sauvignon &amp; Blends</span>
   <h2 class="sec-title">Die Top 100 Weißweine <em>Südafrikas</em></h2>
-  <p class="lead">Weißwein ist Südafrikas größte Stärke: Old-Vine Chenin Blanc aus Swartland und Citrusdal, Chardonnay aus Hemel-en-Aarde und Elgin, mineralischer Sauvignon Blanc aus Constantia, Durbanville und Elim sowie die Cape White Blends. Rangfolge redaktionell; <b>Klick auf eine Zeile öffnet das Profil des Weinguts.</b></p>
+  <p class="lead">Weißwein ist Südafrikas größte Stärke: Old-Vine Chenin Blanc aus Swartland und Citrusdal, Chardonnay aus Hemel-en-Aarde und Elgin, mineralischer Sauvignon Blanc aus Constantia, Durbanville und Elim sowie die Cape White Blends. Rangfolge wie bei den Rotweinen nach Belegen (Atkin, Platter's 2025/26); <b>Klick auf eine Zeile öffnet das Profil des Weinguts.</b></p>
   <div class="filter-bar" id="fb-white"></div>
   <div class="count" id="cnt-white"></div>
   <div class="tbl-wrap"><table><thead id="th-white"></thead><tbody id="tb-white"></tbody></table></div>
@@ -287,6 +292,11 @@ footer a{text-decoration:none;}
   <p class="lead">46. Ausgabe, erschienen im November 2025. Über 8.000 Weine; 316 Weine, Brandys und Husk Spirits erhielten 5 Sterne (≙ 95+ Punkte); 36 „Wines of the Year“ als jeweils bester Wein ihrer Kategorie. Zwei Weine erreichten mit 99 Punkten einen Rekord.</p>
   <div class="aw-grid" id="aw-platter26"></div>
 
+  <h3 class="sub-h">Platter's — <em>Wineries &amp; Wines of the Year 2025</em></h3>
+  <p class="lead">45. Ausgabe (Ende 2024). Die vollständigen Listen aller Fünf-Sterne-Weine und Empfehlungen stehen auf der Unterseite <a href="#" onclick="showPage('platter');return false;">Platter's 2025</a>.</p>
+  <div class="aw-grid" id="aw-platter25w"></div>
+  <div class="aw-grid" id="aw-platter25"></div>
+
   <h3 class="sub-h">Tim Atkin MW — <em>Report 2025 (Rückblick)</em></h3>
   <div class="aw-grid" id="aw-atkin25"></div>
 
@@ -294,14 +304,27 @@ footer a{text-decoration:none;}
 </div>
 </div>
 
+<!-- ========== PLATTER'S 2025 ========== -->
+<div id="page-platter" class="page">
+<div class="container" style="padding-top:40px;">
+  <span class="sec-label">Platter's South African Wine Guide 2025 · Printausgabe</span>
+  <h2 class="sec-title">Die Platter's-Listen <em>2025</em></h2>
+  <p class="lead">Alle Bestenlisten der Ausgabe 2025 (erschienen Ende 2024): die <b>Wines of the Year</b> (bester Wein je Kategorie), die <b>Five Stars</b> (95+ Punkte), die <b>Highly Recommended</b> (94 Punkte) sowie die Sonderlisten <b>Buy Now, Drink Later</b> (lohnt die Lagerung), <b>Hidden Gems</b> (besonders preiswert oder ungewöhnlich) und <b>Superquaffers</b> (sehr trinkig und günstig). Abgeschrieben aus der Printausgabe; Schreibweisen wie im Guide.</p>
+  <div class="filter-bar" id="fb-pl"></div>
+  <div class="count" id="cnt-pl"></div>
+  <div class="tbl-wrap"><table style="min-width:560px;"><thead><tr><th class="nosort">Liste</th><th class="nosort">Kategorie</th><th class="nosort">Wein</th><th class="nosort">Jahrgang</th></tr></thead><tbody id="tb-pl"></tbody></table></div>
+</div>
+</div>
+
 <footer>
   <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--cream);margin-bottom:10px;letter-spacing:.05em;">Südafrika — Guide der großen Kap-Weine</p>
-  <p>Quellen: <a href="https://timatkin.com" target="_blank" rel="noopener">Tim Atkin MW South Africa Report 2025 &amp; 2026</a> · <a href="https://wineonaplatter.com" target="_blank" rel="noopener">Platter's South African Wine Guide 2026</a> · <a href="https://www.sawis.co.za" target="_blank" rel="noopener">SAWIS</a> · <a href="https://www.vinpro.co.za" target="_blank" rel="noopener">VinPro</a> · <a href="https://www.wosa.co.za" target="_blank" rel="noopener">Wines of South Africa</a> · <a href="https://www.wine-searcher.com/vintage-2024-south+africa" target="_blank" rel="noopener">Wine-Searcher</a></p>
+  <p>Quellen: <a href="https://timatkin.com" target="_blank" rel="noopener">Tim Atkin MW South Africa Report 2025 &amp; 2026</a> · <a href="https://wineonaplatter.com" target="_blank" rel="noopener">Platter's South African Wine Guide 2025 (Print) &amp; 2026</a> · Amorim Cap Classique Challenge 2025 · <a href="https://www.sawis.co.za" target="_blank" rel="noopener">SAWIS</a> · <a href="https://www.vinpro.co.za" target="_blank" rel="noopener">VinPro</a> · <a href="https://www.wosa.co.za" target="_blank" rel="noopener">Wines of South Africa</a> · <a href="https://www.wine-searcher.com/vintage-2024-south+africa" target="_blank" rel="noopener">Wine-Searcher</a></p>
   <p style="font-size:9px;">Stand: Oktober 2026. Mit <span class="flag">◇</span> markierte Angaben (Lage/Rebsorte) sind nicht durch eine Primärquelle gesichert. Jahrgangspunkte sind redaktionelle Richtwerte. Keine Gewähr.</p>
   <p style="font-size:9px;margin-top:6px;"><a href="https://attallah.de">← attallah.de</a> · <a href="https://dattallah.github.io/bordeaux-weine/">Bordeaux — Guide des Grands Vins</a></p>
 </footer>
 
 <script src="data.js"></script>
+<script src="platter2025.js"></script>
 <script>
 // =============================================
 // NAVIGATION
@@ -402,7 +425,7 @@ function initView(v) {
   } else {
     html += `<label>Rebsorte:</label><select class="fbtn" data-f="grape" style="text-transform:none;letter-spacing:.05em;"><option value="all">Alle Rebsorten</option>${grapes.map(g => `<option>${g}</option>`).join('')}</select><span class="sep"></span>`;
   }
-  html += `<button class="fbtn" data-f="aw">★ Nur Preisträger 2025/26</button><span class="sep"></span>`;
+  html += `<button class="fbtn" data-f="aw">★ Nur 5 Sterne / Preisträger</button><span class="sep"></span>`;
   html += `<input type="text" class="fsearch" placeholder="Weingut oder Wein suchen…"><span class="sep"></span><button class="fbtn" data-f="all">▾ Alle Weingut-Profile</button>`;
   const fb = document.getElementById('fb-' + v);
   fb.innerHTML = html;
@@ -454,7 +477,7 @@ function renderView(v) {
     <td class="w-reg"><span class="app-dot" style="background:${regions[w.r].color};width:7px;height:7px;"></span>${regions[w.r].name}${w.u ? ' <span class="flag" title="Lage, Rebsorte oder Detail nicht durch eine Primärquelle gesichert">◇</span>' : ''}</td>
     <td><span class="grape">${w.g}</span></td>
     <td>${scBadge(w.pts)}</td>
-    <td class="aw ${w.aw ? '' : 'classic'}">${w.aw ? w.aw : 'Klassiker / Referenzwein'}</td>
+    <td class="aw ${w.aw ? '' : 'classic'}">${w.aw ? w.aw.split(' · ').join('<br>') : 'Klassiker / Referenzwein'}</td>
     <td class="w-note">${w.n}</td>
   </tr>
   <tr class="drow"${open ? '' : ' hidden'}><td></td><td colspan="6"><div class="prof"><span class="prof-h">Das Weingut · ${w.p}</span>${producers[w.p] || ''}</div></td></tr>`;
@@ -584,6 +607,45 @@ renderVintage();
 renderAw('aw-atkin26', awAtkin26);
 renderAw('aw-platter26', awPlatter26);
 renderAw('aw-atkin25', awAtkin25);
+renderAw('aw-platter25w', platter25Wineries);
+renderAw('aw-platter25', platter25.filter(x => x.list === 'woty').map(x => [x.cat, x.w, '']));
+
+// =============================================
+// PLATTER'S 2025 — LISTEN
+// =============================================
+const plLabel = { woty:'Wine of the Year', '5':'5 Sterne (95+)', '94':'Highly Rec. (94)', bndl:'Buy Now, Drink Later', gem:'Hidden Gem', quaff:'Superquaffer' };
+const plOrder = ['woty','5','94','bndl','gem','quaff'];
+const plState = { list:'woty', cat:'all', q:'' };
+function initPlatter() {
+  const fb = document.getElementById('fb-pl');
+  const cnt = l => platter25.filter(x => x.list === l).length;
+  fb.innerHTML = `<label>Liste:</label>` + plOrder.map(l => `<button class="fbtn${l === plState.list ? ' on' : ''}" data-l="${l}">${plLabel[l]} (${cnt(l)})</button>`).join('') +
+    `<button class="fbtn" data-l="all">Alle (${platter25.length})</button><span class="sep"></span>` +
+    `<label>Kategorie:</label><select class="fbtn" id="pl-cat" style="text-transform:none;letter-spacing:.05em;"></select><span class="sep"></span>` +
+    `<input type="text" class="fsearch" placeholder="Wein oder Weingut suchen…">`;
+  fb.querySelectorAll('button[data-l]').forEach(b => b.addEventListener('click', () => {
+    plState.list = b.dataset.l; plState.cat = 'all';
+    fb.querySelectorAll('button[data-l]').forEach(x => x.classList.toggle('on', x === b));
+    fillCats(); renderPlatter();
+  }));
+  document.getElementById('pl-cat').addEventListener('change', e => { plState.cat = e.target.value; renderPlatter(); });
+  fb.querySelector('input').addEventListener('input', e => { plState.q = e.target.value.toLowerCase(); renderPlatter(); });
+  fillCats(); renderPlatter();
+}
+function fillCats() {
+  const cats = [...new Set(platter25.filter(x => plState.list === 'all' || x.list === plState.list).map(x => x.cat))];
+  document.getElementById('pl-cat').innerHTML = `<option value="all">Alle Kategorien</option>` + cats.map(c => `<option>${c}</option>`).join('');
+}
+function renderPlatter() {
+  const list = platter25.filter(x => (plState.list === 'all' || x.list === plState.list) && (plState.cat === 'all' || x.cat === plState.cat) && (!plState.q || x.w.toLowerCase().includes(plState.q)));
+  document.getElementById('cnt-pl').textContent = list.length + ' Einträge';
+  document.getElementById('tb-pl').innerHTML = list.map(x => {
+    const m = x.w.match(/^(.*?)\s+((?:19|20)\d\d|NV)$/);
+    const name = m ? m[1] : x.w, yr = m ? m[2] : '—';
+    return `<tr><td><span class="pl-tag pl-${x.list}">${plLabel[x.list]}</span></td><td class="w-reg">${x.cat}</td><td><span class="w-prod" style="font-size:15px;">${name}</span></td><td class="yr-cell" style="font-size:16px;">${yr}</td></tr>`;
+  }).join('') || '<tr><td colspan="4" style="color:var(--dim);">Keine Einträge.</td></tr>';
+}
+initPlatter();
 </script>
 </body>
 </html>
