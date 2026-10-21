@@ -2,179 +2,272 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F8F5EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131814" media="(prefers-color-scheme: dark)">
 <title>Südafrika — Guide der großen Kap-Weine</title>
-<meta name="description" content="Die wichtigsten Weinregionen Südafrikas, Top-Rot- und Weißweine, Cap Classique, Süßweine, Jahrgänge und die Auszeichnungen von Tim Atkin MW und Platter's.">
+<meta name="description" content="Die wichtigsten Weinregionen Südafrikas, Top 100 Rot- und Weißweine, Top 25 Cap Classique, Jahrgänge und die Auszeichnungen von Tim Atkin MW und Platter's.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F5A4A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23F3E7CF' text-anchor='middle'%3EZA%3C/text%3E%3C/svg%3E">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--pri:#1F5A4A;--pril:#2E7560;--prid:#123A2F;--red:#8A2438;--gold:#9A6A1C;--goldl:#B07F2C;--cream:#1E2620;--creamd:#4E5A4A;--dark:#F8F5EC;--darkc:#FFFFFF;--surface2:#EFF1E6;--on-pri:#F5F0E2;--txt:#3C443A;--dim:#6E7766;--div:rgba(31,90,74,0.17);--line:rgba(31,60,40,.08);--hero1:#DCEBDF;--hero2:#F5F1E4;--navbg:rgba(248,245,236,0.9);}
-@media (prefers-color-scheme: dark){:root{--pri:#3E9A7E;--pril:#4FB592;--prid:#123A2F;--red:#D66A7C;--gold:#D9A94E;--goldl:#E6BC68;--cream:#F1ECDD;--creamd:#C2C6B4;--dark:#131814;--darkc:#1B221D;--surface2:#222B25;--on-pri:#0F1511;--txt:#D3D6CA;--dim:#98A091;--div:rgba(120,190,160,0.18);--line:rgba(200,230,210,.07);--hero1:#1E3229;--hero2:#151B17;--navbg:rgba(19,24,20,0.9);}}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Montserrat',sans-serif;background:var(--dark);color:var(--txt);font-size:12.5px;line-height:1.6;overflow-x:hidden;}
+/* =============================================
+   TOKENS — mobile first
+   ============================================= */
+:root{
+  --pri:#1F5A4A;--pril:#2E7560;--gold:#9A6A1C;--goldl:#B07F2C;--wine:#8A2438;
+  --ink:#1E2620;--txt:#3C443A;--dim:#646D5C;--bg:#F8F5EC;--card:#FFFFFF;--soft:#EFF1E6;
+  --on-pri:#F5F0E2;--line:rgba(31,90,74,.14);--line2:rgba(31,60,40,.08);
+  --hero1:#DCEBDF;--hero2:#F5F1E4;--bar:rgba(248,245,236,.92);--shadow:0 1px 2px rgba(20,40,30,.06),0 4px 14px rgba(20,40,30,.05);
+  --r:14px;--gap:16px;--safe-b:env(safe-area-inset-bottom,0px);
+  --tab-h:64px;--app-h:52px;
+}
+@media (prefers-color-scheme: dark){:root{
+  --pri:#3E9A7E;--pril:#4FB592;--gold:#D9A94E;--goldl:#E6BC68;--wine:#D66A7C;
+  --ink:#F1ECDD;--txt:#D3D6CA;--dim:#A0A898;--bg:#131814;--card:#1B221D;--soft:#222B25;
+  --on-pri:#0F1511;--line:rgba(120,190,160,.16);--line2:rgba(200,230,210,.07);
+  --hero1:#1E3229;--hero2:#151B17;--bar:rgba(19,24,20,.92);--shadow:none;
+}}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--txt);font-size:15px;line-height:1.55;overflow-x:hidden;
+  padding-top:var(--app-h);padding-bottom:calc(var(--tab-h) + var(--safe-b));}
 a{color:var(--gold);}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
+.serif{font-family:'Cormorant Garamond',Georgia,serif;}
+[hidden]{display:none!important;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:center;align-items:center;background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--div);overflow-x:auto;scrollbar-width:none;}
-nav::-webkit-scrollbar{display:none;}
-.nav-item{padding:14px 18px;font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--dim);text-decoration:none;cursor:pointer;transition:color .25s,background .25s;border-right:1px solid var(--div);white-space:nowrap;}
-.nav-item:first-child{border-left:1px solid var(--div);}
-.nav-item:hover,.nav-item.active{color:var(--gold);background:rgba(154,106,28,0.09);}
+/* =============================================
+   APP BAR (oben) + TAB BAR (unten, ab 900px oben)
+   ============================================= */
+.appbar{position:fixed;top:0;left:0;right:0;height:var(--app-h);z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;
+  background:var(--bar);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.brand{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap;}
+.brand em{color:var(--gold);font-style:italic;font-weight:400;}
+.appbar-r{font-size:12px;color:var(--dim);text-decoration:none;white-space:nowrap;}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(5,1fr);
+  height:calc(var(--tab-h) + var(--safe-b));padding-bottom:var(--safe-b);background:var(--bar);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:500;color:var(--dim);text-decoration:none;}
+.tab svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.tab.on{color:var(--pri);}
+.tab.on svg{stroke-width:2;}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;padding:0 20px;background:radial-gradient(ellipse 80% 60% at 50% -10%,var(--hero1) 0%,var(--hero2) 45%,var(--dark) 100%);}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(transparent,var(--dark));pointer-events:none;}
-.hero-badge{font-size:10px;letter-spacing:.55em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:0;animation:fu .9s ease forwards .3s;}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(58px,12vw,140px);font-weight:300;letter-spacing:.05em;line-height:.88;color:var(--cream);opacity:0;animation:fu .9s ease forwards .6s;}
-.hero-title em{font-style:italic;color:var(--goldl);display:block;font-size:.34em;letter-spacing:.24em;margin-top:18px;}
-.hero-sub{font-size:9.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--dim);margin-top:36px;opacity:0;animation:fu .9s ease forwards .9s;max-width:900px;line-height:2;}
-.hero-line{width:1px;height:70px;background:linear-gradient(var(--gold),transparent);margin:36px auto 0;opacity:0;animation:fu .9s ease forwards 1.1s;}
-.hero-cta{position:absolute;bottom:40px;z-index:2;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:0 16px;}
-.cta{cursor:pointer;font-size:9px;letter-spacing:.3em;text-transform:uppercase;padding:11px 22px;border:1px solid var(--div);color:var(--dim);background:color-mix(in srgb,var(--darkc) 60%,transparent);transition:color .2s;}
-.cta:hover{color:var(--gold);}
-.cta.main{background:var(--pri);border-color:var(--pril);color:var(--on-pri);}
-@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+/* =============================================
+   LAYOUT
+   ============================================= */
+.page{display:none;padding:20px 16px 32px;max-width:1240px;margin:0 auto;}
+.page.on{display:block;}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--ink);line-height:1.08;}
+h2.title{font-size:34px;margin-bottom:12px;}
+h2.title em,h1 em{font-style:italic;color:var(--gold);}
+.lead{color:var(--dim);font-size:15px;line-height:1.65;margin-bottom:16px;max-width:70ch;}
+.info{margin:0 0 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);}
+.info summary{list-style:none;padding:12px 14px;font-size:13px;font-weight:600;color:var(--pri);cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.info summary::-webkit-details-marker{display:none;}
+.info summary::after{content:'+';font-size:18px;font-weight:400;}
+.info[open] summary::after{content:'–';}
+.info div{padding:0 14px 14px;font-size:14px;color:var(--dim);line-height:1.65;}
+.h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);margin:26px 0 6px;line-height:1.15;}
+.h3 em{color:var(--gold);}
 
-/* FACTS */
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;margin:0 0 50px;}
-.fact{background:var(--darkc);border:1px solid var(--div);padding:20px 22px;}
-.fact b{display:block;font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--cream);line-height:1.1;}
-.fact span{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);}
+/* =============================================
+   CHIPS, SEGMENTED, SEARCH
+   ============================================= */
+.seg{display:flex;gap:4px;padding:4px;background:var(--soft);border-radius:12px;margin-bottom:12px;overflow-x:auto;scrollbar-width:none;}
+.seg::-webkit-scrollbar{display:none;}
+.seg button{flex:1 0 auto;padding:9px 12px;border-radius:9px;font-size:13px;font-weight:600;color:var(--dim);white-space:nowrap;}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:var(--shadow);}
+.seg button small{font-weight:500;opacity:.7;margin-left:3px;}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 16px 4px;margin:0 -16px 12px;scroll-padding:16px;}
+.chips::-webkit-scrollbar{display:none;}
+.chip{flex:0 0 auto;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:13px;font-weight:500;color:var(--txt);white-space:nowrap;}
+.chip.on{background:var(--pri);border-color:var(--pri);color:var(--on-pri);}
+.chip.x::after{content:' ×';font-weight:600;}
+.tools{position:sticky;top:var(--app-h);z-index:20;background:var(--bg);margin:0 -16px;padding:8px 16px 4px;}
+.searchrow{display:flex;gap:8px;margin-bottom:8px;}
+.search{flex:1;min-width:0;height:44px;padding:0 14px 0 40px;border:1px solid var(--line);border-radius:12px;background:var(--card) no-repeat 13px 50%/18px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23889080' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
+  font:inherit;font-size:15px;color:var(--txt);outline:none;}
+.search:focus{border-color:var(--gold);}
+.fbtn{height:44px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:14px;font-weight:600;color:var(--pri);display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.fbtn .badge{min-width:20px;height:20px;border-radius:10px;background:var(--pri);color:var(--on-pri);font-size:11px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px;}
+.select{height:36px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);font:inherit;font-size:13px;color:var(--txt);max-width:100%;}
+.resultbar{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--dim);margin:2px 0 12px;}
 
-/* PAGES */
-.page{display:none;padding:80px 0 40px;}
-.page.active{display:block;}
-#page-home{padding-top:0;}
-.container{max-width:1500px;margin:0 auto;padding:0 30px;}
-.sec-label{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;}
-.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,56px);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:36px;}
-.sec-title em{font-style:italic;color:var(--goldl);}
-.lead{color:var(--dim);font-size:11px;margin-bottom:28px;max-width:820px;line-height:1.8;}
-
-/* FILTER BAR */
-.filter-bar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;align-items:center;}
-.filter-bar label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);margin-right:4px;}
-.fbtn{font-size:9px;letter-spacing:.25em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--div);background:transparent;color:var(--dim);cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .2s;border-radius:1px;}
-.fbtn:hover,.fbtn.on{background:var(--pri);border-color:var(--pril);color:var(--on-pri);}
-.sep{width:1px;height:20px;background:var(--div);margin:0 6px;}
-input[type=text].fsearch{font-size:11px;padding:7px 14px;border:1px solid var(--div);background:var(--darkc);color:var(--txt);font-family:'Montserrat',sans-serif;outline:none;min-width:200px;border-radius:1px;}
-input[type=text].fsearch::placeholder{color:var(--dim);}
-input[type=text].fsearch:focus{border-color:var(--gold);}
-
-/* TABLE */
-.tbl-wrap{overflow-x:auto;border:1px solid var(--div);}
-table{width:100%;border-collapse:collapse;min-width:760px;}
-thead tr{background:rgba(154,106,28,.06);border-bottom:1px solid var(--div);}
-th{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);padding:11px 14px;text-align:left;white-space:nowrap;cursor:pointer;user-select:none;}
-th.nosort{cursor:default;}
-.vt th{white-space:normal;line-height:1.5;vertical-align:bottom;}
-.vt td{padding:9px 10px;}
-th .sort-arrow{margin-left:4px;opacity:.4;}
-td{padding:9px 14px;border-bottom:1px solid var(--line);font-size:11.5px;color:var(--txt);vertical-align:middle;}
-tr:hover td{background:rgba(31,90,74,.04);}
-tbody tr:last-child td{border-bottom:none;}
-.w-prod{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--cream);line-height:1.2;}
-.w-name{font-size:11px;color:var(--txt);}
-.w-reg{font-size:10px;color:var(--dim);}
-.w-note{font-size:10.5px;color:var(--dim);max-width:340px;line-height:1.55;}
-.grape{display:inline-block;font-size:9px;letter-spacing:.08em;color:var(--creamd);background:rgba(31,90,74,.06);border:1px solid var(--div);padding:2px 7px;white-space:nowrap;}
-.aw{font-size:10px;line-height:1.45;color:var(--txt);}
-.aw .tag{display:inline-block;font-size:8px;letter-spacing:.18em;text-transform:uppercase;padding:2px 6px;margin-right:4px;border:1px solid var(--gold);color:var(--gold);}
-.aw.classic{color:var(--dim);font-style:italic;}
-.rank{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold);font-weight:600;width:44px;}
-tr.wrow{cursor:pointer;}
-.caret{display:inline-block;font-size:10px;color:var(--gold);margin-right:7px;transition:transform .2s;}
-tr.wrow.open .caret{transform:rotate(90deg);}
-tr.drow td{background:var(--surface2);border-bottom:1px solid var(--line);padding:12px 14px 16px;}
-.prof{font-size:11.5px;line-height:1.75;color:var(--txt);max-width:980px;}
-.prof-h{display:block;font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
-.pl-tag{display:inline-block;font-size:8px;letter-spacing:.15em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--div);color:var(--dim);white-space:nowrap;}
-.pl-woty{border-color:var(--gold);color:var(--on-pri);background:var(--gold);}
-.pl-5{border-color:var(--gold);color:var(--gold);}
-.pl-94{border-color:var(--pril);color:var(--pri);}
-.count{font-size:9px;letter-spacing:.2em;color:var(--dim);margin:0 0 10px;text-transform:uppercase;}
-.flag{color:var(--gold);cursor:help;font-size:10px;}
+/* =============================================
+   KARTEN
+   ============================================= */
+.list{display:grid;gap:12px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);}
+.wc-top{display:flex;gap:12px;align-items:flex-start;}
+.wc-rank{flex:0 0 auto;min-width:30px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold);line-height:1.1;}
+.wc-head{flex:1;min-width:0;}
+.wc-prod{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--ink);line-height:1.15;}
+.wc-wine{font-size:15px;color:var(--txt);margin-top:1px;}
+.wc-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:13px;color:var(--dim);margin:10px 0 0;}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:1px;}
+.grape{padding:2px 8px;border-radius:6px;background:var(--soft);color:var(--txt);font-size:12px;}
+.flag{color:var(--gold);font-size:12px;}
+.wc-aw{list-style:none;display:grid;gap:5px;margin:12px 0 0;}
+.wc-aw li{font-size:13px;line-height:1.4;padding:6px 10px;border-radius:8px;background:var(--soft);color:var(--txt);}
+.wc-aw li.gold{background:rgba(201,168,76,.16);color:var(--ink);}
+.wc-aw li.green{background:rgba(46,117,96,.12);}
+.wc-aw li.plain{background:transparent;padding:0;color:var(--dim);font-style:italic;}
+.wc-note{font-size:14px;color:var(--dim);line-height:1.6;margin-top:12px;}
+.more{margin-top:12px;width:100%;display:flex;justify-content:space-between;align-items:center;padding:11px 0 0;border-top:1px solid var(--line2);font-size:13px;font-weight:600;color:var(--pri);text-align:left;}
+.more::after{content:'';width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;margin-right:4px;}
+.more[aria-expanded="true"]::after{transform:rotate(-135deg);}
+.prof{font-size:14px;line-height:1.7;color:var(--txt);padding-top:10px;}
+.empty{padding:28px 16px;text-align:center;color:var(--dim);font-size:14px;}
 
 /* SCORE */
-.sc{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;font-size:10.5px;font-weight:600;flex-shrink:0;}
+.sc{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;font-size:14px;font-weight:600;}
 .s96{background:#FBEEC7;color:#7A5710;border:1.5px solid #C9A84C;}
 .s93{background:#E5F0E4;color:#245A3E;border:1.5px solid #4E9A72;}
 .s90{background:#EDF1E6;color:#3E5A34;border:1.5px solid #7E9A68;}
 .s87{background:#F1EEE2;color:#5E5638;border:1.5px solid #A89A70;}
 .s0{background:#EEEDE8;color:#86847C;border:1.5px solid #C4C2B8;}
-.yr-cell{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--cream);white-space:nowrap;}
-.legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:22px;padding:14px 18px;background:var(--darkc);border:1px solid var(--div);align-items:center;}
-.legend > span{display:flex;align-items:center;gap:7px;font-size:10px;color:var(--dim);}
+.sc.sm{width:34px;height:34px;font-size:12.5px;}
 
-/* REGION CARDS */
-.app-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:2px;}
-.app-card{background:var(--darkc);border:1px solid var(--div);padding:24px 26px;transition:background .25s;cursor:pointer;}
-.app-card:hover{background:var(--surface2);}
-.app-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle;}
-.app-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--cream);margin-bottom:4px;}
-.app-type{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.app-desc{font-size:11.5px;color:var(--dim);line-height:1.7;margin-bottom:10px;}
-.app-meta{font-size:10px;color:var(--txt);line-height:1.6;}
-.app-meta b{font-weight:600;color:var(--cream);}
-.app-subs{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;padding-top:10px;border-top:1px solid var(--div);}
-.app-sub{font-size:9px;letter-spacing:.12em;color:var(--creamd);background:rgba(31,90,74,.05);border:1px solid var(--div);padding:3px 8px;}
-.app-link{margin-top:12px;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);}
+/* =============================================
+   HOME
+   ============================================= */
+.hero{margin:-20px -16px 20px;padding:40px 20px 30px;text-align:center;background:radial-gradient(ellipse 120% 80% at 50% 0%,var(--hero1) 0%,var(--hero2) 55%,var(--bg) 100%);}
+.hero .eyebrow{letter-spacing:.2em;}
+.hero h1{font-size:56px;font-weight:400;margin:6px 0 4px;}
+.hero h1 em{display:block;font-size:22px;letter-spacing:.06em;margin-top:6px;}
+.hero p{font-size:14px;color:var(--dim);max-width:46ch;margin:14px auto 0;}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+.tile{display:flex;flex-direction:column;justify-content:space-between;min-height:104px;padding:14px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);text-align:left;}
+.tile b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--ink);line-height:1.1;}
+.tile span{font-size:12.5px;color:var(--dim);}
+.tile.main{background:var(--pri);border-color:var(--pri);}
+.tile.main b,.tile.main span{color:var(--on-pri);}
+.facts{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -16px 20px;padding:2px 16px;scroll-snap-type:x mandatory;}
+.facts::-webkit-scrollbar{display:none;}
+.fact{flex:0 0 72%;scroll-snap-align:start;padding:16px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);}
+.fact b{display:block;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--ink);line-height:1.1;margin-bottom:4px;}
+.fact span{font-size:13px;color:var(--dim);}
 
-/* AWARDS */
-.aw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px;margin-bottom:40px;}
-.aw-card{background:var(--darkc);border:1px solid var(--div);padding:18px 20px;position:relative;overflow:hidden;}
-.aw-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);}
-.aw-cat{font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
-.aw-name{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--cream);line-height:1.25;margin-bottom:3px;}
-.aw-sub{font-size:10px;color:var(--dim);line-height:1.55;}
-.sub-h{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--cream);margin:10px 0 18px;}
-.sub-h em{font-style:italic;color:var(--goldl);}
-.divider{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:40px 0;}
-.note-box{border:1px dashed var(--div);padding:14px 18px;font-size:10.5px;color:var(--dim);line-height:1.7;margin-bottom:24px;max-width:900px;}
+/* REGIONEN */
+.rc-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);line-height:1.15;display:flex;align-items:center;gap:8px;}
+.rc-name .dot{width:11px;height:11px;margin:0;}
+.rc-type{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--gold);margin:4px 0 8px;}
+.rc-desc{font-size:14px;line-height:1.6;color:var(--dim);}
+.card:not(.open) .rc-desc{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+.rc-meta{font-size:14px;line-height:1.6;margin-top:10px;}
+.rc-meta b{color:var(--ink);font-weight:600;}
+.rc-subs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.rc-subs span{font-size:12px;padding:3px 9px;border-radius:6px;background:var(--soft);}
+.rc-actions{display:flex;gap:8px;margin-top:14px;}
+.btn{flex:1;height:42px;border-radius:10px;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+.btn.pri{background:var(--pri);color:var(--on-pri);}
+.btn.ghost{border:1px solid var(--line);color:var(--pri);}
 
-footer{border-top:1px solid var(--div);padding:32px 30px;text-align:center;color:var(--dim);font-size:9.5px;letter-spacing:.15em;margin-top:60px;line-height:2;}
-footer a{text-decoration:none;}
+/* JAHRGÄNGE */
+.vc-top{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.vc-year{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--ink);line-height:1;}
+.vc-q{font-size:12px;font-weight:600;color:var(--gold);margin-top:4px;}
+.vc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:14px 0 0;}
+.vc-grid div{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;font-size:11px;line-height:1.25;color:var(--dim);}
+.vc-note{font-size:14px;color:var(--dim);line-height:1.6;margin-top:12px;}
+.vc-drink{font-size:13px;margin-top:8px;color:var(--txt);}
+.vc-drink b{font-weight:600;}
+.legend{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;font-size:12px;color:var(--dim);margin:0 -16px 12px;padding:0 16px;}
+.legend::-webkit-scrollbar{display:none;}
+.legend span{display:flex;align-items:center;gap:6px;white-space:nowrap;}
 
-@media (max-width:760px){
-  nav{justify-content:flex-start;}
-  .nav-item{padding:13px 12px;letter-spacing:.2em;}
-  .container{padding:0 16px;}
-  input[type=text].fsearch{min-width:0;width:100%;}
-  .hero-cta{position:static;margin-top:36px;}
+/* PREISE */
+.ac{border-left:3px solid var(--gold);}
+.ac-cat{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.ac-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--ink);line-height:1.2;}
+.ac-sub{font-size:13.5px;color:var(--dim);line-height:1.55;margin-top:4px;}
+.pl-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line2);}
+.pl-row:last-child{border-bottom:0;}
+.pl-name{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--ink);line-height:1.2;}
+.pl-cat{font-size:12.5px;color:var(--dim);margin-top:2px;}
+.pl-yr{flex:0 0 auto;font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--gold);font-weight:600;}
+.tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.04em;padding:2px 7px;border-radius:5px;margin-right:6px;vertical-align:1px;background:var(--soft);color:var(--dim);}
+.tag.woty{background:var(--gold);color:#fff;}
+.tag.t5{background:rgba(201,168,76,.2);color:var(--ink);}
+.tag.t94{background:rgba(46,117,96,.14);color:var(--pri);}
+.pl-box{padding:4px 16px;}
+
+/* FILTER SHEET */
+.scrim{position:fixed;inset:0;z-index:90;background:rgba(10,15,12,.45);opacity:0;pointer-events:none;transition:opacity .2s;}
+.scrim.on{opacity:1;pointer-events:auto;}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:100;max-height:86vh;display:flex;flex-direction:column;background:var(--bg);border-radius:20px 20px 0 0;transform:translateY(105%);transition:transform .25s ease;padding-bottom:var(--safe-b);}
+.sheet.on{transform:none;}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;padding:16px 16px 8px;}
+.sheet-h b{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--ink);}
+.sheet-h button{font-size:14px;font-weight:600;color:var(--pri);}
+.sheet-b{overflow-y:auto;padding:0 16px 8px;}
+.sheet-b h4{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin:16px 0 8px;}
+.sheet-b .wrap{display:flex;flex-wrap:wrap;gap:8px;}
+.switch{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:14px;margin-top:16px;}
+.switch input{width:22px;height:22px;accent-color:var(--pri);}
+.sheet-f{padding:12px 16px 16px;border-top:1px solid var(--line);}
+
+footer{max-width:1240px;margin:0 auto;padding:24px 16px 32px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.7;color:var(--dim);}
+footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);font-weight:600;display:block;margin-bottom:6px;}
+
+/* =============================================
+   TABLET & DESKTOP (progressive Erweiterung)
+   ============================================= */
+@media (min-width:640px){
+  .tiles{grid-template-columns:repeat(3,1fr);}
+  .fact{flex-basis:40%;}
+  .list.cols{grid-template-columns:repeat(2,1fr);}
+  .hero h1{font-size:84px;}
+  h2.title{font-size:44px;}
+}
+@media (min-width:900px){
+  :root{--tab-h:0px;--app-h:60px;}
+  body{padding-bottom:0;}
+  .appbar{padding:0 28px;}
+  .tabbar{top:0;bottom:auto;left:auto;right:20px;height:var(--app-h);z-index:60;display:flex;align-items:center;padding:0;background:none;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;grid-template-columns:none;gap:4px;}
+  .tab{flex-direction:row;gap:7px;padding:8px 12px;border-radius:10px;font-size:13.5px;}
+  .tab svg{width:18px;height:18px;}
+  .tab.on{background:var(--soft);}
+  .appbar-r{display:none;}
+  .page{padding:32px 28px 48px;}
+  .hero{margin:-32px -28px 28px;padding:72px 28px 56px;}
+  .hero h1{font-size:110px;}
+  .hero h1 em{font-size:28px;}
+  .tiles{grid-template-columns:repeat(6,1fr);}
+  .facts{display:grid;grid-template-columns:repeat(5,1fr);overflow:visible;margin:0 0 24px;padding:0;}
+  .chips{flex-wrap:wrap;overflow:visible;margin:0 0 12px;padding:0;}
+  .legend{flex-wrap:wrap;margin:0 0 12px;padding:0;}
+  .tools{margin:0;padding:10px 0 4px;}
+  .list.cols{grid-template-columns:repeat(3,1fr);}
+  .sheet{left:auto;right:24px;bottom:24px;width:420px;border-radius:20px;transform:translateY(calc(100% + 40px));}
+  footer{padding:28px;}
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <span class="nav-item active" onclick="showPage('home',this)">Südafrika</span>
-  <span class="nav-item" onclick="showPage('regions',this)">Regionen</span>
-  <span class="nav-item" onclick="showPage('red',this)">Rotweine</span>
-  <span class="nav-item" onclick="showPage('white',this)">Weißweine</span>
-  <span class="nav-item" onclick="showPage('special',this)">Cap Classique &amp; Süß</span>
-  <span class="nav-item" onclick="showPage('vintage',this)">Jahrgänge</span>
-  <span class="nav-item" onclick="showPage('awards',this)">Auszeichnungen</span>
-  <span class="nav-item" onclick="showPage('platter',this)">Platter's 2025</span>
+<header class="appbar">
+  <a class="brand" href="#start">Kap-<em>Weine</em></a>
+  <a class="appbar-r" href="https://attallah.de">attallah.de</a>
+</header>
+<nav class="tabbar" aria-label="Hauptnavigation">
+    <a class="tab" href="#start" data-p="start"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>Start</a>
+    <a class="tab" href="#regionen" data-p="regionen"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Regionen</a>
+    <a class="tab" href="#weine" data-p="weine"><svg viewBox="0 0 24 24"><path d="M8 3h8l-.5 6a3.5 3.5 0 0 1-7 0z"/><path d="M12 13v7M8.5 21h7"/></svg>Weine</a>
+    <a class="tab" href="#jahrgaenge" data-p="jahrgaenge"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Jahrgänge</a>
+    <a class="tab" href="#preise" data-p="preise"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/></svg>Preise</a>
 </nav>
 
-<!-- ========== HOME ========== -->
-<div id="page-home" class="page active">
-<div class="hero">
-  <div class="hero-badge">Western Cape · Wine of Origin · Cape Winelands</div>
-  <h1 class="hero-title">Südafrika<em>Guide der großen Kap-Weine</em></h1>
-  <p class="hero-sub">Regionen · Top 100 Rot · Top 100 Weiß · Top 25 Cap Classique · 129 Weingüter · Platter's 2025 komplett · Jahrgänge 2009–2025 · Tim Atkin MW &amp; Platter's 2026</p>
-  <div class="hero-line"></div>
-  <div class="hero-cta">
-    <span class="cta" onclick="showPage('regions')">→ Regionen</span>
-    <span class="cta main" onclick="showPage('red')">→ Top-Rotweine</span>
-    <span class="cta" onclick="showPage('white')">→ Top-Weißweine</span>
-    <span class="cta" onclick="showPage('vintage')">→ Jahrgänge</span>
+<!-- ========== START ========== -->
+<main>
+<section id="p-start" class="page">
+  <div class="hero">
+    <div class="eyebrow">Western Cape · Wine of Origin</div>
+    <h1>Südafrika<em>Guide der großen Kap-Weine</em></h1>
+    <p>Top 100 Rot- und Weißweine, Top 25 Cap Classique, 129 Weingüter, Jahrgänge und alle Preise von Tim Atkin MW und Platter's.</p>
   </div>
-</div>
-<div class="container">
-  <span class="sec-label">Das Kap in Zahlen</span>
-  <h2 class="sec-title">Alte Welt trifft <em>Neue Welt</em></h2>
+  <div class="tiles" id="tiles"></div>
+  <div class="eyebrow">Das Kap in Zahlen</div>
   <div class="facts">
     <div class="fact"><b>1659</b><span>Erster Wein am Kap (Jan van Riebeeck)</span></div>
     <div class="fact"><b>≈ 86.500 ha</b><span>Rebfläche 2025 (SAWIS)</span></div>
@@ -183,165 +276,101 @@ footer a{text-decoration:none;}
     <div class="fact"><b>Constantia</b><span>Vin de Constance — Napoleons Süßwein</span></div>
   </div>
   <p class="lead">Südafrika ist das älteste Weinland der Neuen Welt und gleichzeitig eines der dynamischsten. Zwei Ozeane, der kalte Benguela-Strom und der „Cape Doctor“ (der kräftige Südostwind) halten die Trauben trotz Sonne frisch. Alte Buschreben (Old Vines, ab 35 Jahren zertifiziert) aus Chenin Blanc, Cinsault und Grenache sind das Markenzeichen der neuen Generation in Swartland und Citrusdal. Stellenbosch steht für Cabernet Sauvignon und Bordeaux-Blends von Weltklasse, Hemel-en-Aarde und Elgin für kühlen Pinot Noir und Chardonnay.</p>
-</div>
-</div>
+</section>
 
 <!-- ========== REGIONEN ========== -->
-<div id="page-regions" class="page">
-<div class="container" style="padding-top:40px;">
-  <span class="sec-label">Wine of Origin · Regionen, Distrikte &amp; Wards</span>
-  <h2 class="sec-title">Die wichtigsten Weinregionen <em>am Kap</em></h2>
-  <p class="lead">Das Wine-of-Origin-System (seit 1973) gliedert sich in Geographical Unit (z. B. Western Cape) → Region (z. B. Coastal Region, Cape South Coast) → District (z. B. Stellenbosch) → Ward (z. B. Simonsberg-Stellenbosch). Ein Klick auf eine Karte zeigt die Top-Weine dieser Region.</p>
-  <div class="app-grid" id="regGrid"></div>
-</div>
-</div>
+<section id="p-regionen" class="page">
+  <div class="eyebrow">Wine of Origin</div>
+  <h2 class="title">Die Weinregionen <em>am Kap</em></h2>
+  <details class="info"><summary>Wie das Herkunftssystem funktioniert</summary><div>Das Wine-of-Origin-System (seit 1973) gliedert sich in Geographical Unit (z. B. Western Cape) → Region (z. B. Coastal Region, Cape South Coast) → District (z. B. Stellenbosch) → Ward (z. B. Simonsberg-Stellenbosch).</div></details>
+  <div class="list cols" id="regList"></div>
+</section>
 
-<!-- ========== ROTWEINE ========== -->
-<div id="page-red" class="page">
-<div class="container" style="padding-top:40px;">
-  <span class="sec-label">Vins Rouges · Ikonen &amp; Preisträger</span>
-  <h2 class="sec-title">Die Top 100 Rotweine <em>Südafrikas</em></h2>
-  <p class="lead">Rangliste nach Belegen: zuerst die Spitzenbewertungen von Tim Atkin MW 2025/26 und die Wines of the Year von Platter's 2025/26, dann Fünf-Sterne-Weine (95+) und Highly Recommended (94) aus Platter's 2025, zuletzt Ikonen ohne aktuelle Listung. Bei Preisträgern ist der ausgezeichnete Jahrgang angegeben, bei Klassikern geht es um den Wein über mehrere Jahrgänge. Punkte stehen nur dort, wo sie aus Tim Atkin MW oder Platter's belegt sind. <b>Klick auf eine Zeile öffnet das Profil des Weinguts.</b></p>
-  <div class="filter-bar" id="fb-red"></div>
-  <div class="count" id="cnt-red"></div>
-  <div class="tbl-wrap"><table><thead id="th-red"></thead><tbody id="tb-red"></tbody></table></div>
-</div>
-</div>
-
-<!-- ========== WEISSWEINE ========== -->
-<div id="page-white" class="page">
-<div class="container" style="padding-top:40px;">
-  <span class="sec-label">Vins Blancs · Chenin, Chardonnay, Sauvignon &amp; Blends</span>
-  <h2 class="sec-title">Die Top 100 Weißweine <em>Südafrikas</em></h2>
-  <p class="lead">Weißwein ist Südafrikas größte Stärke: Old-Vine Chenin Blanc aus Swartland und Citrusdal, Chardonnay aus Hemel-en-Aarde und Elgin, mineralischer Sauvignon Blanc aus Constantia, Durbanville und Elim sowie die Cape White Blends. Rangfolge wie bei den Rotweinen nach Belegen (Atkin, Platter's 2025/26); <b>Klick auf eine Zeile öffnet das Profil des Weinguts.</b></p>
-  <div class="filter-bar" id="fb-white"></div>
-  <div class="count" id="cnt-white"></div>
-  <div class="tbl-wrap"><table><thead id="th-white"></thead><tbody id="tb-white"></tbody></table></div>
-</div>
-</div>
-
-<!-- ========== CAP CLASSIQUE & SÜSS ========== -->
-<div id="page-special" class="page">
-<div class="container" style="padding-top:40px;">
-  <span class="sec-label">Méthode Cap Classique · Vin de Constance · Straw Wine · Cape Vintage</span>
-  <h2 class="sec-title">Top 25 Cap Classique &amp; <em>Süßweine</em></h2>
-  <p class="lead">Cap Classique ist Flaschengärung nach traditioneller Methode (seit 1971, Simonsig Kaapse Vonkel). Klein Constantias Vin de Constance belebt den legendären Süßwein des 18. Jahrhunderts wieder, den Napoleon im Exil auf St. Helena trank. Calitzdorp in der Klein Karoo ist die Heimat der „Cape Vintage“-Portweinstile. Die Top 25 Cap Classique sind nach belegten Auszeichnungen (Atkin, Platter's, Amorim Cap Classique Challenge 2025) und Renommee gereiht. <b>Klick auf eine Zeile öffnet das Profil des Weinguts.</b></p>
-  <div class="filter-bar" id="fb-special"></div>
-  <div class="count" id="cnt-special"></div>
-  <div class="tbl-wrap"><table><thead id="th-special"></thead><tbody id="tb-special"></tbody></table></div>
-</div>
-</div>
+<!-- ========== WEINE ========== -->
+<section id="p-weine" class="page">
+  <div class="eyebrow" id="w-eyebrow">Top 100</div>
+  <h2 class="title" id="w-title">Rotweine</h2>
+  <div class="seg" id="w-seg">
+    <button data-v="red">Rot<small>100</small></button>
+    <button data-v="white">Weiß<small>100</small></button>
+    <button data-v="special">Schaumwein &amp; Süß<small>36</small></button>
+  </div>
+  <details class="info"><summary>So entsteht die Rangliste</summary><div id="w-info"></div></details>
+  <div class="tools">
+    <div class="searchrow">
+      <input class="search" id="w-q" type="search" placeholder="Weingut, Wein, Stichwort…" autocomplete="off">
+      <button class="fbtn" id="w-filter">Filter <span class="badge" id="w-badge" hidden>0</span></button>
+    </div>
+    <div class="chips" id="w-active"></div>
+  </div>
+  <div class="resultbar"><span id="w-count"></span>
+    <select class="select" id="w-sort" aria-label="Sortierung">
+      <option value="rank">Rang</option><option value="pts">Punkte</option><option value="name">Weingut A–Z</option><option value="region">Region</option>
+    </select>
+  </div>
+  <div class="list cols" id="w-list"></div>
+</section>
 
 <!-- ========== JAHRGÄNGE ========== -->
-<div id="page-vintage" class="page">
-<div class="container" style="padding-top:40px;">
-  <span class="sec-label">Vintages · Jahrgangstabelle</span>
-  <h2 class="sec-title">Jahrgangsbewertungen <em>2009–2025</em></h2>
-  <div class="note-box"><b style="color:var(--gold);">Wichtig zur Einordnung:</b> Für Südafrika gibt es, anders als in Bordeaux, keine etablierte Punkte-Jahrgangstabelle der großen Kritiker. Die Punkte hier sind <b>redaktionelle Richtwerte</b> auf der 100-Punkte-Skala. Sie fassen qualitative Jahrgangsberichte zusammen: Tim Atkin MW (z. B. 2015 und 2017 „arguably the best ever“, 2025 „9–10 von 10, bester Jahrgang seit 2017“), VinPro/SAWIS-Ernteberichte, Wine-Searcher und Fachhandels-Berichte. Sie zeigen die Tendenz; die Unterschiede zwischen einzelnen Weingütern sind am Kap oft größer als zwischen den Jahrgängen.</div>
-
-  <div class="filter-bar">
-    <label>Qualität:</label>
-    <button class="fbtn on" onclick="filterVintage('all',this)">Alle</button>
-    <button class="fbtn" onclick="filterVintage('leg',this)">★ Herausragend 96+</button>
-    <button class="fbtn" onclick="filterVintage('exc',this)">Exzellent 93–95</button>
-    <button class="fbtn" onclick="filterVintage('vg',this)">Sehr gut 90–92</button>
-    <button class="fbtn" onclick="filterVintage('good',this)">Gut / Uneinheitlich &lt;90</button>
-  </div>
-
+<section id="p-jahrgaenge" class="page">
+  <div class="eyebrow">Vintages</div>
+  <h2 class="title">Jahrgänge <em>2009–2025</em></h2>
+  <details class="info"><summary>Wichtig zur Einordnung</summary><div id="v-info"></div></details>
+  <div class="chips" id="v-chips"></div>
   <div class="legend">
-    <span style="letter-spacing:.2em;text-transform:uppercase;font-size:9px;">Legende:</span>
-    <span><span class="sc s96">97</span>Herausragend 96+</span>
-    <span><span class="sc s93">94</span>Exzellent 93–95</span>
-    <span><span class="sc s90">91</span>Sehr gut 90–92</span>
-    <span><span class="sc s87">88</span>Gut 87–89</span>
-    <span><span class="sc s0">85</span>Uneinheitlich &lt;87</span>
-    <span style="margin-left:auto;font-size:9px;">Klick auf Spalten-Header = sortieren</span>
+    <span><span class="sc sm s96">97</span>96+</span><span><span class="sc sm s93">94</span>93–95</span><span><span class="sc sm s90">91</span>90–92</span><span><span class="sc sm s87">88</span>87–89</span><span><span class="sc sm s0">85</span>&lt;87</span>
   </div>
-
-  <div class="tbl-wrap">
-    <table class="vt">
-      <thead>
-        <tr>
-          <th onclick="sortVt(0)">Jahr <span class="sort-arrow">↕</span></th>
-          <th onclick="sortVt(1)">Stellenbosch · Cabernet/Blends <span class="sort-arrow">↕</span></th>
-          <th onclick="sortVt(2)">Swartland · Syrah/Rhône <span class="sort-arrow">↕</span></th>
-          <th onclick="sortVt(3)">Cape South Coast · Pinot/Chard <span class="sort-arrow">↕</span></th>
-          <th onclick="sortVt(4)">Chenin Blanc · Weiß <span class="sort-arrow">↕</span></th>
-          <th class="nosort">Ø</th>
-          <th class="nosort" style="min-width:260px;">Charakter</th>
-          <th class="nosort">Trinkreife (Spitze, rot)</th>
-        </tr>
-      </thead>
-      <tbody id="vtbody"></tbody>
-    </table>
+  <div class="resultbar"><span id="v-count"></span>
+    <select class="select" id="v-sort" aria-label="Sortierung"><option value="year">Neueste zuerst</option><option value="avg">Beste zuerst</option><option value="old">Älteste zuerst</option></select>
   </div>
-</div>
-</div>
+  <div class="list cols" id="v-list"></div>
+</section>
 
-<!-- ========== AUSZEICHNUNGEN ========== -->
-<div id="page-awards" class="page">
-<div class="container" style="padding-top:40px;">
-  <span class="sec-label">Tim Atkin MW · Platter's by Diners Club</span>
-  <h2 class="sec-title">Die Auszeichnungen <em>2025 / 2026</em></h2>
-
-  <h3 class="sub-h">Tim Atkin MW — <em>South Africa Special Report 2026</em></h3>
-  <p class="lead">14. Ausgabe, veröffentlicht am 1. September 2026. 1.831 Weine von über 350 Weingütern verkostet. Rund 247 Weine erreichten 95+ Punkte, siebzehn 98 Punkte, einer 99 und einer 100. Atkin bewertet den Jahrgang 2025 mit 9–10 von 10 als besten seit 2017.</p>
-  <div class="aw-grid" id="aw-atkin26"></div>
-
-  <h3 class="sub-h">Platter's by Diners Club — <em>South African Wine Guide 2026</em></h3>
-  <p class="lead">46. Ausgabe, erschienen im November 2025. Über 8.000 Weine; 316 Weine, Brandys und Husk Spirits erhielten 5 Sterne (≙ 95+ Punkte); 36 „Wines of the Year“ als jeweils bester Wein ihrer Kategorie. Zwei Weine erreichten mit 99 Punkten einen Rekord.</p>
-  <div class="aw-grid" id="aw-platter26"></div>
-
-  <h3 class="sub-h">Platter's — <em>Wineries &amp; Wines of the Year 2025</em></h3>
-  <p class="lead">45. Ausgabe (Ende 2024). Die vollständigen Listen aller Fünf-Sterne-Weine und Empfehlungen stehen auf der Unterseite <a href="#" onclick="showPage('platter');return false;">Platter's 2025</a>.</p>
-  <div class="aw-grid" id="aw-platter25w"></div>
-  <div class="aw-grid" id="aw-platter25"></div>
-
-  <h3 class="sub-h">Tim Atkin MW — <em>Report 2025 (Rückblick)</em></h3>
-  <div class="aw-grid" id="aw-atkin25"></div>
-
-  <div class="note-box">Eine vollständige Liste aller 316 Platter's-Fünfsterne-Weine und aller Atkin-„Growths“ (Klassifikation der besten Erzeuger nach Bordeaux-Vorbild) ist nur in den kostenpflichtigen Publikationen enthalten: <a href="https://timatkin.com" target="_blank" rel="noopener">timatkin.com</a> · <a href="https://wineonaplatter.com" target="_blank" rel="noopener">wineonaplatter.com</a>. Diese Seite zeigt die öffentlich berichteten Hauptpreise.</div>
-</div>
-</div>
-
-<!-- ========== PLATTER'S 2025 ========== -->
-<div id="page-platter" class="page">
-<div class="container" style="padding-top:40px;">
-  <span class="sec-label">Platter's South African Wine Guide 2025 · Printausgabe</span>
-  <h2 class="sec-title">Die Platter's-Listen <em>2025</em></h2>
-  <p class="lead">Alle Bestenlisten der Ausgabe 2025 (erschienen Ende 2024): die <b>Wines of the Year</b> (bester Wein je Kategorie), die <b>Five Stars</b> (95+ Punkte), die <b>Highly Recommended</b> (94 Punkte) sowie die Sonderlisten <b>Buy Now, Drink Later</b> (lohnt die Lagerung), <b>Hidden Gems</b> (besonders preiswert oder ungewöhnlich) und <b>Superquaffers</b> (sehr trinkig und günstig). Abgeschrieben aus der Printausgabe; Schreibweisen wie im Guide.</p>
-  <div class="filter-bar" id="fb-pl"></div>
-  <div class="count" id="cnt-pl"></div>
-  <div class="tbl-wrap"><table style="min-width:560px;"><thead><tr><th class="nosort">Liste</th><th class="nosort">Kategorie</th><th class="nosort">Wein</th><th class="nosort">Jahrgang</th></tr></thead><tbody id="tb-pl"></tbody></table></div>
-</div>
-</div>
+<!-- ========== PREISE ========== -->
+<section id="p-preise" class="page">
+  <div class="eyebrow">Tim Atkin MW · Platter's</div>
+  <h2 class="title">Auszeichnungen <em>&amp; Listen</em></h2>
+  <div class="chips" id="a-seg">
+    <button class="chip" data-v="atkin26">Atkin 2026</button>
+    <button class="chip" data-v="platter26">Platter's 2026</button>
+    <button class="chip" data-v="lists">Platter's-Listen 2025</button>
+    <button class="chip" data-v="platter25">Platter's 2025 Preise</button>
+    <button class="chip" data-v="atkin25">Atkin 2025</button>
+  </div>
+  <p class="lead" id="a-lead"></p>
+  <div id="a-awards" class="list cols"></div>
+  <div id="a-lists" hidden>
+    <div class="chips" id="pl-chips"></div>
+    <div class="searchrow">
+      <input class="search" id="pl-q" type="search" placeholder="Wein oder Weingut…" autocomplete="off">
+      <select class="select" id="pl-cat" style="height:44px;max-width:44%;" aria-label="Kategorie"></select>
+    </div>
+    <div class="resultbar"><span id="pl-count"></span></div>
+    <div class="card pl-box" id="pl-list"></div>
+  </div>
+</section>
+</main>
 
 <footer>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--cream);margin-bottom:10px;letter-spacing:.05em;">Südafrika — Guide der großen Kap-Weine</p>
-  <p>Quellen: <a href="https://timatkin.com" target="_blank" rel="noopener">Tim Atkin MW South Africa Report 2025 &amp; 2026</a> · <a href="https://wineonaplatter.com" target="_blank" rel="noopener">Platter's South African Wine Guide 2025 (Print) &amp; 2026</a> · Amorim Cap Classique Challenge 2025 · <a href="https://www.sawis.co.za" target="_blank" rel="noopener">SAWIS</a> · <a href="https://www.vinpro.co.za" target="_blank" rel="noopener">VinPro</a> · <a href="https://www.wosa.co.za" target="_blank" rel="noopener">Wines of South Africa</a> · <a href="https://www.wine-searcher.com/vintage-2024-south+africa" target="_blank" rel="noopener">Wine-Searcher</a></p>
-  <p style="font-size:9px;">Stand: Oktober 2026. Mit <span class="flag">◇</span> markierte Angaben (Lage/Rebsorte) sind nicht durch eine Primärquelle gesichert. Jahrgangspunkte sind redaktionelle Richtwerte. Keine Gewähr.</p>
-  <p style="font-size:9px;margin-top:6px;"><a href="https://attallah.de">← attallah.de</a> · <a href="https://dattallah.github.io/bordeaux-weine/">Bordeaux — Guide des Grands Vins</a></p>
+  <b>Südafrika — Guide der großen Kap-Weine</b>
+  Quellen: <a href="https://timatkin.com" target="_blank" rel="noopener">Tim Atkin MW South Africa Report 2025 &amp; 2026</a> · <a href="https://wineonaplatter.com" target="_blank" rel="noopener">Platter's South African Wine Guide 2025 (Print) &amp; 2026</a> · Amorim Cap Classique Challenge 2025 · <a href="https://www.sawis.co.za" target="_blank" rel="noopener">SAWIS</a> · <a href="https://www.vinpro.co.za" target="_blank" rel="noopener">VinPro</a> · <a href="https://www.wosa.co.za" target="_blank" rel="noopener">Wines of South Africa</a><br>
+  Stand: Oktober 2026. Mit <span class="flag">◇</span> markierte Angaben (Lage/Rebsorte) sind nicht durch eine Primärquelle gesichert. Jahrgangspunkte sind redaktionelle Richtwerte. Keine Gewähr.<br>
+  <a href="https://attallah.de">← attallah.de</a> · <a href="https://dattallah.github.io/bordeaux-weine/">Bordeaux — Guide des Grands Vins</a>
 </footer>
+
+<!-- FILTER SHEET -->
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Filter">
+  <div class="sheet-h"><b>Filter</b><button id="f-reset">Zurücksetzen</button></div>
+  <div class="sheet-b" id="f-body"></div>
+  <div class="sheet-f"><button class="btn pri" id="f-apply" style="width:100%;">Anzeigen</button></div>
+</div>
 
 <script src="data.js"></script>
 <script src="platter2025.js"></script>
 <script>
 // =============================================
-// NAVIGATION
-// =============================================
-function showPage(id, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  if (el) el.classList.add('active');
-  else document.querySelectorAll('.nav-item').forEach(n => {
-    if (n.getAttribute('onclick').includes("'" + id + "'")) n.classList.add('active');
-  });
-  window.scrollTo(0, 0);
-}
-
-// =============================================
-// REGIONEN
+// DATEN (Regionen, Jahrgänge, Preise)
 // =============================================
 const regions = {
   stb:  { name:'Stellenbosch', color:'#8A2438', type:'Coastal Region · Cabernet · Bordeaux-Blends · Chenin', desc:'Das Herz des Kap-Weins und das „Médoc Südafrikas“. Granit- und Sandsteinböden an den Hängen von Simonsberg, Helderberg und Jonkershoek, gekühlt von der False Bay. Hier stehen die meisten Ikonen: Kanonkop, Meerlust, Rust en Vrede, Jordan, Delaire Graff.', climate:'Mediterran, durch False Bay gekühlt', grapes:'Cabernet Sauvignon, Merlot, Cabernet Franc, Pinotage, Chenin Blanc, Chardonnay', subs:['Simonsberg-Stellenbosch','Banghoek','Jonkershoek Valley','Devon Valley','Bottelary','Polkadraai Hills','Papegaaiberg','Vlottenburg'] },
@@ -360,153 +389,6 @@ const regions = {
   kk:   { name:'Klein Karoo · Calitzdorp', color:'#8A4A2A', type:'Halbwüste · Cape Vintage · Muskateller', desc:'Trockene Halbwüste zwischen den Bergketten. Calitzdorp ist die „Port-Hauptstadt“ Südafrikas: Touriga Nacional, Tinta Barocca und Muskateller für die Cape-Vintage-Stile (Boplaas, De Krans).', climate:'Heiß, sehr trocken', grapes:'Touriga Nacional, Tinta Barocca, Muscat', subs:['Calitzdorp','Tradouw','Upper Langkloof'] },
 };
 
-function renderRegions() {
-  document.getElementById('regGrid').innerHTML = Object.entries(regions).map(([k, r]) => {
-    const n = wines.filter(w => w.r === k).length;
-    return `<div class="app-card" onclick="jumpRegion('${k}')">
-      <div class="app-name"><span class="app-dot" style="background:${r.color}"></span>${r.name}</div>
-      <div class="app-type">${r.type}</div>
-      <div class="app-desc">${r.desc}</div>
-      <div class="app-meta"><b>Klima:</b> ${r.climate}<br><b>Rebsorten:</b> ${r.grapes}</div>
-      <div class="app-subs">${r.subs.map(s => `<span class="app-sub">${s}</span>`).join('')}</div>
-      <div class="app-link">→ ${n} Top-Weine anzeigen</div>
-    </div>`;
-  }).join('');
-}
-
-// =============================================
-// WEIN-TABELLEN (generisch für rot / weiss / special)
-// =============================================
-const views = {
-  red:     { types:['rot'] },
-  white:   { types:['weiss'] },
-  special: { types:['cc','suess'] },
-};
-const state = {};
-const typeLabel = { rot:'Rot', weiss:'Weiß', cc:'Cap Classique', suess:'Süß / Fortified' };
-// Rang je Kategorie = Reihenfolge in data.js
-const rankCount = {};
-wines.forEach(w => { rankCount[w.c] = (rankCount[w.c] || 0) + 1; w.rank = rankCount[w.c]; });
-
-const cols = [
-  { k:'rank', label:'Nr.',        get:w => (w.c === 'suess' ? 1000 : 0) + w.rank },
-  { k:'p',   label:'Weingut',     get:w => w.p + ' ' + w.w },
-  { k:'r',   label:'Region',      get:w => regions[w.r].name },
-  { k:'g',   label:'Rebsorte',    get:w => w.g },
-  { k:'pts', label:'Punkte',      get:w => w.pts || 0 },
-  { k:'aw',  label:'Auszeichnung', get:w => w.aw ? 0 : 1 },
-  { k:'n',   label:'Der Wein',    nosort:true },
-];
-
-// Preisträger = der Wein selbst wurde 2025/26 bepunktet oder ausgezeichnet (nicht nur das Weingut)
-const isPrize = w => !!w.pts || /Wine of the Year|5 Stern/.test(w.aw || '');
-
-function scClass(s) {
-  if (!s) return 's0';
-  if (s >= 96) return 's96';
-  if (s >= 93) return 's93';
-  if (s >= 90) return 's90';
-  if (s >= 87) return 's87';
-  return 's0';
-}
-function scBadge(s) { return s ? `<span class="sc ${scClass(s)}">${s}</span>` : '<span class="sc s0">—</span>'; }
-
-function initView(v) {
-  const list = wines.filter(w => views[v].types.includes(w.c));
-  const regs = [...new Set(list.map(w => w.r))];
-  const grapes = [...new Set(list.map(w => w.g))].sort();
-  state[v] = { reg:'all', grape:'all', type:'all', q:'', aw:false, sort:0, dir:1, open:new Set(), all:false };
-  let html = `<label>Region:</label><button class="fbtn on" data-f="reg" data-v="all">Alle (${list.length})</button>`;
-  html += regs.map(r => `<button class="fbtn" data-f="reg" data-v="${r}">${regions[r].name.split(' · ')[0].split(' & ')[0]}</button>`).join('');
-  html += `<span class="sep"></span>`;
-  if (views[v].types.length > 1) {
-    html += `<label>Typ:</label><button class="fbtn on" data-f="type" data-v="all">Alle</button>` +
-      views[v].types.map(t => `<button class="fbtn" data-f="type" data-v="${t}">${typeLabel[t]}</button>`).join('') + `<span class="sep"></span>`;
-  } else {
-    html += `<label>Rebsorte:</label><select class="fbtn" data-f="grape" style="text-transform:none;letter-spacing:.05em;"><option value="all">Alle Rebsorten</option>${grapes.map(g => `<option>${g}</option>`).join('')}</select><span class="sep"></span>`;
-  }
-  html += `<button class="fbtn" data-f="aw">★ Nur 5 Sterne / Preisträger</button><span class="sep"></span>`;
-  html += `<input type="text" class="fsearch" placeholder="Weingut oder Wein suchen…"><span class="sep"></span><button class="fbtn" data-f="all">▾ Alle Weingut-Profile</button>`;
-  const fb = document.getElementById('fb-' + v);
-  fb.innerHTML = html;
-  fb.querySelectorAll('button[data-f]').forEach(b => b.addEventListener('click', () => {
-    const f = b.dataset.f, st = state[v];
-    if (f === 'aw') { st.aw = !st.aw; b.classList.toggle('on', st.aw); }
-    else if (f === 'all') { st.all = !st.all; st.open.clear(); b.classList.toggle('on', st.all); }
-    else {
-      st[f] = b.dataset.v;
-      fb.querySelectorAll(`button[data-f="${f}"]`).forEach(x => x.classList.toggle('on', x === b));
-    }
-    renderView(v);
-  }));
-  const sel = fb.querySelector('select');
-  if (sel) sel.addEventListener('change', () => { state[v].grape = sel.value; renderView(v); });
-  fb.querySelector('input').addEventListener('input', e => { state[v].q = e.target.value.toLowerCase(); renderView(v); });
-  document.getElementById('th-' + v).innerHTML = '<tr>' + cols.map((c, i) =>
-    c.nosort ? `<th class="nosort" style="min-width:260px;">${c.label}</th>` : `<th data-i="${i}">${c.label} <span class="sort-arrow">↕</span></th>`).join('') + '</tr>';
-  document.querySelectorAll('#th-' + v + ' th[data-i]').forEach(th => th.addEventListener('click', () => {
-    const i = +th.dataset.i, st = state[v];
-    if (st.sort === i) st.dir *= -1; else { st.sort = i; st.dir = (cols[i].k === 'pts') ? -1 : 1; }
-    renderView(v);
-  }));
-  renderView(v);
-}
-
-function renderView(v) {
-  const st = state[v];
-  let list = wines.filter(w => views[v].types.includes(w.c))
-    .filter(w => st.reg === 'all' || w.r === st.reg)
-    .filter(w => st.grape === 'all' || w.g === st.grape)
-    .filter(w => st.type === 'all' || w.c === st.type)
-    .filter(w => !st.aw || isPrize(w))
-    .filter(w => !st.q || (w.p + ' ' + w.w + ' ' + w.g + ' ' + (producers[w.p] || '')).toLowerCase().includes(st.q));
-  const c = cols[st.sort];
-  list.sort((a, b) => {
-    // Standard: Preisträger zuerst, dann nach Punkten, dann alphabetisch
-    if (c.k === 'aw') return ((a.aw ? 0 : 1) - (b.aw ? 0 : 1)) * st.dir || (b.pts || 0) - (a.pts || 0) || a.p.localeCompare(b.p);
-    const x = c.get(a), y = c.get(b);
-    return (typeof x === 'number' ? x - y : String(x).localeCompare(String(y), 'de')) * st.dir;
-  });
-  document.getElementById('cnt-' + v).textContent = list.length + ' Weine';
-  const tb = document.getElementById('tb-' + v);
-  tb.innerHTML = list.map(w => {
-    const key = w.c + w.rank, open = st.all ? !st.open.has(key) : st.open.has(key);
-    return `<tr class="wrow${open ? ' open' : ''}" data-k="${key}">
-    <td class="rank">${w.rank}</td>
-    <td><div class="w-prod"><span class="caret">▸</span>${w.p}</div><div class="w-name">${w.w}${views[v].types.length > 1 ? ' · <span style="color:var(--dim)">' + typeLabel[w.c] + '</span>' : ''}</div></td>
-    <td class="w-reg"><span class="app-dot" style="background:${regions[w.r].color};width:7px;height:7px;"></span>${regions[w.r].name}${w.u ? ' <span class="flag" title="Lage, Rebsorte oder Detail nicht durch eine Primärquelle gesichert">◇</span>' : ''}</td>
-    <td><span class="grape">${w.g}</span></td>
-    <td>${scBadge(w.pts)}</td>
-    <td class="aw ${w.aw ? '' : 'classic'}">${w.aw ? w.aw.split(' · ').join('<br>') : 'Klassiker / Referenzwein'}</td>
-    <td class="w-note">${w.n}</td>
-  </tr>
-  <tr class="drow"${open ? '' : ' hidden'}><td></td><td colspan="6"><div class="prof"><span class="prof-h">Das Weingut · ${w.p}</span>${producers[w.p] || ''}</div></td></tr>`;
-  }).join('') || '<tr><td colspan="7" style="color:var(--dim);">Keine Weine für diese Auswahl.</td></tr>';
-  tb.querySelectorAll('tr.wrow').forEach(tr => tr.addEventListener('click', () => {
-    const k = tr.dataset.k;
-    st.open.has(k) ? st.open.delete(k) : st.open.add(k);
-    const det = tr.nextElementSibling, isOpen = det.hidden;
-    det.hidden = !isOpen; tr.classList.toggle('open', isOpen);
-  }));
-}
-
-function jumpRegion(r) {
-  const has = t => wines.some(w => w.r === r && views[t].types.includes(w.c));
-  const target = has('red') ? 'red' : has('white') ? 'white' : 'special';
-  ['red', 'white', 'special'].forEach(v => {
-    if (!wines.some(w => w.r === r && views[v].types.includes(w.c))) return;
-    state[v].reg = r; state[v].aw = false;
-    document.querySelectorAll('#fb-' + v + ' button[data-f="aw"]').forEach(b => b.classList.remove('on'));
-    document.querySelectorAll('#fb-' + v + ' button[data-f="reg"]').forEach(b => b.classList.toggle('on', b.dataset.v === r));
-    renderView(v);
-  });
-  showPage(target);
-}
-
-// =============================================
-// JAHRGÄNGE (redaktionelle Richtwerte)
-// s: Stellenbosch · w: Swartland · c: Cape South Coast · ch: Chenin/Weiß
-// =============================================
 const vintages = [
   { y:2025, s:96, w:96, c:96, ch:96, note:'Mild, trocken, geringer Krankheitsdruck; kühle Reifephase bewahrte die Säure (Pinotage, Shiraz, Chardonnay). Atkin: 9–10/10, bester Jahrgang seit 2017. Ernte 1,244 Mio. t (+11 %).', drink:'2028–2045+' },
   { y:2024, s:94, w:92, c:91, ch:92, note:'Warm und früh. Frost drückte die Erträge (v. a. Breedekloof). Stellenbosch- und Olifants-River-Weine laut Berichten „outstanding all-round“, Swartland stark bei Rot.', drink:'2027–2040' },
@@ -526,38 +408,7 @@ const vintages = [
   { y:2010, s:90, w:89, c:89, ch:89, note:'Schwieriger Start (Wind, ungleichmäßiger Austrieb), aber starke Stellenbosch-Cabernets. Konzentriert, tanninreich.', drink:'jetzt–2028' },
   { y:2009, s:94, w:93, c:92, ch:91, note:'Lange als bester Jahrgang des Jahrzehnts gefeiert: reif, ausgewogen, sehr gute Rote in Stellenbosch.', drink:'jetzt–2030' },
 ];
-let vtSortCol = 0, vtSortDir = -1, vtFilter = 'all';
-const vAvg = v => Math.round((v.s + v.w + v.c + v.ch) / 4);
-function vtQuality(v) {
-  const a = vAvg(v);
-  return a >= 96 ? 'leg' : a >= 93 ? 'exc' : a >= 90 ? 'vg' : 'good';
-}
-function renderVintage() {
-  const keys = [v => v.y, v => v.s, v => v.w, v => v.c, v => v.ch];
-  const data = vintages.filter(v => vtFilter === 'all' || vtQuality(v) === vtFilter)
-    .sort((a, b) => (keys[vtSortCol](a) - keys[vtSortCol](b)) * vtSortDir);
-  document.getElementById('vtbody').innerHTML = data.map(v => `<tr>
-    <td><span class="yr-cell">${v.y}</span></td>
-    <td>${scBadge(v.s)}</td><td>${scBadge(v.w)}</td><td>${scBadge(v.c)}</td><td>${scBadge(v.ch)}</td>
-    <td style="font-weight:600;color:var(--cream);">${vAvg(v)}</td>
-    <td class="w-note">${v.note}</td>
-    <td style="font-size:10.5px;color:var(--dim);white-space:nowrap;">${v.drink}</td>
-  </tr>`).join('');
-}
-function filterVintage(f, btn) {
-  vtFilter = f;
-  btn.parentElement.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  renderVintage();
-}
-function sortVt(col) {
-  if (vtSortCol === col) vtSortDir *= -1; else { vtSortCol = col; vtSortDir = -1; }
-  renderVintage();
-}
 
-// =============================================
-// AUSZEICHNUNGEN
-// =============================================
 const awAtkin26 = [
   ['Overall Red Wine of the Year', 'Sadie Family Columella 2024', 'Swartland · 100 Punkte'],
   ['Overall White Wine of the Year', 'Alheit Vineyards Huilkrans Chenin Blanc 2025', 'Citrusdal Mountain · 99 Punkte'],
@@ -594,58 +445,284 @@ const awAtkin25 = [
   ['100 Punkte', 'Porseleinberg Syrah 2023', 'Swartland'],
   ['Winemaker of the Year 2025', 'Donovan Rall', 'Rall Wines, Swartland'],
 ];
-function renderAw(id, arr) {
-  document.getElementById(id).innerHTML = arr.map(([c, n, s]) => `<div class="aw-card"><div class="aw-cat">${c}</div><div class="aw-name">${n}</div>${s ? `<div class="aw-sub">${s}</div>` : ''}</div>`).join('');
+
+// =============================================
+// HILFSFUNKTIONEN
+// =============================================
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
+function scClass(s) { return !s ? 's0' : s >= 96 ? 's96' : s >= 93 ? 's93' : s >= 90 ? 's90' : s >= 87 ? 's87' : 's0'; }
+const scBadge = (s, sm) => `<span class="sc ${sm ? 'sm ' : ''}${scClass(s)}">${s || '—'}</span>`;
+const regShort = r => regions[r].name.split(' · ')[0].split(' & ')[0].replace(' (regionsübergreifend)', '');
+
+// Rang je Kategorie = Reihenfolge in data.js
+const rankCount = {};
+wines.forEach(w => { rankCount[w.c] = (rankCount[w.c] || 0) + 1; w.rank = rankCount[w.c]; });
+// Preisträger = der Wein selbst wurde bepunktet oder ausgezeichnet (nicht nur das Weingut)
+const isPrize = w => !!w.pts || /Wine of the Year|5 Stern/.test(w.aw || '');
+
+// =============================================
+// ROUTING (Hash, damit die Zurück-Geste funktioniert)
+// =============================================
+const routes = { start:['start'], regionen:['regionen'], weine:['weine','red'], rot:['weine','red'], weiss:['weine','white'], schaumwein:['weine','special'], jahrgaenge:['jahrgaenge'], preise:['preise','atkin26'], platter:['preise','lists'] };
+function route() {
+  const key = (location.hash || '#start').slice(1);
+  const [page, sub] = routes[key] || routes.start;
+  document.querySelectorAll('.page').forEach(p => p.classList.toggle('on', p.id === 'p-' + page));
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.p === page));
+  if (page === 'weine') setView(sub || cur);
+  if (page === 'preise' && sub) setAward(sub);
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+
+// =============================================
+// START
+// =============================================
+const cnt = c => wines.filter(w => w.c === c).length;
+$('tiles').innerHTML = [
+  ['#rot', 'Rotweine', `Top ${cnt('rot')}`, 'main'],
+  ['#weiss', 'Weißweine', `Top ${cnt('weiss')}`],
+  ['#schaumwein', 'Cap Classique', `Top ${cnt('cc')} · dazu Süßweine`],
+  ['#regionen', 'Regionen', `${Object.keys(regions).length} Anbaugebiete`],
+  ['#jahrgaenge', 'Jahrgänge', '2009–2025'],
+  ['#platter', 'Platter\'s 2025', `${platter25.length} Einträge`],
+].map(([h, b, s, c]) => `<a class="tile ${c || ''}" href="${h}" style="text-decoration:none;"><b>${b}</b><span>${s}</span></a>`).join('');
+
+// =============================================
+// REGIONEN
+// =============================================
+$('regList').innerHTML = Object.entries(regions).map(([k, r]) => {
+  const n = wines.filter(w => w.r === k).length;
+  return `<article class="card">
+    <div class="rc-name"><span class="dot" style="background:${r.color}"></span>${r.name}</div>
+    <div class="rc-type">${r.type}</div>
+    <p class="rc-desc">${r.desc}</p>
+    <div class="rc-x" hidden>
+      <div class="rc-meta"><b>Klima:</b> ${r.climate}<br><b>Rebsorten:</b> ${r.grapes}</div>
+      <div class="rc-subs">${r.subs.map(s => `<span>${s}</span>`).join('')}</div>
+    </div>
+    <div class="rc-actions">
+      <button class="btn ghost" data-more>Details</button>
+      <button class="btn pri" data-reg="${k}">${n} Weine</button>
+    </div>
+  </article>`;
+}).join('');
+$('regList').addEventListener('click', e => {
+  const m = e.target.closest('[data-more]');
+  if (m) { const c = m.closest('.card'), x = c.querySelector('.rc-x'); x.hidden = !x.hidden; c.classList.toggle('open', !x.hidden); m.textContent = x.hidden ? 'Details' : 'Weniger'; return; }
+  const r = e.target.closest('[data-reg]');
+  if (r) jumpRegion(r.dataset.reg);
+});
+
+// =============================================
+// WEINE
+// =============================================
+const views = {
+  red:     { types:['rot'], eyebrow:'Top 100 · Vins Rouges', title:'Rotweine <em>Südafrikas</em>', hash:'rot' },
+  white:   { types:['weiss'], eyebrow:'Top 100 · Vins Blancs', title:'Weißweine <em>Südafrikas</em>', hash:'weiss' },
+  special: { types:['cc','suess'], eyebrow:'Top 25 Cap Classique · Süßweine', title:'Schaumwein <em>&amp; Süßweine</em>', hash:'schaumwein' },
+};
+const info = {
+  red: 'Rangliste nach Belegen: zuerst die Spitzenbewertungen von Tim Atkin MW 2025/26 und die Wines of the Year von Platter\'s 2025/26, dann Fünf-Sterne-Weine (95+) und Highly Recommended (94) aus Platter\'s 2025, zuletzt Ikonen ohne aktuelle Listung. Bei Preisträgern ist der ausgezeichnete Jahrgang angegeben. Punkte nur, wo sie aus Atkin oder Platter\'s belegt sind.',
+  white: 'Weißwein ist Südafrikas größte Stärke: Old-Vine Chenin Blanc aus Swartland und Citrusdal, Chardonnay aus Hemel-en-Aarde und Elgin, Sauvignon Blanc aus Constantia, Durbanville und Elim sowie die Cape White Blends. Rangfolge wie bei den Rotweinen nach Belegen.',
+  special: 'Cap Classique ist Flaschengärung nach traditioneller Methode (seit 1971, Simonsig Kaapse Vonkel). Die Top 25 sind nach Atkin, Platter\'s und der Amorim Cap Classique Challenge 2025 gereiht. Dazu die besten Süß- und Portweine: Vin de Constance, Straw Wine, Noble Late Harvest und Cape Vintage.',
+};
+const typeLabel = { rot:'Rot', weiss:'Weiß', cc:'Cap Classique', suess:'Süß / Fortified' };
+const st = {};
+Object.keys(views).forEach(v => st[v] = { reg:'all', grape:'all', type:'all', prize:false, q:'', sort:'rank', open:new Set() });
+let cur = 'red';
+
+function setView(v) {
+  cur = v;
+  $('w-eyebrow').textContent = views[v].eyebrow;
+  $('w-title').innerHTML = views[v].title;
+  $('w-info').textContent = info[v];
+  document.querySelectorAll('#w-seg button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  $('w-q').value = st[v].q;
+  $('w-sort').value = st[v].sort;
+  renderWines();
+}
+$('w-seg').addEventListener('click', e => { const b = e.target.closest('button'); if (b) location.hash = views[b.dataset.v].hash; });
+$('w-q').addEventListener('input', e => { st[cur].q = e.target.value.toLowerCase().trim(); renderWines(); });
+$('w-sort').addEventListener('change', e => { st[cur].sort = e.target.value; renderWines(); });
+
+function filtered(v, s) {
+  s = s || st[v];
+  return wines.filter(w => views[v].types.includes(w.c))
+    .filter(w => s.reg === 'all' || w.r === s.reg)
+    .filter(w => s.grape === 'all' || w.g === s.grape)
+    .filter(w => s.type === 'all' || w.c === s.type)
+    .filter(w => !s.prize || isPrize(w))
+    .filter(w => !s.q || (w.p + ' ' + w.w + ' ' + w.g + ' ' + regions[w.r].name + ' ' + (producers[w.p] || '')).toLowerCase().includes(s.q));
+}
+const sorters = {
+  rank:   (a, b) => (a.c === 'suess') - (b.c === 'suess') || a.rank - b.rank,
+  pts:    (a, b) => (b.pts || 0) - (a.pts || 0) || isPrize(b) - isPrize(a) || a.rank - b.rank,
+  name:   (a, b) => a.p.localeCompare(b.p, 'de') || a.w.localeCompare(b.w, 'de'),
+  region: (a, b) => regions[a.r].name.localeCompare(regions[b.r].name, 'de') || a.rank - b.rank,
+};
+function awClass(t) { return /Wine of the Year|100 Pkt|99 Pkt|98 Pkt|97 Pkt|96 Pkt|Gesamtsieger/.test(t) ? 'gold' : /5 Sterne|95 Pkt|Kategoriesieger/.test(t) ? 'green' : ''; }
+
+function wineCard(w, s) {
+  const key = w.c + w.rank, open = s.open.has(key);
+  const aws = w.aw ? w.aw.split(' · ').map(t => `<li class="${awClass(t)}">${t}</li>`).join('') : '<li class="plain">Klassiker / Referenzwein</li>';
+  return `<article class="card">
+    <div class="wc-top">
+      <span class="wc-rank">${w.rank}</span>
+      <div class="wc-head"><h3 class="wc-prod">${w.p}</h3><div class="wc-wine">${w.w}</div></div>
+      ${w.pts ? scBadge(w.pts) : ''}
+    </div>
+    <div class="wc-meta"><span><span class="dot" style="background:${regions[w.r].color}"></span>${regShort(w.r)}</span><span class="grape">${w.g}</span>${views[cur].types.length > 1 ? `<span>${typeLabel[w.c]}</span>` : ''}${w.u ? '<span class="flag" title="Lage, Rebsorte oder Detail nicht gesichert">◇ nicht gesichert</span>' : ''}</div>
+    <ul class="wc-aw">${aws}</ul>
+    <p class="wc-note">${w.n}</p>
+    <button class="more" data-k="${key}" aria-expanded="${open}">Über das Weingut</button>
+    <div class="prof"${open ? '' : ' hidden'}>${producers[w.p] || ''}</div>
+  </article>`;
+}
+function renderWines() {
+  const s = st[cur], list = filtered(cur).sort(sorters[s.sort]);
+  $('w-count').textContent = `${list.length} ${list.length === 1 ? 'Wein' : 'Weine'}`;
+  $('w-list').innerHTML = list.map(w => wineCard(w, s)).join('') || '<div class="empty">Keine Weine für diese Auswahl.</div>';
+  // aktive Filter als entfernbare Chips
+  const act = [];
+  if (s.reg !== 'all') act.push(['reg', regShort(s.reg)]);
+  if (s.grape !== 'all') act.push(['grape', s.grape]);
+  if (s.type !== 'all') act.push(['type', typeLabel[s.type]]);
+  if (s.prize) act.push(['prize', '★ 5 Sterne / Preisträger']);
+  $('w-active').innerHTML = act.map(([k, l]) => `<button class="chip on x" data-k="${k}">${l}</button>`).join('');
+  $('w-active').hidden = !act.length;
+  $('w-badge').textContent = act.length; $('w-badge').hidden = !act.length;
+}
+$('w-list').addEventListener('click', e => {
+  const b = e.target.closest('.more'); if (!b) return;
+  const p = b.nextElementSibling, open = p.hidden, s = st[cur];
+  p.hidden = !open; b.setAttribute('aria-expanded', open);
+  open ? s.open.add(b.dataset.k) : s.open.delete(b.dataset.k);
+});
+$('w-active').addEventListener('click', e => {
+  const b = e.target.closest('[data-k]'); if (!b) return;
+  const k = b.dataset.k; st[cur][k] = k === 'prize' ? false : 'all'; renderWines();
+});
+
+// ---------- Filter-Sheet ----------
+let draft = null;
+function openSheet() { draft = Object.assign({}, st[cur]); renderSheet(); $('scrim').classList.add('on'); $('sheet').classList.add('on'); }
+function closeSheet() { $('scrim').classList.remove('on'); $('sheet').classList.remove('on'); }
+function renderSheet() {
+  const all = wines.filter(w => views[cur].types.includes(w.c));
+  const regs = [...new Set(all.map(w => w.r))].sort((a, b) => regShort(a).localeCompare(regShort(b), 'de'));
+  const grapes = [...new Set(all.map(w => w.g))].sort((a, b) => a.localeCompare(b, 'de'));
+  const chip = (k, v, l) => `<button class="chip${draft[k] === v ? ' on' : ''}" data-k="${k}" data-v="${v}">${l}</button>`;
+  let h = '';
+  if (views[cur].types.length > 1) h += `<h4>Typ</h4><div class="wrap">${chip('type', 'all', 'Alle')}${views[cur].types.map(t => chip('type', t, typeLabel[t])).join('')}</div>`;
+  h += `<h4>Region</h4><div class="wrap">${chip('reg', 'all', 'Alle')}${regs.map(r => chip('reg', r, regShort(r))).join('')}</div>`;
+  h += `<h4>Rebsorte</h4><div class="wrap">${chip('grape', 'all', 'Alle')}${grapes.map(g => chip('grape', g, g)).join('')}</div>`;
+  h += `<label class="switch">★ Nur 5 Sterne / Preisträger<input type="checkbox" id="f-prize"${draft.prize ? ' checked' : ''}></label>`;
+  $('f-body').innerHTML = h;
+  $('f-prize').addEventListener('change', e => { draft.prize = e.target.checked; updateApply(); });
+  updateApply();
+}
+function updateApply() { const n = filtered(cur, draft).length; $('f-apply').textContent = `${n} ${n === 1 ? 'Wein' : 'Weine'} anzeigen`; }
+$('f-body').addEventListener('click', e => {
+  const b = e.target.closest('.chip[data-k]'); if (!b) return;
+  draft[b.dataset.k] = b.dataset.v;
+  b.parentElement.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === b));
+  updateApply();
+});
+$('w-filter').addEventListener('click', openSheet);
+$('scrim').addEventListener('click', closeSheet);
+$('f-apply').addEventListener('click', () => { Object.assign(st[cur], draft); closeSheet(); renderWines(); window.scrollTo(0, 0); });
+$('f-reset').addEventListener('click', () => { Object.assign(draft, { reg:'all', grape:'all', type:'all', prize:false }); renderSheet(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+
+function jumpRegion(r) {
+  const v = Object.keys(views).find(v => wines.some(w => w.r === r && views[v].types.includes(w.c)));
+  Object.keys(views).forEach(x => { if (wines.some(w => w.r === r && views[x].types.includes(w.c))) Object.assign(st[x], { reg:r, grape:'all', type:'all', prize:false, q:'' }); });
+  location.hash = views[v].hash;
+}
+
+// =============================================
+// JAHRGÄNGE
+// =============================================
+$('v-info').innerHTML = "Für Südafrika gibt es, anders als in Bordeaux, keine etablierte Punkte-Jahrgangstabelle der großen Kritiker. Die Punkte hier sind <b>redaktionelle Richtwerte</b> auf der 100-Punkte-Skala. Sie fassen qualitative Jahrgangsberichte zusammen: Tim Atkin MW (z. B. 2015 und 2017 „arguably the best ever“, 2025 „9–10 von 10, bester Jahrgang seit 2017“), VinPro/SAWIS-Ernteberichte, Wine-Searcher und Fachhandels-Berichte. Sie zeigen die Tendenz; die Unterschiede zwischen einzelnen Weingütern sind am Kap oft größer als zwischen den Jahrgängen.";
+const vAvg = v => Math.round((v.s + v.w + v.c + v.ch) / 4);
+const vQ = a => a >= 96 ? ['leg', 'Herausragend'] : a >= 93 ? ['exc', 'Exzellent'] : a >= 90 ? ['vg', 'Sehr gut'] : ['good', 'Gut / Uneinheitlich'];
+const vSt = { f:'all', sort:'year' };
+$('v-chips').innerHTML = [['all', 'Alle'], ['leg', '★ Herausragend'], ['exc', 'Exzellent'], ['vg', 'Sehr gut'], ['good', 'Gut / Uneinheitlich']]
+  .map(([k, l]) => `<button class="chip${k === 'all' ? ' on' : ''}" data-f="${k}">${l}</button>`).join('');
+$('v-chips').addEventListener('click', e => {
+  const b = e.target.closest('[data-f]'); if (!b) return;
+  vSt.f = b.dataset.f; $('v-chips').querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === b)); renderVintage();
+});
+$('v-sort').addEventListener('change', e => { vSt.sort = e.target.value; renderVintage(); });
+function renderVintage() {
+  const srt = { year:(a, b) => b.y - a.y, old:(a, b) => a.y - b.y, avg:(a, b) => vAvg(b) - vAvg(a) || b.y - a.y }[vSt.sort];
+  const data = vintages.filter(v => vSt.f === 'all' || vQ(vAvg(v))[0] === vSt.f).sort(srt);
+  $('v-count').textContent = `${data.length} Jahrgänge`;
+  $('v-list').innerHTML = data.map(v => `<article class="card">
+    <div class="vc-top"><div><div class="vc-year">${v.y}</div><div class="vc-q">${vQ(vAvg(v))[1]} · Ø ${vAvg(v)}</div></div>${scBadge(vAvg(v))}</div>
+    <div class="vc-grid">
+      <div>${scBadge(v.s, 1)}Stellen­bosch</div><div>${scBadge(v.w, 1)}Swart­land</div><div>${scBadge(v.c, 1)}Süd­küste</div><div>${scBadge(v.ch, 1)}Chenin / Weiß</div>
+    </div>
+    <p class="vc-note">${v.note}</p>
+    <div class="vc-drink"><b>Trinkreife (Spitze, rot):</b> ${v.drink}</div>
+  </article>`).join('');
+}
+
+// =============================================
+// PREISE & PLATTER'S-LISTEN
+// =============================================
+const awardSets = {
+  atkin26:   { lead:'14. Ausgabe, veröffentlicht am 1. September 2026. 1.831 Weine von über 350 Weingütern; rund 247 Weine mit 95+ Punkten, siebzehn mit 98, einer mit 99 und einer mit 100. Den Jahrgang 2025 bewertet Atkin mit 9–10 von 10.', data:awAtkin26 },
+  platter26: { lead:'46. Ausgabe, erschienen im November 2025. Über 8.000 Weine; 316 Weine, Brandys und Husk Spirits mit 5 Sternen (95+); 36 „Wines of the Year“. Zwei Weine erreichten mit 99 Punkten einen Rekord. (Öffentlich berichtete Hauptpreise.)', data:awPlatter26 },
+  platter25: { lead:'45. Ausgabe (Ende 2024), aus der Printausgabe: die drei Wineries of the Year und alle 27 Wines of the Year 2025.', data:platter25Wineries.concat(platter25.filter(x => x.list === 'woty').map(x => [x.cat, x.w, ''])) },
+  atkin25:   { lead:'13. Ausgabe (September 2025) – zum Vergleich.', data:awAtkin25 },
+  lists:     { lead:'Alle Bestenlisten aus Platter\'s 2025 (Printausgabe): Wines of the Year, Five Stars (95+), Highly Recommended (94), Buy Now Drink Later, Hidden Gems und Superquaffers. Schreibweisen wie im Guide.' },
+};
+function setAward(k) {
+  document.querySelectorAll('#a-seg button').forEach(b => b.classList.toggle('on', b.dataset.v === k));
+  $('a-lead').textContent = awardSets[k].lead;
+  const isList = k === 'lists';
+  $('a-lists').hidden = !isList; $('a-awards').hidden = isList;
+  if (!isList) $('a-awards').innerHTML = awardSets[k].data.map(([c, n, s]) => `<article class="card ac"><div class="ac-cat">${c}</div><div class="ac-name">${n}</div>${s ? `<div class="ac-sub">${s}</div>` : ''}</article>`).join('');
+  else renderPlatter();
+}
+$('a-seg').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { b.dataset.v === 'lists' ? (location.hash = 'platter') : (history.replaceState(null, '', '#preise'), setAward(b.dataset.v)); } });
+
+const plLabel = { woty:'Wine of the Year', '5':'5 Sterne', '94':'94 Punkte', bndl:'Buy Now, Drink Later', gem:'Hidden Gem', quaff:'Superquaffer' };
+const plTag = { woty:'woty', '5':'t5', '94':'t94' };
+const plSt = { list:'woty', cat:'all', q:'' };
+$('pl-chips').innerHTML = ['woty', '5', '94', 'bndl', 'gem', 'quaff', 'all'].map(l =>
+  `<button class="chip${l === plSt.list ? ' on' : ''}" data-l="${l}">${l === 'all' ? 'Alle' : plLabel[l]} <small style="opacity:.7">${l === 'all' ? platter25.length : platter25.filter(x => x.list === l).length}</small></button>`).join('');
+$('pl-chips').addEventListener('click', e => {
+  const b = e.target.closest('[data-l]'); if (!b) return;
+  plSt.list = b.dataset.l; plSt.cat = 'all';
+  $('pl-chips').querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === b));
+  fillCats(); renderPlatter();
+});
+$('pl-cat').addEventListener('change', e => { plSt.cat = e.target.value; renderPlatter(); });
+$('pl-q').addEventListener('input', e => { plSt.q = e.target.value.toLowerCase().trim(); renderPlatter(); });
+function fillCats() {
+  const cats = [...new Set(platter25.filter(x => plSt.list === 'all' || x.list === plSt.list).map(x => x.cat))];
+  $('pl-cat').innerHTML = `<option value="all">Alle Kategorien</option>` + cats.map(c => `<option>${esc(c)}</option>`).join('');
+}
+function renderPlatter() {
+  const list = platter25.filter(x => (plSt.list === 'all' || x.list === plSt.list) && (plSt.cat === 'all' || x.cat === plSt.cat) && (!plSt.q || x.w.toLowerCase().includes(plSt.q)));
+  $('pl-count').textContent = `${list.length} Einträge`;
+  $('pl-list').innerHTML = list.map(x => {
+    const m = x.w.match(/^(.*?)\s+((?:19|20)\d\d|NV)$/);
+    return `<div class="pl-row"><div><div class="pl-name">${esc(m ? m[1] : x.w)}</div><div class="pl-cat">${plSt.list === 'all' ? `<span class="tag ${plTag[x.list] || ''}">${plLabel[x.list]}</span>` : ''}${esc(x.cat)}</div></div><div class="pl-yr">${m ? m[2] : ''}</div></div>`;
+  }).join('') || '<div class="empty">Keine Einträge.</div>';
 }
 
 // =============================================
 // INIT
 // =============================================
-renderRegions();
-['red', 'white', 'special'].forEach(initView);
+fillCats();
 renderVintage();
-renderAw('aw-atkin26', awAtkin26);
-renderAw('aw-platter26', awPlatter26);
-renderAw('aw-atkin25', awAtkin25);
-renderAw('aw-platter25w', platter25Wineries);
-renderAw('aw-platter25', platter25.filter(x => x.list === 'woty').map(x => [x.cat, x.w, '']));
-
-// =============================================
-// PLATTER'S 2025 — LISTEN
-// =============================================
-const plLabel = { woty:'Wine of the Year', '5':'5 Sterne (95+)', '94':'Highly Rec. (94)', bndl:'Buy Now, Drink Later', gem:'Hidden Gem', quaff:'Superquaffer' };
-const plOrder = ['woty','5','94','bndl','gem','quaff'];
-const plState = { list:'woty', cat:'all', q:'' };
-function initPlatter() {
-  const fb = document.getElementById('fb-pl');
-  const cnt = l => platter25.filter(x => x.list === l).length;
-  fb.innerHTML = `<label>Liste:</label>` + plOrder.map(l => `<button class="fbtn${l === plState.list ? ' on' : ''}" data-l="${l}">${plLabel[l]} (${cnt(l)})</button>`).join('') +
-    `<button class="fbtn" data-l="all">Alle (${platter25.length})</button><span class="sep"></span>` +
-    `<label>Kategorie:</label><select class="fbtn" id="pl-cat" style="text-transform:none;letter-spacing:.05em;"></select><span class="sep"></span>` +
-    `<input type="text" class="fsearch" placeholder="Wein oder Weingut suchen…">`;
-  fb.querySelectorAll('button[data-l]').forEach(b => b.addEventListener('click', () => {
-    plState.list = b.dataset.l; plState.cat = 'all';
-    fb.querySelectorAll('button[data-l]').forEach(x => x.classList.toggle('on', x === b));
-    fillCats(); renderPlatter();
-  }));
-  document.getElementById('pl-cat').addEventListener('change', e => { plState.cat = e.target.value; renderPlatter(); });
-  fb.querySelector('input').addEventListener('input', e => { plState.q = e.target.value.toLowerCase(); renderPlatter(); });
-  fillCats(); renderPlatter();
-}
-function fillCats() {
-  const cats = [...new Set(platter25.filter(x => plState.list === 'all' || x.list === plState.list).map(x => x.cat))];
-  document.getElementById('pl-cat').innerHTML = `<option value="all">Alle Kategorien</option>` + cats.map(c => `<option>${c}</option>`).join('');
-}
-function renderPlatter() {
-  const list = platter25.filter(x => (plState.list === 'all' || x.list === plState.list) && (plState.cat === 'all' || x.cat === plState.cat) && (!plState.q || x.w.toLowerCase().includes(plState.q)));
-  document.getElementById('cnt-pl').textContent = list.length + ' Einträge';
-  document.getElementById('tb-pl').innerHTML = list.map(x => {
-    const m = x.w.match(/^(.*?)\s+((?:19|20)\d\d|NV)$/);
-    const name = m ? m[1] : x.w, yr = m ? m[2] : '—';
-    return `<tr><td><span class="pl-tag pl-${x.list}">${plLabel[x.list]}</span></td><td class="w-reg">${x.cat}</td><td><span class="w-prod" style="font-size:15px;">${name}</span></td><td class="yr-cell" style="font-size:16px;">${yr}</td></tr>`;
-  }).join('') || '<tr><td colspan="4" style="color:var(--dim);">Keine Einträge.</td></tr>';
-}
-initPlatter();
+setAward('atkin26');
+route();
 </script>
 </body>
 </html>
