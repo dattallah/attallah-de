@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F8F5EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131814" media="(prefers-color-scheme: dark)">
+<title>Naturparks — Die schönsten Schutzgebiete im südlichen Afrika</title>
+<meta name="description" content="36 Naturparks in Südafrika, Namibia, Botswana, Simbabwe, Mosambik und Sambia: Karte mit Tier-Rangfolge, Parkprofile mit Signature-Bildern, Reisezeit-Kalender.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F5A4A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23E6BC68' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   TOKENS — mobile first (gleiche Familie wie Kap-Weine)
+   ============================================= */
+:root{
+  --pri:#1F5A4A;--pril:#2E7560;--gold:#9A6A1C;--goldl:#B07F2C;
+  --ink:#1E2620;--txt:#3C443A;--dim:#646D5C;--bg:#F8F5EC;--card:#FFFFFF;--soft:#EFF1E6;
+  --on-pri:#F5F0E2;--line:rgba(31,90,74,.14);--line2:rgba(31,60,40,.08);
+  --hero1:#DCEBDF;--hero2:#F5F1E4;--bar:rgba(248,245,236,.92);--shadow:0 1px 2px rgba(20,40,30,.06),0 4px 14px rgba(20,40,30,.05);
+  --t1:#1F5A4A;--t2:#4E8F76;--t3:#BBD8C9;--t1-fg:#F5F0E2;--t2-fg:#FFFFFF;--t3-fg:#173A2D;--ring:#FFFFFF;
+  --ocean:#DCE7E6;--land:#ECE6D3;--land2:#F3EFE4;--border:#A29A80;--water:#A6C7CC;--river:#8DB6BE;--label:#7A7260;
+  --r:14px;--safe-b:env(safe-area-inset-bottom,0px);--tab-h:64px;--app-h:52px;
+}
+@media (prefers-color-scheme: dark){:root{
+  --pri:#3E9A7E;--pril:#4FB592;--gold:#D9A94E;--goldl:#E6BC68;
+  --ink:#F1ECDD;--txt:#D3D6CA;--dim:#A0A898;--bg:#131814;--card:#1B221D;--soft:#222B25;
+  --on-pri:#0F1511;--line:rgba(120,190,160,.16);--line2:rgba(200,230,210,.07);
+  --hero1:#1E3229;--hero2:#151B17;--bar:rgba(19,24,20,.92);--shadow:none;
+  --t1:#2A7A62;--t2:#62A88D;--t3:#C9E5D7;--t1-fg:#F5F0E2;--t2-fg:#0F1511;--t3-fg:#173A2D;--ring:#E9EFE7;
+  --ocean:#17222A;--land:#283028;--land2:#1F2520;--border:#6F7866;--water:#2E5560;--river:#3D6A75;--label:#9AA08A;
+}}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--txt);font-size:15px;line-height:1.55;overflow-x:hidden;
+  padding-top:var(--app-h);padding-bottom:calc(var(--tab-h) + var(--safe-b));}
+a{color:var(--gold);}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
+[hidden]{display:none!important;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+/* APP BAR + TAB BAR */
+.appbar{position:fixed;top:0;left:0;right:0;height:var(--app-h);z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px;
+  background:var(--bar);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.brand{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap;}
+.brand em{color:var(--gold);font-style:italic;font-weight:400;}
+.appbar-r{display:flex;align-items:center;gap:6px;font-size:12px;white-space:nowrap;}
+.appbar-r a{color:var(--dim);text-decoration:none;}
+.ver{font:inherit;font-size:11px;color:var(--gold);background:none;border:0;padding:4px 2px;cursor:pointer;}
+.beta{display:inline-block;font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:5px;background:var(--gold);color:#fff;vertical-align:2px;margin-left:4px;}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);
+  height:calc(var(--tab-h) + var(--safe-b));padding-bottom:var(--safe-b);background:var(--bar);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:500;color:var(--dim);text-decoration:none;}
+.tab svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.tab.on{color:var(--pri);}
+.tab.on svg{stroke-width:2;}
+
+/* LAYOUT */
+.page{display:none;padding:20px 16px 32px;max-width:1240px;margin:0 auto;}
+.page.on{display:block;}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--ink);line-height:1.08;}
+h2.title{font-size:34px;margin-bottom:12px;text-wrap:balance;}
+h2.title em,h1 em{font-style:italic;color:var(--gold);}
+.lead{color:var(--dim);font-size:15px;line-height:1.65;margin-bottom:16px;max-width:70ch;}
+.info{margin:0 0 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);}
+.info summary{list-style:none;padding:12px 14px;font-size:13px;font-weight:600;color:var(--pri);cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.info summary::-webkit-details-marker{display:none;}
+.info summary::after{content:'+';font-size:18px;font-weight:400;}
+.info[open] summary::after{content:'–';}
+.info div{padding:0 14px 14px;font-size:14px;color:var(--dim);line-height:1.65;}
+.h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);margin:26px 0 8px;line-height:1.15;}
+.h3 em{color:var(--gold);}
+
+/* CHIPS, SEARCH */
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 16px 4px;margin:0 -16px 10px;scroll-padding:16px;}
+.chips::-webkit-scrollbar{display:none;}
+.chip{flex:0 0 auto;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:13px;font-weight:500;color:var(--txt);white-space:nowrap;display:inline-flex;align-items:center;gap:7px;}
+.chip.on{background:var(--pri);border-color:var(--pri);color:var(--on-pri);}
+.chip .tdot{width:11px;height:11px;}
+.tools{position:sticky;top:var(--app-h);z-index:20;background:var(--bg);margin:0 -16px;padding:8px 16px 4px;}
+.searchrow{display:flex;gap:8px;margin-bottom:8px;}
+.search{flex:1;min-width:0;height:44px;padding:0 14px 0 40px;border:1px solid var(--line);border-radius:12px;background:var(--card) no-repeat 13px 50%/18px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23646D5C' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
+  font:inherit;font-size:15px;color:var(--txt);outline:none;}
+.search:focus{border-color:var(--gold);}
+.select{height:36px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);font:inherit;font-size:13px;color:var(--txt);max-width:100%;}
+.resultbar{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--dim);margin:2px 0 12px;flex-wrap:wrap;}
+
+/* TIER-PUNKTE */
+.tdot{display:inline-block;width:10px;height:10px;border-radius:50%;box-shadow:0 0 0 1.5px var(--ring),0 0 0 2.5px var(--line);flex:0 0 auto;}
+.T1{background:var(--t1);color:var(--t1-fg);} .T2{background:var(--t2);color:var(--t2-fg);} .T3{background:var(--t3);color:var(--t3-fg);}
+.num{flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:inline-grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;line-height:1;box-shadow:0 0 0 2px var(--ring),0 0 0 3px var(--line);font-variant-numeric:lining-nums tabular-nums;}
+
+/* KARTEN (Park-Cards) */
+.list{display:grid;gap:12px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);}
+.pc{padding:0;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;}
+.pc-img{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,var(--hero1),var(--soft));overflow:hidden;}
+.pc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+.pc:hover .pc-img img{transform:scale(1.03);}
+.pc-img .num{position:absolute;left:12px;bottom:12px;z-index:2;}
+.pc-img.noimg img{display:none;}
+.pc-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.pc-name{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:var(--ink);line-height:1.12;}
+.pc-meta{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:12.5px;color:var(--dim);}
+.pc-desc{font-size:14px;color:var(--dim);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.pc-go{margin-top:auto;padding-top:10px;border-top:1px solid var(--line2);font-size:13px;font-weight:600;color:var(--pri);}
+.pc-go::after{content:' ›';color:var(--gold);}
+.tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.04em;padding:2px 7px;border-radius:5px;background:var(--soft);color:var(--dim);}
+.tag.un{background:rgba(201,168,76,.2);color:var(--ink);}
+.empty{padding:28px 16px;text-align:center;color:var(--dim);font-size:14px;}
+
+/* HOME */
+.hero{margin:-20px -16px 20px;padding:40px 20px 30px;text-align:center;background:radial-gradient(ellipse 120% 80% at 50% 0%,var(--hero1) 0%,var(--hero2) 55%,var(--bg) 100%);}
+.hero .eyebrow{letter-spacing:.2em;}
+.hero h1{font-size:56px;font-weight:400;margin:6px 0 4px;}
+.hero h1 em{display:block;font-size:22px;letter-spacing:.06em;margin-top:6px;}
+.hero p{font-size:14px;color:var(--dim);max-width:46ch;margin:14px auto 0;}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+.tile{display:flex;flex-direction:column;justify-content:space-between;min-height:104px;padding:14px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);text-align:left;text-decoration:none;}
+.tile b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--ink);line-height:1.1;}
+.tile span{font-size:12.5px;color:var(--dim);display:flex;align-items:center;gap:7px;}
+.tile.main{background:var(--pri);border-color:var(--pri);}
+.tile.main b,.tile.main span{color:var(--on-pri);}
+.facts{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -16px 20px;padding:2px 16px;scroll-snap-type:x mandatory;}
+.facts::-webkit-scrollbar{display:none;}
+.fact{flex:0 0 72%;scroll-snap-align:start;padding:16px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);}
+.fact b{display:block;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--ink);line-height:1.1;margin-bottom:4px;}
+.fact span{font-size:13px;color:var(--dim);}
+.strip{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -16px 24px;padding:2px 16px;scroll-snap-type:x mandatory;}
+.strip::-webkit-scrollbar{display:none;}
+.sig{flex:0 0 78%;scroll-snap-align:start;position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--soft);text-decoration:none;}
+.sig img{width:100%;height:100%;object-fit:cover;display:block;}
+.sig figcaption{position:absolute;inset:auto 0 0 0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(10,18,14,.78));color:#F5F0E2;display:flex;align-items:flex-end;gap:10px;}
+.sig figcaption b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;line-height:1.1;display:block;}
+.sig figcaption span{font-size:12px;opacity:.85;}
+.sig .num{width:30px;height:30px;font-size:17px;}
+
+/* KARTE */
+.mapbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);}
+.mapbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap;font-size:13px;color:var(--dim);}
+.btn{height:36px;padding:0 12px;border-radius:10px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;}
+.btn.pri{background:var(--pri);color:var(--on-pri);}
+.btn.ghost{border:1px solid var(--line);color:var(--pri);}
+.scroller{overflow:auto;max-height:80vh;}
+.mapbox.zoom .scroller svg{width:200%;}
+svg.map{display:block;width:100%;height:auto;}
+svg .m{cursor:pointer;}
+svg .m text{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;pointer-events:none;}
+svg .m.hl circle.c{stroke:var(--gold);}
+svg .clab{font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:.14em;fill:var(--label);pointer-events:none;}
+svg .olab{font-family:'Cormorant Garamond',serif;font-style:italic;fill:var(--river);pointer-events:none;}
+.mapnote{font-size:12px;color:var(--dim);padding:10px 14px 12px;border-top:1px solid var(--line);line-height:1.5;}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--dim);margin:12px 0;}
+.legend span{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.legend .tdot{width:13px;height:13px;}
+
+/* PARK-DETAIL */
+.back{font-size:14px;font-weight:600;color:var(--pri);margin:0 0 12px;padding:6px 0;}
+.gal{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -16px 16px;padding:2px 16px;scroll-snap-type:x mandatory;}
+.gal::-webkit-scrollbar{display:none;}
+.gal figure{flex:0 0 88%;scroll-snap-align:start;border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line);}
+.gal .ph{aspect-ratio:4/3;background:linear-gradient(135deg,var(--hero1),var(--soft));}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;}
+.gal figcaption{padding:10px 12px;font-size:13px;color:var(--txt);display:flex;justify-content:space-between;gap:10px;align-items:baseline;}
+.gal figcaption a{font-size:11.5px;color:var(--dim);white-space:nowrap;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px;}
+.gal.one figure{flex-basis:100%;}
+.pd-head{display:flex;gap:14px;align-items:center;margin-bottom:12px;}
+.pd-head .num{width:46px;height:46px;font-size:25px;}
+.pd-head h2{font-size:36px;}
+.pd-grid{display:grid;gap:12px;}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14px;}
+.kv dt{color:var(--dim);}
+.kv dd{color:var(--ink);font-weight:500;}
+.prof{font-size:15px;line-height:1.75;color:var(--txt);}
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin-top:4px;}
+.months span{font-size:10px;text-align:center;padding:5px 0;border-radius:5px;background:var(--soft);color:var(--dim);}
+.months span.on{background:var(--pri);color:var(--on-pri);font-weight:600;}
+.near{display:grid;gap:8px;}
+.near a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-size:14px;}
+.near a .num{width:28px;height:28px;font-size:16px;}
+.near a small{margin-left:auto;color:var(--dim);font-size:12px;white-space:nowrap;}
+.ext{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--pri);text-decoration:none;}
+.ext::after{content:' ↗';color:var(--gold);}
+
+/* REISEZEIT */
+.mx-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--card);}
+table.mx{border-collapse:collapse;width:100%;min-width:560px;font-size:12.5px;}
+.mx th,.mx td{padding:6px 4px;border-bottom:1px solid var(--line2);text-align:center;}
+.mx th{font-weight:600;color:var(--dim);font-size:11px;position:sticky;top:0;background:var(--card);}
+.mx th.cur{color:var(--gold);}
+.mx td.nm{text-align:left;padding-left:12px;white-space:nowrap;}
+.mx td.nm a{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
+.mx td.nm .tdot{width:9px;height:9px;}
+.mx td i{display:block;height:14px;border-radius:4px;background:var(--soft);}
+.mx td i.on{background:var(--pri);}
+.mx td.cur i{outline:1px solid var(--gold);}
+
+footer{max-width:1240px;margin:0 auto;padding:24px 16px 32px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.7;color:var(--dim);}
+footer b{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--ink);font-weight:600;display:block;margin-bottom:6px;}
+.changelog{margin-top:14px;}
+.changelog summary{cursor:pointer;color:var(--txt);}
+.changelog ol{list-style:none;margin:8px 0 0;display:grid;gap:8px;}
+.changelog li b{font-family:inherit;font-size:12.5px;display:inline;color:var(--ink);margin:0;}
+
+@media (min-width:640px){
+  .tiles{grid-template-columns:repeat(3,1fr);}
+  .fact{flex-basis:40%;}
+  .sig{flex-basis:44%;}
+  .list.cols{grid-template-columns:repeat(2,1fr);}
+  .hero h1{font-size:84px;}
+  h2.title{font-size:44px;}
+  .gal figure{flex-basis:62%;}
+  .pd-grid{grid-template-columns:1fr 1fr;}
+}
+@media (min-width:900px){
+  :root{--tab-h:0px;--app-h:60px;}
+  body{padding-bottom:0;}
+  .appbar{padding:0 28px;justify-content:flex-start;gap:18px;}
+  .tabbar{top:0;bottom:auto;left:auto;right:20px;height:var(--app-h);z-index:60;display:flex;align-items:center;padding:0;background:none;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;}
+  .tab{flex-direction:row;gap:7px;padding:8px 12px;border-radius:10px;font-size:13.5px;}
+  .tab svg{width:18px;height:18px;}
+  .tab.on{background:var(--soft);}
+  .appbar-r{padding-top:3px;}
+  .page{padding:32px 28px 48px;}
+  .hero{margin:-32px -28px 28px;padding:72px 28px 56px;}
+  .hero h1{font-size:110px;}
+  .hero h1 em{font-size:28px;}
+  .tiles{grid-template-columns:repeat(6,1fr);}
+  .facts{display:grid;grid-template-columns:repeat(5,1fr);overflow:visible;margin:0 0 24px;padding:0;}
+  .strip{margin:0 0 28px;padding:0;}
+  .sig{flex-basis:31%;}
+  .chips{flex-wrap:wrap;overflow:visible;margin:0 0 10px;padding:0;}
+  .tools{margin:0;padding:10px 0 4px;}
+  .list.cols{grid-template-columns:repeat(3,1fr);}
+  .gal{margin:0 0 20px;padding:0;}
+  .gal figure{flex-basis:48%;}
+  .karte-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;align-items:start;}
+  .karte-side{position:sticky;top:calc(var(--app-h) + 16px);max-height:calc(100vh - var(--app-h) - 32px);overflow:auto;}
+  footer{padding:28px;}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important;}}
+</style>
+</head>
+<body>
+
+<header class="appbar">
+  <a class="brand" href="#start">Natur-<em>Parks</em></a>
+  <div class="appbar-r"><button class="ver" id="verBtn" type="button" title="Version und Änderungen"></button><a href="https://attallah.de">attallah.de</a></div>
+</header>
+<nav class="tabbar" aria-label="Hauptnavigation">
+  <a class="tab" href="#start" data-p="start"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>Start</a>
+  <a class="tab" href="#karte" data-p="karte"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Karte</a>
+  <a class="tab" href="#parks" data-p="parks"><svg viewBox="0 0 24 24"><path d="M12 3 5 13h4l-3 5h12l-3-5h4z"/><path d="M12 18v3"/></svg>Parks</a>
+  <a class="tab" href="#reisezeit" data-p="reisezeit"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Reisezeit</a>
+</nav>
+
+<main>
+<!-- ========== START ========== -->
+<section id="p-start" class="page">
+  <div class="hero">
+    <div class="eyebrow">Südliches Afrika · Wildnis &amp; Weite</div>
+    <h1>Naturparks<em>Die schönsten Schutzgebiete im Süden Afrikas</em></h1>
+    <p id="hero-p"></p>
+  </div>
+  <div class="tiles" id="tiles"></div>
+  <div class="eyebrow">Signature-Momente</div>
+  <div class="strip" id="strip"></div>
+  <div class="eyebrow">Der Süden in Zahlen</div>
+  <div class="facts" id="facts"></div>
+  <p class="lead">Von der roten Namib bis zum türkisen Bazaruto, vom Okavango-Delta bis an die Kaphalbinsel: Die Auswahl reicht über sechs Länder. Die Nummer jedes Parks ist sein Rang. Tier 1 sind die Orte, für die man eigens anreist; Tier 2 sind herausragende Ziele, oft ideal als Ergänzung; Tier 3 sind lohnende Stopps auf der Route oder Spezialisten-Ziele mit klarer Saison.</p>
+</section>
+
+<!-- ========== KARTE ========== -->
+<section id="p-karte" class="page">
+  <div class="eyebrow">Lage &amp; Rang</div>
+  <h2 class="title">Die Karte <em>der Parks</em></h2>
+  <div class="chips" id="k-tier"></div>
+  <div class="chips" id="k-cat"></div>
+  <div class="karte-grid">
+    <div class="mapbox" id="mapbox">
+      <div class="mapbar"><span id="k-count"></span><button class="btn ghost" id="zoomBtn" type="button" aria-pressed="false">Vergrößern</button></div>
+      <div class="scroller" id="scroller"><svg class="map" id="map" role="img" aria-label="Karte des südlichen Afrika mit nummerierten Naturparks"></svg></div>
+      <div class="mapnote" id="mapnote">Grenzen vereinfacht, Flüsse und Seen schematisch. Liegen Punkte zu dicht, sind sie leicht versetzt; eine feine Linie zeigt dann zur tatsächlichen Lage.</div>
+    </div>
+    <div class="karte-side">
+      <div class="legend"><span><span class="tdot T1"></span>Tier 1 · Weltklasse</span><span><span class="tdot T2"></span>Tier 2 · Herausragend</span><span><span class="tdot T3"></span>Tier 3 · Ergänzung</span></div>
+      <div class="list" id="k-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PARKS ========== -->
+<section id="p-parks" class="page">
+  <div class="eyebrow">Rangliste</div>
+  <h2 class="title">Alle <em>Parks</em></h2>
+  <details class="info"><summary>So entsteht die Rangliste</summary><div>Die Einstufung ist eine redaktionelle Einschätzung aus Erlebniswert, Einzigartigkeit der Landschaft und Tierdichte, keine amtliche Klassifizierung. Reisezeiten sind Richtwerte und hängen davon ab, was man sehen möchte (Tiere, Blüte, Wasserstand). Fakten zu Größen, Welterbe-Status und Wildzählungen stammen aus Wikipedia, UNESCO und Berichten der Parkverwaltungen; Stand Oktober 2026.</div></details>
+  <div class="tools">
+    <div class="searchrow">
+      <input class="search" id="p-q" type="search" placeholder="Park, Land, Tier, Stichwort…" autocomplete="off">
+    </div>
+    <div class="chips" id="p-tier"></div>
+    <div class="chips" id="p-cat"></div>
+    <div class="chips" id="p-land"></div>
+  </div>
+  <div class="resultbar"><span id="p-count"></span>
+    <select class="select" id="p-sort" aria-label="Sortierung">
+      <option value="rank">Rang</option><option value="name">Name A–Z</option><option value="land">Land</option><option value="lat">Nord → Süd</option>
+    </select>
+  </div>
+  <div class="list cols" id="p-list"></div>
+</section>
+
+<!-- ========== REISEZEIT ========== -->
+<section id="p-reisezeit" class="page">
+  <div class="eyebrow">Wann wohin</div>
+  <h2 class="title">Reisezeit <em>nach Monat</em></h2>
+  <p class="lead">Wähle einen Monat und sieh, welche Parks dann in Bestform sind. Darunter der ganze Kalender. Faustregel: Für Safaris ist die Trockenzeit von Mai bis Oktober am besten, für die Kapregion der Südsommer.</p>
+  <div class="chips" id="r-months"></div>
+  <h3 class="h3" id="r-head"></h3>
+  <div class="list cols" id="r-list"></div>
+  <h3 class="h3">Der ganze <em>Kalender</em></h3>
+  <div class="mx-wrap"><table class="mx" id="r-mx"></table></div>
+</section>
+
+<!-- ========== PARK-DETAIL ========== -->
+<section id="p-park" class="page">
+  <button class="back" type="button" id="backBtn">‹ Zurück</button>
+  <div class="eyebrow" id="d-eyebrow"></div>
+  <div class="pd-head"><span class="num" id="d-num"></span><h2 class="title" id="d-name" style="margin:0"></h2></div>
+  <div class="gal" id="d-gal"></div>
+  <div class="pd-grid">
+    <div class="card">
+      <p class="prof" id="d-desc"></p>
+      <a class="ext" id="d-link" target="_blank" rel="noopener">Mehr Infos</a>
+    </div>
+    <div class="card">
+      <dl class="kv" id="d-kv"></dl>
+      <div style="margin-top:14px;font-size:12px;color:var(--dim)">Beste Reisezeit</div>
+      <div class="months" id="d-months"></div>
+    </div>
+  </div>
+  <h3 class="h3">Lage</h3>
+  <div class="mapbox"><svg class="map" id="minimap" role="img"></svg></div>
+  <h3 class="h3" id="d-nearh">In der <em>Nähe</em></h3>
+  <div class="near" id="d-near"></div>
+</section>
+</main>
+
+<footer>
+  <b>Naturparks — Die schönsten Schutzgebiete im südlichen Afrika</b>
+  Rangfolge und Reisezeiten sind redaktionelle Einschätzungen. Fakten nach Wikipedia, <a href="https://whc.unesco.org/" target="_blank" rel="noopener">UNESCO-Welterbezentrum</a> und Parkverwaltungen, Stand Oktober 2026.
+  Fotos: <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>; Urheber und Lizenz stehen auf der jeweils verlinkten Dateiseite.<br>
+  <a href="https://attallah.de">← attallah.de</a> · <a href="../suedafrika/">Südafrika — Guide der großen Kap-Weine</a>
+  <details class="changelog" id="versionen"><summary id="verSum"></summary><ol id="verList"></ol></details>
+</footer>
+
+<script src="data.js"></script>
+<script>
+// =============================================
+// HILFSFUNKTIONEN
+// =============================================
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
+const slug = s => s.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const imgUrl = (f, w) => 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(f) + '?width=' + w;
+const filePage = f => 'https://commons.wikimedia.org/wiki/File:' + encodeURIComponent(f.replace(/ /g, '_'));
+const MONTHS = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+const MONTHS_L = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+const TIERS = { 1:'Tier 1 · Weltklasse', 2:'Tier 2 · Herausragend', 3:'Tier 3 · Lohnende Ergänzung' };
+const numBadge = (p, cls = '') => `<span class="num T${p.t} ${cls}">${p.n}</span>`;
+const hideBroken = 'this.closest(\'.pc-img,.ph,.sig\')&&this.closest(\'.pc-img,.ph,.sig\').classList.add(\'noimg\');this.remove();';
+parks.forEach(p => { p.slug = slug(p.name); });
+
+// Versionen (neueste zuerst). Bis zur Freigabe von v1.0 als Beta.
+const changelog = [
+  ['0.5 beta', '31.10.2026', 'Erste Beta: 36 Parks in sechs Ländern mit Tier-Rang, Karte mit Filtern, Parkseiten mit Signature-Bildern (Wikimedia Commons), Lage-Karte und Nachbarparks, Reisezeit-Kalender nach Monat'],
+];
+$('verBtn').innerHTML = `(v${changelog[0][0].replace(' beta', '')}<span class="beta">beta</span>)`;
+$('verSum').textContent = `Version ${changelog[0][0]} · ${changelog[0][1]} · Änderungen`;
+$('verList').innerHTML = changelog.map(([v, d, t]) => `<li><b>v${v}</b> · ${d}<br>${t}</li>`).join('');
+$('verBtn').addEventListener('click', () => { const d = $('versionen'); d.open = true; d.scrollIntoView({ behavior:'smooth', block:'end' }); });
+
+// =============================================
+// KARTE: Projektion & Geografie
+// =============================================
+const LON0 = 11.0, LON1 = 37.2, LAT0 = -35.3, LAT1 = -12.0, VW = 1000;
+const my = lat => Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360)) * 180 / Math.PI;
+const S = VW / (LON1 - LON0);
+const VH = Math.round((my(LAT1) - my(LAT0)) * S);
+const P = (lon, lat) => [(lon - LON0) * S, (my(LAT1) - my(lat)) * S];
+const path = (pts, close) => pts.map((p, i) => { const [x, y] = P(p[0], p[1]); return (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1); }).join('') + (close ? 'Z' : '');
+
+const COAST = [[13.6,-11],[13.6,-12.2],[13.4,-12.6],[12.8,-13.6],[12.4,-14.4],[12.15,-15.2],[11.85,-15.8],[11.8,-16.5],[11.75,-17.26],[12.0,-18.2],[12.6,-19.2],[13.0,-20.0],[13.4,-20.8],[13.95,-21.75],[14.25,-22.1],[14.5,-22.65],[14.45,-22.95],[14.5,-24.0],[14.8,-25.0],[14.95,-26.0],[15.15,-26.6],[15.2,-27.1],[15.7,-27.8],[16.45,-28.63],[16.87,-29.25],[17.25,-30.3],[17.6,-30.9],[18.0,-31.6],[18.3,-32.3],[17.9,-33.0],[18.3,-33.4],[18.45,-33.9],[18.35,-34.05],[18.47,-34.36],[18.75,-34.08],[18.85,-34.38],[19.4,-34.6],[20.0,-34.83],[20.5,-34.45],[21.4,-34.4],[22.1,-34.15],[23.4,-34.1],[24.0,-34.15],[25.0,-33.98],[25.7,-34.0],[26.9,-33.6],[27.9,-33.05],[28.9,-32.2],[29.6,-31.6],[30.4,-30.9],[31.0,-29.9],[31.5,-29.3],[32.0,-28.85],[32.5,-28.3],[32.75,-27.4],[32.89,-26.86],[32.9,-26.3],[32.95,-26.05],[32.6,-25.95],[32.95,-25.75],[33.4,-25.3],[34.0,-24.95],[35.0,-24.5],[35.5,-23.8],[35.55,-23.0],[35.5,-22.1],[35.3,-22.0],[35.15,-21.2],[34.8,-20.6],[34.7,-20.1],[34.84,-19.84],[35.4,-19.25],[36.0,-18.85],[36.45,-18.6],[36.9,-17.9],[37.6,-17.4],[38.6,-16.8],[39.4,-16.3],[40.0,-15.8],[40.6,-15.0],[40.75,-14.4],[40.6,-13.5],[40.5,-11],[13.6,-11]];
+const BORDERS = [
+ [[11.75,-17.26],[13.0,-16.97],[14.2,-17.4],[18.45,-17.4],[20.0,-17.9],[21.0,-18.0],[23.47,-17.63],[24.0,-17.5],[25.26,-17.8]],
+ [[25.26,-17.8],[24.2,-17.95],[23.3,-18.0],[21.0,-18.32],[21.0,-22.0],[20.0,-22.0],[20.0,-24.75]],
+ [[20.0,-24.75],[20.0,-28.4],[19.0,-28.6],[18.2,-28.9],[17.4,-28.7],[16.45,-28.63]],
+ [[20.0,-24.75],[20.8,-26.8],[21.7,-26.85],[22.6,-26.1],[23.5,-25.3],[24.7,-25.75],[25.6,-25.6],[25.9,-24.8],[26.8,-24.3],[27.4,-23.6],[28.2,-22.8],[29.37,-22.2]],
+ [[29.37,-22.2],[28.4,-21.6],[27.7,-21.0],[27.3,-20.45],[26.2,-19.6],[25.95,-18.9],[25.26,-17.8]],
+ [[29.37,-22.2],[31.3,-22.4]],
+ [[31.3,-22.4],[31.55,-23.5],[31.95,-24.6],[31.95,-25.95]],
+ [[32.1,-26.85],[32.89,-26.86]],
+ [[31.3,-22.4],[32.4,-21.3],[32.5,-20.6],[32.85,-20.0],[32.75,-19.0],[32.95,-18.2],[32.95,-17.3],[32.95,-16.7],[31.8,-16.2],[30.42,-15.63]],
+ [[30.42,-15.63],[29.4,-15.9],[28.8,-16.5],[27.3,-17.9],[25.85,-17.92],[25.26,-17.8]],
+ [[30.42,-15.63],[30.6,-15.0],[31.9,-14.6],[33.0,-14.0]],
+ [[33.0,-14.0],[33.3,-13.2],[33.0,-12.3],[33.2,-11]],
+ [[33.0,-14.0],[33.7,-14.6],[34.4,-14.5],[34.55,-15.3],[34.3,-16.0],[34.6,-16.4],[35.15,-17.1],[35.3,-16.1],[35.85,-16.0],[35.75,-15.0],[35.3,-14.4]],
+ [[23.47,-17.63],[22.0,-16.2],[22.0,-13.0],[24.0,-13.0],[24.0,-11]],
+ [[24.0,-11],[24.5,-11.5],[26.0,-11.9],[27.2,-11.6],[28.4,-12.2],[29.5,-13.2],[29.8,-12.2],[29.6,-11]]
+];
+const SMALL = [
+ [[27.0,-29.6],[27.5,-28.9],[28.2,-28.7],[28.7,-28.6],[29.3,-29.1],[29.45,-29.6],[29.1,-30.1],[28.5,-30.4],[27.9,-30.6],[27.4,-30.3],[27.1,-30.0]],
+ [[31.3,-25.7],[31.95,-25.95],[32.12,-26.5],[32.1,-26.85],[31.9,-27.3],[31.1,-27.3],[30.8,-26.8],[30.8,-26.3],[31.1,-25.9]]
+];
+const LAKES = [
+ [[34.25,-11],[34.75,-11],[34.75,-12.0],[34.85,-12.8],[34.9,-13.6],[35.3,-14.0],[35.25,-14.45],[34.9,-14.1],[34.5,-13.9],[34.35,-13.2],[34.2,-12.6],[34.2,-11.8]],
+ [[27.0,-17.85],[27.6,-17.3],[28.2,-16.9],[28.8,-16.55],[28.95,-16.6],[28.4,-17.05],[27.8,-17.5],[27.15,-17.95]],
+ [[30.6,-15.65],[31.5,-15.55],[32.6,-15.65],[32.5,-15.8],[31.5,-15.75],[30.7,-15.8]],
+ [[22.4,-18.9],[23.0,-18.95],[23.6,-19.3],[23.65,-19.9],[23.1,-20.1],[22.5,-19.85],[22.1,-19.4]]
+];
+const RIVERS = [
+ [[23.0,-12.5],[23.0,-14.0],[23.1,-15.3],[23.6,-16.6],[24.3,-17.5],[25.3,-17.8],[25.86,-17.93],[27.0,-17.85]],
+ [[28.8,-16.55],[29.4,-15.9],[30.4,-15.62],[30.6,-15.65]],
+ [[32.6,-15.65],[33.6,-16.2],[34.5,-16.9],[35.3,-17.6],[36.0,-18.4],[36.3,-18.75]],
+ [[17.8,-17.45],[19.5,-17.8],[20.8,-18.0],[21.8,-18.27],[22.2,-18.8],[22.5,-19.1]],
+ [[29.0,-29.4],[28.3,-29.9],[26.8,-30.4],[25.5,-30.6],[24.3,-29.7],[23.0,-29.0],[21.25,-28.45],[20.33,-28.6],[20.0,-28.4]],
+ [[27.0,-24.0],[28.2,-22.8],[29.37,-22.2],[31.3,-22.4],[32.4,-23.5],[33.0,-24.5],[33.55,-25.2]],
+ [[30.3,-13.2],[31.0,-13.8],[31.55,-13.6],[32.2,-13.0]]
+];
+const COUNTRY_LABELS = [['Namibia',17.4,-22.6],['Botswana',23.6,-23.4],['Simbabwe',30.6,-18.6],['Mosambik',33.9,-24.2],['Südafrika',23.9,-31.0],['Sambia',28.0,-13.6],['Angola',16.8,-14.0],['Malawi',33.6,-12.5]];
+const OCEAN_LABELS = [['Atlantik',12.4,-32.2],['Indischer Ozean',34.6,-31.6]];
+
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+let preciseLand = null; // Pfad-Liste aus der Weltkarte, falls nachgeladen
+
+function drawBase(svg, withLabels) {
+  svg.innerHTML = '';
+  svg.setAttribute('viewBox', `0 0 ${VW} ${VH}`);
+  const id = 'clip-' + svg.id;
+  const clip = el('clipPath', { id }, el('defs', {}, svg));
+  el('rect', { x:0, y:0, width:VW, height:VH }, clip);
+  el('rect', { x:0, y:0, width:VW, height:VH, fill:'var(--ocean)' }, svg);
+  const geo = el('g', { 'clip-path':`url(#${id})` }, svg);
+  const ns = { 'vector-effect':'non-scaling-stroke' };
+  if (preciseLand) {
+    preciseLand.forEach(([d, focus]) => el('path', { d, fill: focus ? 'var(--land)' : 'var(--land2)', stroke:'var(--border)', 'stroke-width':1, 'stroke-linejoin':'round', ...ns }, geo));
+  } else {
+    el('path', { d:path(COAST, true), fill:'var(--land)', stroke:'var(--border)', 'stroke-width':1, 'stroke-linejoin':'round', ...ns }, geo);
+    BORDERS.forEach(b => el('path', { d:path(b), fill:'none', stroke:'var(--border)', 'stroke-width':1, 'stroke-dasharray':'4 3', ...ns }, geo));
+    SMALL.forEach(b => el('path', { d:path(b, true), fill:'none', stroke:'var(--border)', 'stroke-width':1, 'stroke-dasharray':'4 3', ...ns }, geo));
+  }
+  RIVERS.forEach(r => el('path', { d:path(r), fill:'none', stroke:'var(--river)', 'stroke-width':1.4, 'stroke-linecap':'round', 'stroke-linejoin':'round', opacity:.85, ...ns }, geo));
+  LAKES.forEach(l => el('path', { d:path(l, true), fill:'var(--water)', stroke:'var(--river)', 'stroke-width':.8, ...ns }, geo));
+  const labels = [];
+  if (withLabels) {
+    const g = el('g', {}, svg);
+    COUNTRY_LABELS.forEach(([t, lo, la]) => { const [x, y] = P(lo, la); const e = el('text', { x, y, class:'clab', 'text-anchor':'middle' }, g); e.textContent = t.toUpperCase(); labels.push([e, 10]); });
+    OCEAN_LABELS.forEach(([t, lo, la]) => { const [x, y] = P(lo, la); const e = el('text', { x, y, class:'olab', 'text-anchor':'middle' }, g); e.textContent = t; labels.push([e, 13]); });
+  }
+  return labels;
+}
+
+// ---------- Hauptkarte ----------
+const svg = $('map');
+let mapLabels = [], leadG, markG;
+parks.forEach(p => { [p.x, p.y] = P(p.lon, p.lat); });
+function buildMap() {
+  mapLabels = drawBase(svg, true);
+  leadG = el('g', {}, svg);
+  markG = el('g', {}, svg);
+  parks.forEach(p => {
+    const g = el('g', { class:'m', tabindex:0, role:'link', 'aria-label':`${p.n} ${p.name}` }, markG);
+    p.circ = el('circle', { class:'c', fill:`var(--t${p.t})`, stroke:'var(--ring)' }, g);
+    p.tx = el('text', { 'text-anchor':'middle', 'dominant-baseline':'central', fill:`var(--t${p.t}-fg)` }, g);
+    p.tx.textContent = p.n;
+    el('title', {}, g).textContent = `${p.n} · ${p.name} (${p.land})`;
+    p.dot = el('circle', { fill:'var(--ink)' }, leadG);
+    p.ln = el('line', { stroke:'var(--ink)', 'stroke-width':1, 'vector-effect':'non-scaling-stroke', opacity:.5 }, leadG);
+    p.g = g;
+    const go = () => { location.hash = 'park/' + p.slug; };
+    g.addEventListener('click', go);
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    g.addEventListener('mouseenter', () => hlCard(p, true));
+    g.addEventListener('mouseleave', () => hlCard(p, false));
+  });
+  layout();
+}
+
+const mapState = { tiers: new Set([1, 2, 3]), cat: 'alle' };
+const onMap = p => mapState.tiers.has(p.t) && (mapState.cat === 'alle' || p.c === mapState.cat);
+
+function layout() {
+  const w = svg.getBoundingClientRect().width;
+  if (!w) return;
+  const k = w / VW;
+  const R = Math.max(10, Math.min(13, w / 34)) / k;
+  mapLabels.forEach(([e, px]) => e.setAttribute('font-size', (px / k).toFixed(2)));
+  const nodes = parks.filter(onMap);
+  nodes.forEach(p => { p.px = p.x; p.py = p.y; });
+  const min = 2 * R + 2 / k;
+  for (let it = 0; it < 160; it++) {
+    for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
+      const a = nodes[i], b = nodes[j];
+      let dx = b.px - a.px, dy = b.py - a.py, d = Math.hypot(dx, dy);
+      if (d < min) {
+        if (d < 0.01) { dx = 1; dy = 0.3; d = Math.hypot(dx, dy); }
+        const push = (min - d) / 2, ux = dx / d, uy = dy / d;
+        a.px -= ux * push; a.py -= uy * push; b.px += ux * push; b.py += uy * push;
+      }
+    }
+    nodes.forEach(p => { p.px += (p.x - p.px) * 0.04; p.py += (p.y - p.py) * 0.04; });
+  }
+  parks.forEach(p => {
+    const v = onMap(p);
+    p.g.style.display = v ? '' : 'none';
+    p.dot.style.display = p.ln.style.display = 'none';
+    if (!v) return;
+    p.circ.setAttribute('cx', p.px); p.circ.setAttribute('cy', p.py); p.circ.setAttribute('r', R); p.circ.setAttribute('stroke-width', 2 / k);
+    p.tx.setAttribute('x', p.px); p.tx.setAttribute('y', p.py + 0.5 / k); p.tx.setAttribute('font-size', (R * 1.15).toFixed(2));
+    if (Math.hypot(p.px - p.x, p.py - p.y) > R * 0.5) {
+      p.dot.style.display = p.ln.style.display = '';
+      p.dot.setAttribute('cx', p.x); p.dot.setAttribute('cy', p.y); p.dot.setAttribute('r', 2.2 / k);
+      p.ln.setAttribute('x1', p.x); p.ln.setAttribute('y1', p.y); p.ln.setAttribute('x2', p.px); p.ln.setAttribute('y2', p.py);
+    }
+  });
+}
+new ResizeObserver(() => layout()).observe(svg);
+$('zoomBtn').addEventListener('click', e => {
+  const on = $('mapbox').classList.toggle('zoom');
+  e.currentTarget.setAttribute('aria-pressed', on);
+  e.currentTarget.textContent = on ? 'Ganze Karte' : 'Vergrößern';
+});
+
+// Karten-Filter + Seitenliste
+function tierChips(host, set, onChange) {
+  host.innerHTML = [1, 2, 3].map(t => `<button class="chip" data-t="${t}"><span class="tdot T${t}"></span>Tier ${t}</button>`).join('');
+  const sync = () => host.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', set.has(+c.dataset.t)));
+  host.addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    const t = +b.dataset.t;
+    if (set.has(t)) { if (set.size > 1) set.delete(t); } else set.add(t);
+    sync(); onChange();
+  });
+  sync();
+}
+function catChips(host, get, set, onChange) {
+  host.innerHTML = [['alle', 'Alle Kategorien'], ...Object.entries(CATS)].map(([k, v]) => `<button class="chip" data-c="${k}">${v}</button>`).join('');
+  const sync = () => host.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c.dataset.c === get()));
+  host.addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; set(b.dataset.c); sync(); onChange(); });
+  sync();
+}
+function renderMapSide() {
+  const vis = parks.filter(onMap);
+  $('k-count').textContent = `${vis.length} Parks auf der Karte`;
+  $('k-list').innerHTML = vis.map(p => `<a href="#park/${p.slug}" data-n="${p.n}" style="display:block;text-decoration:none;color:inherit"><span class="card" style="display:flex;align-items:center;gap:12px;padding:10px 12px">${numBadge(p)}<span style="min-width:0"><span class="pc-name" style="font-size:19px;display:block">${esc(p.name)}</span><span class="pc-meta">${esc(p.land)} · ${CATS[p.c]}</span></span></span></a>`).join('');
+  $('k-list').querySelectorAll('a').forEach(a => {
+    const p = parks[+a.dataset.n - 1];
+    a.addEventListener('mouseenter', () => p.g && p.g.classList.add('hl'));
+    a.addEventListener('mouseleave', () => p.g && p.g.classList.remove('hl'));
+  });
+}
+function hlCard(p, on) {
+  const a = $('k-list').querySelector(`[data-n="${p.n}"] .card`);
+  if (a) a.style.borderColor = on ? 'var(--gold)' : '';
+}
+tierChips($('k-tier'), mapState.tiers, () => { layout(); renderMapSide(); });
+catChips($('k-cat'), () => mapState.cat, v => { mapState.cat = v; }, () => { layout(); renderMapSide(); });
+
+// Präzisere Grenzen aus der ECharts-Weltkarte nachladen (Apache-2.0); bei Fehler bleibt die vereinfachte Karte
+function decodeRing(str, off, scale) {
+  const out = []; let px = off[0], py = off[1];
+  for (let i = 0; i < str.length; i += 2) {
+    let x = str.charCodeAt(i) - 64, y = str.charCodeAt(i + 1) - 64;
+    x = (x >> 1) ^ (-(x & 1)); y = (y >> 1) ^ (-(y & 1));
+    x += px; y += py; px = x; py = y;
+    out.push([x / scale, y / scale]);
+  }
+  return out;
+}
+function usePrecise(geo) {
+  try {
+    const scale = geo.UTF8Scale || 1024;
+    const focus = /namibia|botswana|zimbabwe|mozambique|africa|zambia|lesotho|swazi|eswatini|malawi/i;
+    const list = [];
+    geo.features.forEach(f => {
+      const g = f.geometry; if (!g) return;
+      const polys = g.type === 'Polygon' ? [g.coordinates] : g.type === 'MultiPolygon' ? g.coordinates : [];
+      const offs = g.type === 'Polygon' ? [g.encodeOffsets] : g.encodeOffsets;
+      let d = '';
+      polys.forEach((poly, i) => poly.forEach((ring, j) => {
+        const pts = geo.UTF8Encoding ? decodeRing(ring, offs[i][j], scale) : ring;
+        if (!pts.some(([lo, la]) => lo > LON0 - 6 && lo < LON1 + 6 && la > LAT0 - 6 && la < LAT1 + 6)) return;
+        d += path(pts, true);
+      }));
+      if (d) list.push([d, focus.test((f.properties && f.properties.name) || '')]);
+    });
+    if (list.length > 8) {
+      preciseLand = list;
+      buildMap();
+      if (current) route();
+      $('mapnote').textContent = 'Grenzen nach der ECharts-Weltkarte (vereinfacht), Flüsse und Seen schematisch. Liegen Punkte zu dicht, sind sie leicht versetzt; eine feine Linie zeigt dann zur tatsächlichen Lage.';
+    }
+  } catch (e) { /* vereinfachte Karte bleibt */ }
+}
+window.echarts = { registerMap: (n, geo) => { window.__geo = geo; } };
+const sc = document.createElement('script');
+sc.src = 'https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js';
+sc.onload = () => { if (window.__geo) usePrecise(window.__geo); };
+document.head.appendChild(sc);
+
+// =============================================
+// START
+// =============================================
+const unescoN = parks.filter(p => p.unesco).length;
+$('hero-p').textContent = `${parks.length} Schutzgebiete in sechs Ländern, nach Rang nummeriert. Mit Karte, Parkprofilen, Signature-Bildern und Reisezeit-Kalender.`;
+$('tiles').innerHTML = [
+  ['#karte', 'Karte', `${parks.length} Parks auf einen Blick`, 'main'],
+  ['#parks/tier-1', 'Tier 1', `<span class="tdot T1"></span>${parks.filter(p => p.t === 1).length} Weltklasse-Parks`],
+  ['#parks/tier-2', 'Tier 2', `<span class="tdot T2"></span>${parks.filter(p => p.t === 2).length} herausragend`],
+  ['#parks/tier-3', 'Tier 3', `<span class="tdot T3"></span>${parks.filter(p => p.t === 3).length} Ergänzungen`],
+  ['#reisezeit', 'Reisezeit', 'Was passt wann?'],
+  ['#parks', 'Alle Parks', 'Suchen &amp; filtern'],
+].map(([h, b, s, c]) => `<a class="tile ${c || ''}" href="${h}"><b>${b}</b><span>${s}</span></a>`).join('');
+$('strip').innerHTML = parks.filter(p => p.t === 1).map(p => `<a class="sig" href="#park/${p.slug}"><img src="${imgUrl(p.img[0][0], 900)}" alt="${esc(p.img[0][1])}" loading="lazy" onerror="${hideBroken}"><figcaption>${numBadge(p)}<span><b>${esc(p.name)}</b><span>${esc(p.land)} · ${esc(p.img[0][1])}</span></span></figcaption></a>`).join('');
+$('facts').innerHTML = [
+  [parks.length, 'Parks und Schutzgebiete'],
+  ['6 Länder', COUNTRIES.join(', ')],
+  [unescoN, 'davon (Teil eines) UNESCO-Welterbes'],
+  ['≈ 1,7 km', 'Breite der Victoriafälle'],
+  ['110.513', 'Großtiere bei der Gorongosa-Luftzählung 2025'],
+].map(([b, s]) => `<div class="fact"><b>${b}</b><span>${s}</span></div>`).join('');
+
+// =============================================
+// PARKS
+// =============================================
+const pState = { q:'', tiers: new Set([1, 2, 3]), cat:'alle', land:'alle', sort:'rank' };
+const card = p => `<a class="card pc" href="#park/${p.slug}">
+  <div class="pc-img"><img src="${imgUrl(p.img[0][0], 640)}" alt="${esc(p.img[0][1])}" loading="lazy" onerror="${hideBroken}">${numBadge(p)}</div>
+  <div class="pc-body">
+    <div class="pc-name">${esc(p.name)}</div>
+    <div class="pc-meta"><span>${esc(p.land)}</span><span>${CATS[p.c]}</span><span>Beste Zeit: ${p.zeit}</span></div>
+    <div>${p.unesco ? '<span class="tag un">UNESCO-Welterbe</span>' : ''}</div>
+    <div class="pc-desc">${esc(p.d)}</div>
+    <div class="pc-go">Park ansehen</div>
+  </div></a>`;
+function renderParks() {
+  const q = pState.q.trim().toLowerCase();
+  let list = parks.filter(p => pState.tiers.has(p.t) && (pState.cat === 'alle' || p.c === pState.cat) && (pState.land === 'alle' || p.land.includes(pState.land))
+    && (!q || (p.name + ' ' + p.land + ' ' + CATS[p.c] + ' tier ' + p.t + ' ' + p.d).toLowerCase().includes(q)));
+  const by = { rank:(a, b) => a.n - b.n, name:(a, b) => a.name.localeCompare(b.name, 'de'), land:(a, b) => a.land.localeCompare(b.land, 'de') || a.n - b.n, lat:(a, b) => b.lat - a.lat };
+  list.sort(by[pState.sort]);
+  $('p-count').textContent = `${list.length} von ${parks.length} Parks`;
+  $('p-list').innerHTML = list.length ? list.map(card).join('') : '<div class="empty">Keine Parks für diese Auswahl.</div>';
+}
+tierChips($('p-tier'), pState.tiers, renderParks);
+catChips($('p-cat'), () => pState.cat, v => { pState.cat = v; }, renderParks);
+$('p-land').innerHTML = [['alle', 'Alle Länder'], ...COUNTRIES.map(c => [c, c])].map(([k, v]) => `<button class="chip" data-l="${k}">${v}</button>`).join('');
+const syncLand = () => $('p-land').querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c.dataset.l === pState.land));
+$('p-land').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; pState.land = b.dataset.l; syncLand(); renderParks(); });
+syncLand();
+$('p-q').addEventListener('input', e => { pState.q = e.target.value; renderParks(); });
+$('p-sort').addEventListener('change', e => { pState.sort = e.target.value; renderParks(); });
+const syncTierChips = () => $('p-tier').querySelectorAll('.chip').forEach(c => c.classList.toggle('on', pState.tiers.has(+c.dataset.t)));
+
+// =============================================
+// REISEZEIT
+// =============================================
+let rMonth = new Date().getMonth() + 1;
+$('r-months').innerHTML = MONTHS.map((m, i) => `<button class="chip" data-m="${i + 1}">${m}</button>`).join('');
+$('r-months').addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; rMonth = +b.dataset.m; renderTravel(); });
+function renderTravel() {
+  $('r-months').querySelectorAll('.chip').forEach(c => c.classList.toggle('on', +c.dataset.m === rMonth));
+  const list = parks.filter(p => p.m.includes(rMonth));
+  $('r-head').innerHTML = `Ideal im <em>${MONTHS_L[rMonth - 1]}</em> · ${list.length} Parks`;
+  $('r-list').innerHTML = list.map(card).join('');
+  $('r-mx').innerHTML = `<thead><tr><th style="text-align:left;padding-left:12px">Park</th>${MONTHS.map((m, i) => `<th class="${i + 1 === rMonth ? 'cur' : ''}">${m}</th>`).join('')}</tr></thead><tbody>`
+    + parks.map(p => `<tr><td class="nm"><a href="#park/${p.slug}"><span class="tdot T${p.t}"></span>${p.n} · ${esc(p.name)}</a></td>${MONTHS.map((m, i) => `<td class="${i + 1 === rMonth ? 'cur' : ''}"><i class="${p.m.includes(i + 1) ? 'on' : ''}" title="${m}"></i></td>`).join('')}</tr>`).join('') + '</tbody>';
+}
+
+// =============================================
+// PARK-DETAIL
+// =============================================
+const dist = (a, b) => { const R = 6371, r = Math.PI / 180; const dLa = (b.lat - a.lat) * r, dLo = (b.lon - a.lon) * r; const h = Math.sin(dLa / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
+function showPark(s) {
+  const p = parks.find(x => x.slug === s);
+  if (!p) { location.hash = 'parks'; return; }
+  document.title = `${p.name} — Naturparks`;
+  $('d-eyebrow').textContent = `${p.land} · ${CATS[p.c]}`;
+  $('d-num').className = `num T${p.t}`; $('d-num').textContent = p.n;
+  $('d-name').textContent = p.name;
+  $('d-gal').className = 'gal' + (p.img.length === 1 ? ' one' : '');
+  $('d-gal').innerHTML = p.img.map(([f, cap]) => `<figure><div class="ph"><img src="${imgUrl(f, 1280)}" alt="${esc(cap)}" loading="lazy" onerror="${hideBroken}"></div><figcaption><span>${esc(cap)}</span><a href="${filePage(f)}" target="_blank" rel="noopener">Foto: Commons · Lizenz</a></figcaption></figure>`).join('');
+  $('d-desc').textContent = p.d;
+  $('d-link').href = p.link;
+  $('d-link').textContent = p.link.includes('unesco') ? 'Mehr Infos bei der UNESCO' : 'Mehr Infos (Wikipedia)';
+  $('d-kv').innerHTML = [
+    ['Rang', `${p.n} · ${TIERS[p.t]}`],
+    ['Land', esc(p.land)],
+    ['Kategorie', CATS[p.c]],
+    ['Lage', `${Math.abs(p.lat).toFixed(2).replace('.', ',')}° S · ${p.lon.toFixed(2).replace('.', ',')}° O`],
+    ['Beste Zeit', p.zeit],
+    ...(p.unesco ? [['Status', 'UNESCO-Welterbe (Teil)']] : []),
+  ].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
+  $('d-months').innerHTML = MONTHS.map((m, i) => `<span class="${p.m.includes(i + 1) ? 'on' : ''}">${m}</span>`).join('');
+  // Mini-Karte
+  const mm = $('minimap');
+  drawBase(mm, false);
+  mm.setAttribute('aria-label', `Lage von ${p.name}`);
+  const k = (mm.getBoundingClientRect().width || 600) / VW;
+  parks.forEach(o => { if (o !== p) el('circle', { cx:o.x, cy:o.y, r:3.5 / k, fill:`var(--t${o.t})`, stroke:'var(--ring)', 'stroke-width':1 / k, opacity:.8 }, mm); });
+  el('circle', { cx:p.x, cy:p.y, r:20 / k, fill:'none', stroke:'var(--gold)', 'stroke-width':2 / k }, mm);
+  el('circle', { cx:p.x, cy:p.y, r:12 / k, fill:`var(--t${p.t})`, stroke:'var(--ring)', 'stroke-width':2 / k }, mm);
+  const t = el('text', { x:p.x, y:p.y + 0.5 / k, 'text-anchor':'middle', 'dominant-baseline':'central', fill:`var(--t${p.t}-fg)`, 'font-size':(13 / k).toFixed(1), 'font-family':'Cormorant Garamond,Georgia,serif', 'font-weight':600 }, mm);
+  t.textContent = p.n;
+  // In der Nähe
+  const near = parks.filter(o => o !== p).map(o => [o, dist(p, o)]).sort((a, b) => a[1] - b[1]).slice(0, 4);
+  $('d-near').innerHTML = near.map(([o, km]) => `<a href="#park/${o.slug}">${numBadge(o)}<span>${esc(o.name)}</span><small>${Math.round(km / 10) * 10} km Luftlinie</small></a>`).join('');
+}
+$('backBtn').addEventListener('click', () => { history.length > 1 ? history.back() : (location.hash = 'parks'); });
+
+// =============================================
+// ROUTING (Hash, damit die Zurück-Geste funktioniert)
+// =============================================
+let current = '';
+function route() {
+  const key = decodeURIComponent((location.hash || '#start').slice(1));
+  let page = key.split('/')[0];
+  if (!['start', 'karte', 'parks', 'reisezeit', 'park'].includes(page)) page = 'start';
+  const prev = current; current = key;
+  document.querySelectorAll('.page').forEach(s => s.classList.toggle('on', s.id === 'p-' + page));
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.p === (page === 'park' ? 'parks' : page)));
+  if (page !== 'park') document.title = 'Naturparks — Die schönsten Schutzgebiete im südlichen Afrika';
+  if (page === 'parks') {
+    const m = key.match(/^parks\/tier-([123])$/);
+    if (m) { pState.tiers.clear(); pState.tiers.add(+m[1]); syncTierChips(); }
+    renderParks();
+  }
+  if (page === 'karte') requestAnimationFrame(layout);
+  if (page === 'reisezeit') renderTravel();
+  if (page === 'park') requestAnimationFrame(() => showPark(key.slice(5)));
+  if (prev !== key) window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+buildMap();
+renderMapSide();
+route();
+</script>
+</body>
+</html>
